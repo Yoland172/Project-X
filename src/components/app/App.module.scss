@@ -1,5 +1,46 @@
-.test {
-  width: 20px;
-  height: 20px;
-  background-color: aqua;
+body {
+  background-image: radial-gradient(circle at 0% 0%, #282828, #292929 51%, #131313);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+}
+
+:root {
+  --main-text-color: #a1a1a1;
+}
+
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+input,
+button {
+  outline: none;
+}
+
+p,
+h1,
+h2,
+h3 {
+  color: var(--main-text-color);
+}
+
+::-webkit-scrollbar{
+  background: none;
+  width: 4px;
+}
+
+::-webkit-scrollbar-corner{
+  display: none;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #4c4c4c;
+  border-radius: 4px;
 }
