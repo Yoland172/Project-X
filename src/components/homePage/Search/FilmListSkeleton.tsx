@@ -1,8 +1,15 @@
-import Skeleton from "../../Helpers/Skeleton/Skeleton";
+import Skeleton from "../../../Helpers/Skeleton/Skeleton";
 import styles from "./search.module.scss";
 
 const FilmListSkeleton = () => {
-    return (<><div className={styles.filmInfoContainer}>
+
+let styleProps = {
+    display: "grid", 
+    rowGap: "18px"
+
+} 
+
+    return (<div style={styleProps}><div className={styles.filmInfoContainer} >
         <div className={styles.filmName}>
             <Skeleton width="25vw" height="3vh" borderRadius="15px"/>
         </div>
@@ -92,7 +99,7 @@ const FilmListSkeleton = () => {
 
         </div>
     </div>
-    </>)
+    </div>)
 
 }
 

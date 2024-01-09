@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react";
-import SearchArrow from "../../assets/icon/SearchArrow";
+import SearchArrow from "../../../assets/icon/SearchArrow";
 import styles from "./search.module.scss";
-import { getFilms } from "../../api/requests";
-import FilmItem from "../../types/types";
+import {FilmItemMainPage} from "../../../types/types";
 
 
 interface searchProps {
   tryToFindFilmsByTyiping: (text:string) => void,
   setFilmList: (array: any) => void,
-  filmList:FilmItem[],
+  filmList:FilmItemMainPage[],
   setIsFetching:(isFetching:boolean) => void,
   tryFindFilmBySearch:()=>void,
   setSearchText:(setSearchText:string) => void
+  removeFilmsCount:() => void
 }
-const Search = ({ tryToFindFilmsByTyiping, setFilmList,filmList,setIsFetching,tryFindFilmBySearch,setSearchText }: searchProps) => {
+const Search = ({ tryToFindFilmsByTyiping, setFilmList,filmList,setIsFetching,tryFindFilmBySearch,setSearchText,removeFilmsCount }: searchProps) => {
   return (<div className={styles.searchBarContainer}>
     <div className={styles.webflowStyleInput}>
       <input type="text" placeholder="Search..." onChange={(event) => {
@@ -23,6 +22,7 @@ const Search = ({ tryToFindFilmsByTyiping, setFilmList,filmList,setIsFetching,tr
          else {
         setFilmList([]);
         setIsFetching(false);
+        removeFilmsCount();
       }
       }}></input>
       <button type="submit" onClick={()=> {tryFindFilmBySearch()}}><SearchArrow /></button>

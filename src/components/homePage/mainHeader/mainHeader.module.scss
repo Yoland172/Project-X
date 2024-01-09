@@ -116,7 +116,7 @@
 .bigMainText {
     padding: 40px 0px 0px 40px;
   &>p{
-    color: #ffffff;
+    color: var(--light-grey);
     font-size: 5vw;
     letter-spacing: 4px;
     font-weight: 550;

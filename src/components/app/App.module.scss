@@ -1,22 +1,30 @@
 body {
-  background-image: radial-gradient(circle at 0% 0%, #282828, #292929 51%, #131313);
+  background: radial-gradient(circle at 0% 0%, #282828, #292929 51%, #131313) !important;
+  background: radial-gradient(circle at 0% 0%, #383838, #303030 51%, #131313);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {
-  font-family: "Montserrat";
-  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700&family=Montserrat:wght@300&display=swap');
 
 :root {
   --main-text-color: #a1a1a1;
+  --light-grey:#f9f9f9;
+  --dark:#c9c9c9;
+  --grey:#5a5a5a;
+  --golden:#D6B600;
+  --green:#158a7a;
+  --black:#2c2c2c;
+
 }
 
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   margin: 0;
+  text-decoration: none;
 }
 
 input,
@@ -41,6 +49,6 @@ h3 {
 }
 
 ::-webkit-scrollbar-thumb{
-  background-color: #4c4c4c;
+  background-color: var(--grey);
   border-radius: 4px;
 }

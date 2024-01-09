@@ -1,14 +1,22 @@
-import SearchContainer from '../Search/SearchContainer';
-import MainHeader from '../mainHeader/mainHeader'; 
+import { Navigate, Route, Routes} from 'react-router-dom';
 import styles from './App.module.scss';
+import FilmPage from '../filmPage/FilmPage';
+import HomePage from '../homePage/HomePage';
+import { useEffect } from 'react';
 
 
 function App() {
   return (
-    <div className="App">
-      <div className={styles.test}></div>
-      <MainHeader/>
-      <SearchContainer/>
+    <div className={styles.App}>
+    <Routes>
+      <Route path='/home' element={
+        <>
+          <HomePage/>
+        </>
+      } />
+      <Route path='/film/:id' element={<FilmPage/>}/>
+      <Route path='*' element={<Navigate to={'/home'} />} />
+    </Routes>
     </div>
   );
 }

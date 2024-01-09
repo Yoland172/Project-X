@@ -1,12 +1,7 @@
 import styles from "./mainHeader.module.scss";
-import superman_header from "../../assets/img/superman_header.jpg";
-import batman_header from "../../assets/img/batman_header.jpg";
-import batma_header1 from "../../assets/img/batman_headerCopy.jpg";
-import nextArrow from "../../assets/icon/nextArrow.svg";
-import prevArrow from "../../assets/icon/prevArrow.svg";
-import { useEffect, useState } from "react";
-import PrevArrow from "../../assets/icon/prevArrow";
-import NextArrow from "../../assets/icon/nextArrow";
+import superman_header from "../../../assets/img/superman_header.jpg";
+import batman_header from "../../../assets/img/batman_header.jpg";
+import batma_header1 from "../../../assets/img/batman_headerCopy.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

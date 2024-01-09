@@ -35,17 +35,15 @@
     &:after {
         content: "";
         position: absolute;
+        border-radius: 10px;
         left: 0px;
         right: 0px;
         bottom: 0px;
         z-index: 999;
-        height: 2px;
-        border-bottom-left-radius: 2px;
-        border-bottom-right-radius: 2px;
+        height: 3px;
         background-position: 0% 0%;
-        background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+        background: var(--golden);
         background-size: 500% auto;
-        animation: gradient 3s linear infinite;
     }
 
 
@@ -72,11 +70,13 @@
         cursor: pointer;
 
         &>svg {
-            fill: #c0c0c0;
-            transition: 300ms;
+            fill: var(--light-grey);
+            transition: 300ms ease-in-out;
+            transform: rotate(0deg);
 
             &:hover {
-                fill: #e1e1e1;
+                fill: var(--golden);
+                transform: rotate(360deg);
                 transition: 300ms;
             }
         }
@@ -93,38 +93,100 @@
     box-sizing: border-box;
     padding: 10px 100px 40px 200px;
     display: grid;
-    grid-template-columns: 3fr  6fr;
+    grid-template-columns: 3fr 6fr;
     min-height: 300px;
 
     .imageContainer {
-        .imageFilmOn{
+        .imageFilmOn {
             animation: filmImage 250ms ease;
             visibility: visible;
             opacity: 1;
             transition: 200ms;
             width: 75%;
         }
-        .imageFilmOff{
+
+        .imageFilmOff {
             visibility: hidden;
             opacity: 0;
             transition: 200ms;
         }
     }
 
-    .filmListContainerShow{
-        min-height: 200px;
-        max-height: 75vh;
-        overflow: scroll;
-        padding: 0px 100px;
-        animation: showFilmList 500ms ease;
-    }
+    .filmListContainer {
 
-    .filmListContainerOff{
-        min-height: 200px;
-        max-height: 75vh;
-        overflow: scroll;
-        padding: 0px 100px;
-        animation: removeFilmList 500ms ease;
+        &>div {
+            padding: 0px 100px;
+        }
+
+
+        .filmListShow {
+            min-height: 200px;
+            max-height: 75vh;
+            overflow: scroll;
+            animation: showFilmList 500ms ease;
+
+
+
+        }
+
+        .filmListRemove {
+            min-height: 200px;
+            max-height: 75vh;
+            overflow: scroll;
+            animation: removeFilmList 500ms ease;
+        }
+
+
+        .navContainer {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            .pageInfo {
+                font-size: 1.3em;
+                letter-spacing: 1px;
+            }
+
+            .navArrowContainer {
+
+                display: flex;
+                justify-content: space-between;
+
+
+                .arrow{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 15px;
+                    cursor: pointer;
+                    
+                    &>p{
+                        transition: 250ms;
+                    }
+                    
+                    &>svg{
+                        fill: var(--main-text-color);
+                        transition: 250ms;
+                    }
+
+                    &:hover {
+
+                        &>svg{
+                            fill: var(--golden);
+                            transition: 250ms;
+                            transform: scale(1.1);
+                        }
+
+                        &>p{
+                            color: var(--golden);
+                            transition: 250ms;
+                            transform: scale(1.1);
+                        }
+                    }
+
+                }
+            }
+        }
+
     }
 
     .filmInfoContainer {
@@ -132,7 +194,7 @@
         justify-content: space-between;
         box-sizing: border-box;
         align-items: center;
-        padding: 20px 10px;
+        padding: 20px 0px;
         transition: 200ms ease-out;
 
         &:hover {
@@ -140,7 +202,7 @@
             transition: 200ms ease-out;
 
             .filmName>p {
-                color: #ffff;
+                color: var(--light-grey);
                 transition: 200ms ease-out;
 
             }
@@ -148,7 +210,7 @@
 
 
             .addInfo>p {
-                color: #ffff;
+                color: var(--light-grey);
                 transition: 200ms ease-out;
                 font-weight: 600;
             }
@@ -157,7 +219,7 @@
         .filmName {
             color: var(--main-text-color);
             letter-spacing: 2px;
-            font-size: 2.4em;
+            font-size: 2.4rem;
             font-weight: 500;
 
             &>p {
@@ -182,36 +244,36 @@
 }
 
 @keyframes showFilmList {
-    0%{
+    0% {
         height: 200px;
     }
 
-    100%{
+    100% {
         height: 75vh;
     }
 }
 
 @keyframes removeFilmList {
-    0%{
+    0% {
         height: 75vh;
     }
 
-    100%{
+    100% {
         height: 200px;
     }
 }
 
 @keyframes filmImage {
-    0%{
+    0% {
         transform: translateX(-140%);
         opacity: 0;
     }
 
-    25%{
+    25% {
         opacity: 0.07;
     }
 
-    40%{
+    40% {
         opacity: 0.15;
     }
 
@@ -219,15 +281,15 @@
         opacity: .2;
     }
 
-    80%{
+    80% {
         opacity: .5;
     }
 
-    90%{
-       opacity: .8;
+    90% {
+        opacity: .8;
     }
 
-    100%{
+    100% {
         opacity: 1;
         transform: translateX(auto);
     }
