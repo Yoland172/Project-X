@@ -1,296 +1,270 @@
 .searchBar {
-    width: 300px;
+  width: 300px;
 }
 
 .searchBarContainer {
-    width: 100%;
-    padding: 50px 40px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 50px 40px;
+  box-sizing: border-box;
 }
-
-
-
 
 // gradient animation
 @keyframes gradient {
-    0% {
-        background-position: 0 0
-    }
+  0% {
+    background-position: 0 0;
+  }
 
-    100% {
-        background-position: 100% 0
-    }
+  100% {
+    background-position: 100% 0;
+  }
 }
-
-
 
 .webflowStyleInput {
-    position: relative;
-    display: flex;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 2px;
-    padding: 1.4rem 10px;
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 2px;
+  padding: 1.4rem 10px;
 
-    &:after {
-        content: "";
-        position: absolute;
-        border-radius: 10px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 999;
-        height: 3px;
-        background-position: 0% 0%;
-        background: var(--golden);
-        background-size: 500% auto;
+  &:after {
+    content: "";
+    position: absolute;
+    border-radius: 10px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 3px;
+    background-position: 0% 0%;
+    background: var(--golden);
+    background-size: 500% auto;
+  }
+
+  & > input {
+    background: none !important;
+    border: none;
+    flex-grow: 1;
+    color: #c0c0c0;
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+    vertical-align: middle;
+    padding-right: 10px;
+    letter-spacing: 2px;
+    width: 0;
+
+    &::-webkit-input-placeholder {
+      color: #c0c0c0;
     }
+  }
 
+  & > button {
+    background: none;
+    border: none;
+    cursor: pointer;
 
-    &>input {
-        background: none !important;
-        border: none;
-        flex-grow: 1;
-        color: #c0c0c0;
-        font-size: 1.7rem;
-        line-height: 2.4rem;
-        vertical-align: middle;
-        padding-right: 10px;
-        letter-spacing: 2px;
-        width: 0;
+    & > svg {
+      fill: var(--light-grey);
+      transition: 300ms ease-in-out;
+      transform: rotate(0deg);
 
-        &::-webkit-input-placeholder {
-            color: #c0c0c0;
-        }
+      &:hover {
+        fill: var(--golden);
+        transform: rotate(360deg);
+        transition: 300ms;
+      }
     }
-
-    &>button {
-        background: none;
-        border: none;
-        cursor: pointer;
-
-        &>svg {
-            fill: var(--light-grey);
-            transition: 300ms ease-in-out;
-            transform: rotate(0deg);
-
-            &:hover {
-                fill: var(--golden);
-                transform: rotate(360deg);
-                transition: 300ms;
-            }
-        }
-    }
+  }
 }
-
-
-
 
 // Film list container
 
 .mainFilmListContainer {
-    // must be new name of class!!!
-    box-sizing: border-box;
-    padding: 10px 100px 40px 200px;
-    display: grid;
-    grid-template-columns: 3fr 6fr;
-    min-height: 300px;
+  // must be new name of class!!!
+  box-sizing: border-box;
+  padding: 10px 100px 40px 200px;
+  display: grid;
+  grid-template-columns: 3fr 6fr;
+  min-height: 300px;
 
-    .imageContainer {
-        .imageFilmOn {
-            animation: filmImage 250ms ease;
-            visibility: visible;
-            opacity: 1;
-            transition: 200ms;
-            width: 75%;
-        }
-
-        .imageFilmOff {
-            visibility: hidden;
-            opacity: 0;
-            transition: 200ms;
-        }
+  .imageContainer {
+    .imageFilmOn {
+      animation: filmImage 250ms ease;
+      visibility: visible;
+      opacity: 1;
+      transition: 200ms;
+      width: 75%;
     }
 
-    .filmListContainer {
+    .imageFilmOff {
+      visibility: hidden;
+      opacity: 0;
+      transition: 200ms;
+    }
+  }
 
-        &>div {
-            padding: 0px 100px;
-        }
-
-
-        .filmListShow {
-            min-height: 200px;
-            max-height: 75vh;
-            overflow: scroll;
-            animation: showFilmList 500ms ease;
-
-
-
-        }
-
-        .filmListRemove {
-            min-height: 200px;
-            max-height: 75vh;
-            overflow: scroll;
-            animation: removeFilmList 500ms ease;
-        }
-
-
-        .navContainer {
-            margin-top: 10px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            .pageInfo {
-                font-size: 1.3em;
-                letter-spacing: 1px;
-            }
-
-            .navArrowContainer {
-
-                display: flex;
-                justify-content: space-between;
-
-
-                .arrow{
-                    display: flex;
-                    align-items: center;
-                    column-gap: 15px;
-                    cursor: pointer;
-                    
-                    &>p{
-                        transition: 250ms;
-                    }
-                    
-                    &>svg{
-                        fill: var(--main-text-color);
-                        transition: 250ms;
-                    }
-
-                    &:hover {
-
-                        &>svg{
-                            fill: var(--golden);
-                            transition: 250ms;
-                            transform: scale(1.1);
-                        }
-
-                        &>p{
-                            color: var(--golden);
-                            transition: 250ms;
-                            transform: scale(1.1);
-                        }
-                    }
-
-                }
-            }
-        }
-
+  .filmListContainer {
+    & > div {
+      padding: 0px 100px;
     }
 
-    .filmInfoContainer {
+    .filmListShow {
+      min-height: 200px;
+      max-height: 75vh;
+      overflow: scroll;
+      animation: showFilmList 500ms ease;
+    }
+
+    .filmListRemove {
+      min-height: 200px;
+      max-height: 75vh;
+      overflow: scroll;
+      animation: removeFilmList 500ms ease;
+    }
+
+    .navContainer {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      .pageInfo {
+        font-size: 1.3em;
+        letter-spacing: 1px;
+      }
+
+      .navArrowContainer {
         display: flex;
         justify-content: space-between;
-        box-sizing: border-box;
-        align-items: center;
-        padding: 20px 0px;
-        transition: 200ms ease-out;
 
-        &:hover {
-            transform: scale(1.1);
-            transition: 200ms ease-out;
+        .arrow {
+          display: flex;
+          align-items: center;
+          column-gap: 15px;
+          cursor: pointer;
 
-            .filmName>p {
-                color: var(--light-grey);
-                transition: 200ms ease-out;
+          & > p {
+            transition: 250ms;
+          }
 
+          & > svg {
+            fill: var(--main-text-color);
+            transition: 250ms;
+          }
+
+          &:hover {
+            & > svg {
+              fill: var(--golden);
+              transition: 250ms;
+              transform: scale(1.1);
             }
 
-
-
-            .addInfo>p {
-                color: var(--light-grey);
-                transition: 200ms ease-out;
-                font-weight: 600;
+            & > p {
+              color: var(--golden);
+              transition: 250ms;
+              transform: scale(1.1);
             }
+          }
         }
-
-        .filmName {
-            color: var(--main-text-color);
-            letter-spacing: 2px;
-            font-size: 2.4rem;
-            font-weight: 500;
-
-            &>p {
-                transition: 200ms ease-out;
-            }
-
-        }
-
-
-        .addInfo {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-
-            &>p {
-                letter-spacing: 1px;
-                transition: 200ms ease-out;
-            }
-
-        }
+      }
     }
+  }
+
+  .filmInfoContainer {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 20px 0px;
+    transition: 200ms ease-out;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 200ms ease-out;
+
+      .filmName > p {
+        color: var(--light-grey);
+        transition: 200ms ease-out;
+      }
+
+      .addInfo > p {
+        color: var(--light-grey);
+        transition: 200ms ease-out;
+        font-weight: 600;
+      }
+    }
+
+    .filmName {
+      color: var(--main-text-color);
+      letter-spacing: 2px;
+      font-size: 2.4rem;
+      font-weight: 500;
+
+      & > p {
+        transition: 200ms ease-out;
+      }
+    }
+
+    .addInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      & > p {
+        letter-spacing: 1px;
+        transition: 200ms ease-out;
+      }
+    }
+  }
 }
 
 @keyframes showFilmList {
-    0% {
-        height: 200px;
-    }
+  0% {
+    height: 200px;
+  }
 
-    100% {
-        height: 75vh;
-    }
+  100% {
+    height: 75vh;
+  }
 }
 
 @keyframes removeFilmList {
-    0% {
-        height: 75vh;
-    }
+  0% {
+    height: 75vh;
+  }
 
-    100% {
-        height: 200px;
-    }
+  100% {
+    height: 200px;
+  }
 }
 
 @keyframes filmImage {
-    0% {
-        transform: translateX(-140%);
-        opacity: 0;
-    }
+  0% {
+    transform: translateX(-140%);
+    opacity: 0;
+  }
 
-    25% {
-        opacity: 0.07;
-    }
+  25% {
+    opacity: 0.07;
+  }
 
-    40% {
-        opacity: 0.15;
-    }
+  40% {
+    opacity: 0.15;
+  }
 
-    50% {
-        opacity: .2;
-    }
+  50% {
+    opacity: 0.2;
+  }
 
-    80% {
-        opacity: .5;
-    }
+  80% {
+    opacity: 0.5;
+  }
 
-    90% {
-        opacity: .8;
-    }
+  90% {
+    opacity: 0.8;
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateX(auto);
-    }
+  100% {
+    opacity: 1;
+    transform: translateX(auto);
+  }
 }

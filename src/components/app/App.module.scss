@@ -1,28 +1,29 @@
 body {
-  background: radial-gradient(circle at 0% 0%, #282828, #292929 51%, #131313) !important;
+  background: radial-gradient(
+    circle at 0% 0%,
+    #282828,
+    #292929 51%,
+    #131313
+  ) !important;
   background: radial-gradient(circle at 0% 0%, #383838, #303030 51%, #131313);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700&family=Montserrat:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700&family=Montserrat:wght@300&display=swap");
 
 :root {
   --main-text-color: #a1a1a1;
-  --light-grey:#f9f9f9;
-  --dark:#c9c9c9;
-  --grey:#5a5a5a;
-  --golden:#D6B600;
-  --green:#158a7a;
-  --black:#2c2c2c;
-
+  --light-grey: #f9f9f9;
+  --dark: #c9c9c9;
+  --grey: #5a5a5a;
+  --golden: #d6b600;
+  --green: #158a7a;
+  --black: #2c2c2c;
 }
 
-
 * {
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   margin: 0;
   text-decoration: none;
 }
@@ -39,16 +40,16 @@ h3 {
   color: var(--main-text-color);
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   background: none;
   width: 4px;
 }
 
-::-webkit-scrollbar-corner{
+::-webkit-scrollbar-corner {
   display: none;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: var(--grey);
   border-radius: 4px;
 }
