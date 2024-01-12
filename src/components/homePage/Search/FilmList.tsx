@@ -80,24 +80,22 @@ const FilmList = ({
             <></>
           )}
         </div>
-        {filmsCount ? (
+        {filmsCount>0 ? (
           <div className={styles.navContainer}>
             <p className={styles.pageInfo}>All items : {filmsCount}</p>
             <div className={styles.navArrowContainer}>
-              <div className={styles.arrow} onClick={prevPage}>
+              <button className={styles.arrow} onClick={prevPage}>
                 <LeftArrow width={50} height={50} />
                 <p>{`${(pageNumber + 0.1) * 10 - 10}-${
                   Math.abs((pageNumber + 0.1) * 10 - 10 - filmsCount) >= 10
                     ? pageNumber * 10
                     : filmsCount
                 }`}</p>
-              </div>
-              <div
+              </button>
+              <button
                 className={styles.arrow}
                 onClick={() => {
-                  if ((pageNumber + 0.1) * 10 - filmsCount <= 0) {
                     nextPage();
-                  }
                 }}
               >
                 <p>
@@ -106,7 +104,7 @@ const FilmList = ({
                     : 0}
                 </p>
                 <RightArrow width={50} height={50} />
-              </div>
+              </button>
             </div>
           </div>
         ) : (

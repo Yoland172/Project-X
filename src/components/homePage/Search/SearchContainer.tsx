@@ -73,7 +73,8 @@ const SearchContainer = () => {
         }}
         filmsCount={filmsCount}
         nextPage={() => {
-          if (searchText) {
+          if (searchText && (pageNumber + 0.1) * 10 - filmsCount <= 0) {
+            console.log('NextPage')
             setIsFetching(true);
             getFilms(searchText, pageNumber + 1).then((res) => {
               if (res.Response === "True") {
@@ -92,6 +93,7 @@ const SearchContainer = () => {
         }}
         prevPage={() => {
           if (searchText && pageNumber > 1) {
+            console.log('prevPage')
             setIsFetching(true);
             getFilms(searchText, pageNumber - 1).then((res) => {
               if (res.Response === "True") {

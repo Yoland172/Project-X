@@ -13,7 +13,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
     <>
       <div className={styles.mainContainer}>
         <div className={styles.filmPosterContainer}>
-          {filmInfo?.Poster ? (
+          {filmInfo?.Poster && filmInfo.Poster!=="N/A" ? (
             <img src={filmInfo.Poster} alt="FilmPoster" />
           ) : (
             <></>
@@ -38,7 +38,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
                         </div>
 
                     </div> */}
-            {filmInfo?.Metascore !== "N/A" ? (
+            {filmInfo?.Metascore && filmInfo?.Metascore !== "N/A"  ? (
               <div className={styles.ratingItem}>
                 <h1>METACRITIC:</h1>
                 <div className={styles.iconWithRating}>
@@ -56,7 +56,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
         <div className={styles.filmInfoContainer}>
           <h1 className={styles.title}>{filmInfo?.Title}</h1>
           <div className={styles.addInfo}>
-            {filmInfo?.Runtime !== "N/A" ? (
+            {filmInfo?.Runtime && filmInfo?.Runtime !== "N/A" ? (
               <div className={styles.runtime}>
                 <p>
                   Runtime:<span>{filmInfo?.Runtime}</span>
@@ -65,7 +65,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
             ) : (
               <></>
             )}
-            {filmInfo?.Genre !== "N/A" ? (
+            {filmInfo?.Genre && filmInfo?.Genre !== "N/A" ? (
               <div className={styles.genre}>
                 <p>
                   Genre:<span>{filmInfo?.Genre}</span>
@@ -74,7 +74,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
             ) : (
               <></>
             )}
-            {filmInfo?.Year !== "N/A" ? (
+            {filmInfo?.Year && filmInfo?.Year !== "N/A" ? (
               <div className={styles.year}>
                 <p>
                   Year:<span>{filmInfo?.Year}</span>
@@ -83,7 +83,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
             ) : (
               <></>
             )}
-            {filmInfo?.Type ? (
+            {filmInfo?.Type && filmInfo?.Type !== "N/A" ? (
               <div className={styles.type}>
                 <p>
                   Type:<span>{filmInfo?.Type}</span>
@@ -92,7 +92,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
             ) : (
               <></>
             )}
-            {filmInfo?.Plot !== "N/A" ? (
+            {filmInfo?.Plot && filmInfo?.Plot !== "N/A" ? (
               <div className={styles.plot}>
                 <p>{filmInfo?.Plot}</p>
               </div>
@@ -102,7 +102,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
           </div>
           <SectionLine />
 
-          {filmInfo?.Awards !== "N/A" ? (
+          {filmInfo?.Awards&&filmInfo?.Awards !== "N/A" ? (
             <div className={styles.oscarAwardsContainer}>
               <div className={styles.goldContainer}></div>
               <div></div>
@@ -113,43 +113,64 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
           ) : (
             <></>
           )}
+
           <div className={styles.addInfoContainer}>
-            <div className={styles.directorsTest}>
-              <div className={styles.verticalLine}></div>
-              <div className={styles.textContainer}>
-                <h1>{filmInfo?.Director}</h1>
-                <p>Director</p>
+            {filmInfo?.Director && filmInfo?.Director !== "N/A" ? (
+              <div className={styles.directorsTest}>
+                <div className={styles.verticalLine}></div>
+                <div className={styles.textContainer}>
+                  <h1>{filmInfo?.Director}</h1>
+                  <p>Director</p>
+                </div>
               </div>
-            </div>
-            <div className={styles.directorsTest}>
-              <div className={styles.verticalLine}></div>
-              <div className={styles.textContainer}>
-                <h1>{filmInfo?.Rated}</h1>
-                <p>Rated</p>
+            ) : (
+              <></>
+            )}
+            {filmInfo?.Rated && filmInfo?.Rated !== "N/A" ? (
+              <div className={styles.directorsTest}>
+                <div className={styles.verticalLine}></div>
+                <div className={styles.textContainer}>
+                  <h1>{filmInfo?.Rated}</h1>
+                  <p>Rated</p>
+                </div>
               </div>
-            </div>
-            <div className={styles.directorsTest}>
-              <div className={styles.verticalLine}></div>
-              <div className={styles.textContainer}>
-                <h1>{filmInfo?.Language}</h1>
-                <p>Language</p>
+            ) : (
+              <></>
+            )}
+            {filmInfo?.Language && filmInfo?.Language !== "N/A" ? (
+              <div className={styles.directorsTest}>
+                <div className={styles.verticalLine}></div>
+                <div className={styles.textContainer}>
+                  <h1>{filmInfo?.Language}</h1>
+                  <p>Language</p>
+                </div>
               </div>
-            </div>
-            <div className={styles.directorsTest}>
-              <div className={styles.verticalLine}></div>
-              <div className={styles.textContainer}>
-                <h1>{filmInfo?.Released}</h1>
-                <p>Released</p>
+            ) : (
+              <></>
+            )}
+            {filmInfo?.Released && filmInfo?.Released !== "N/A" ? (
+              <div className={styles.directorsTest}>
+                <div className={styles.verticalLine}></div>
+                <div className={styles.textContainer}>
+                  <h1>{filmInfo?.Released}</h1>
+                  <p>Released</p>
+                </div>
               </div>
-            </div>
-            <div className={styles.directorsTest}>
-              <div className={styles.verticalLine}></div>
-              <div className={styles.textContainer}>
-                <h1>{filmInfo?.Country}</h1>
-                <p>Country</p>
+            ) : (
+              <></>
+            )}
+            {filmInfo?.Country && filmInfo?.Country !== "N/A" ? (
+              <div className={styles.directorsTest}>
+                <div className={styles.verticalLine}></div>
+                <div className={styles.textContainer}>
+                  <h1>{filmInfo?.Country}</h1>
+                  <p>Country</p>
+                </div>
               </div>
-            </div>
-            {filmInfo?.BoxOffice !== "N/A" ? (
+            ) : (
+              <></>
+            )}
+            {filmInfo?.BoxOffice && filmInfo?.BoxOffice !== "N/A"  ? (
               <div className={styles.directorsTest}>
                 <div className={styles.verticalLine}></div>{" "}
                 {/*make check for all blocks */}

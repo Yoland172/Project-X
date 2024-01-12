@@ -35,7 +35,7 @@ export interface FilmItemInfoPage{
     Website:string,
     Writer:string,
     Year:string,
-    imdbId:string,
+    imdbID:string,
     imdbRating:string,
     imdbVotes:string
 }

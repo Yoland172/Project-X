@@ -37,7 +37,7 @@ describe("Search component", () => {
     expect(setSearchTextMock).toHaveBeenCalledWith("test");
   });
 
-  test("pres button working", () => {
+  test("press button working", () => {
     //Arrange
     const tryFindFilmBySearchMock = jest.fn();
 
