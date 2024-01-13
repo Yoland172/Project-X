@@ -1,47 +1,16 @@
 import styles from "./mainHeader.module.scss";
-import superman_header from "../../../assets/img/superman_header.jpg";
-import batman_header from "../../../assets/img/batman_header.jpg";
-import batma_header1 from "../../../assets/img/batman_headerCopy.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { settingsForSlider, slides } from "./slides";
 
 function MainHeader() {
-  const slides = [
-    {
-      img: superman_header,
-      name: "Superman",
-      year: "2006",
-    },
-    {
-      img: batma_header1,
-      name: "Batman I",
-      year: "2003",
-    },
-    {
-      img: batman_header,
-      name: "Batman II",
-      year: "2001",
-    },
-  ];
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    arrows: false,
-    pauseOnHover: true,
-    autoplaySpeed: 4000,
-  };
-
   return (
     <div className={styles.roundaboutContainer}>
-      <Slider {...settings}>
-        {slides.map((e) => {
+      <Slider {...settingsForSlider}>
+        {slides.map((e, index) => {
           return (
-            <div>
+            <div key={index}>
               <div className={styles.imageContainer}>
                 <img src={e.img} alt="" />
               </div>

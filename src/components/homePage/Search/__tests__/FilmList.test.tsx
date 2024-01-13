@@ -3,7 +3,7 @@ import renderer from "react-test-renderer";
 import FilmList from "../FilmList";
 import { BrowserRouter } from "react-router-dom";
 
-describe("FilmList component", () => {
+describe("FilmList Ccomponent tests", () => {
   const filmList = [
     {
       Title: "Batman Begins",
@@ -86,7 +86,7 @@ describe("FilmList component", () => {
         "https://m.media-amazon.com/images/M/MV5BOTRlNWQwM2ItNjkyZC00MGI3LThkYjktZmE5N2FlMzcyNTIyXkEyXkFqcGdeQXVyMTEyNzgwMDUw._V1_SX300.jpg",
     },
   ];
-  test("component is render", () => {
+  test("Component renders correctly", () => {
     //Arange
     const setCurrentImageMock = jest.fn();
     const removeCurrentImageMock = jest.fn();
@@ -118,7 +118,7 @@ describe("FilmList component", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test("pagination is render and working", () => {
+  test("pagination renders", () => {
     //Arange
     const setCurrentImageMock = jest.fn();
     const removeCurrentImageMock = jest.fn();
@@ -148,11 +148,41 @@ describe("FilmList component", () => {
     //Assert
     expect(navArrows[0]).toBeInTheDocument();
     expect(navArrows[1]).toBeInTheDocument();
+  });
+
+  test("pagination works", () => {
+    //Arange
+    const setCurrentImageMock = jest.fn();
+    const removeCurrentImageMock = jest.fn();
+    const prevPageMock = jest.fn();
+    const nextPageMock = jest.fn();
+
+    //act
+    render(
+      <BrowserRouter>
+        <FilmList
+          filmList={filmList}
+          isFetching={false}
+          currentImage={""}
+          setCurrentImage={setCurrentImageMock}
+          removeCurrentImage={removeCurrentImageMock}
+          prevPage={prevPageMock}
+          nextPage={nextPageMock}
+          filmsCount={250}
+          pageNumber={1}
+        />
+      </BrowserRouter>
+    );
+    const navArrows = screen.getAllByRole("button");
+    fireEvent.click(navArrows[0]);
+    fireEvent.click(navArrows[1]);
+
+    //Assert
     expect(prevPageMock).toHaveBeenCalled();
     expect(nextPageMock).toHaveBeenCalled();
   });
 
-  test("pagination is not render", () => {
+  test("Pagination not renders", () => {
     //act
     render(
       <BrowserRouter>

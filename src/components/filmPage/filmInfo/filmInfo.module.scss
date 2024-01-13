@@ -24,7 +24,6 @@
         fill: var(--golden);
       }
     }
-    //styles for skeleton
 
     .ratingList {
       display: grid;
@@ -109,7 +108,7 @@
       overflow: hidden;
       margin-left: 40px;
 
-      .goldContainer {
+      .oscarAwards {
         // rename contanier
         background-color: var(--golden);
         transform: rotate(20deg) scale(2.7);

@@ -1,6 +1,5 @@
 import { IconProp } from "../../../types/types";
 
-
 const FacebookIcon = ({width, height}:IconProp) => {
     return (
 <svg fill="#000000" width={width} height={height} viewBox="0 0 1920 1920">

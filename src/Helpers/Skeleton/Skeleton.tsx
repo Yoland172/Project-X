@@ -1,5 +1,4 @@
 import styles from "./skeleton.module.scss";
-
 interface SkeletonProps {
     width: string,
     height:string,

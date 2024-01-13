@@ -47,7 +47,7 @@ describe("FilmInfo component", () => {
     Response: "True",
   };
 
-  test("component is render", () => {
+  test("Component matches shapshot", () => {
     //Act
     const tree = renderer.create(<FilmInfo filmInfo={filmInfo} />).toJSON();
 

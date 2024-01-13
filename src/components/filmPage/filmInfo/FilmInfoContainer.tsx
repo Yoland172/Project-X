@@ -6,23 +6,23 @@ import { FilmItemInfoPage } from "../../../types/types";
 import FilmInfoSkeleton from "./FilmInfoSkeleton";
 
 const FilmInfoContainer = () => {
-  const filmId = useParams().id;
+  const {id} = useParams();
 
   const [filmInfo, setFilmInfo] = useState<FilmItemInfoPage>();
   const [isFetching, setIsFetching] = useState<boolean>(false);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    if (filmId) {
+    if (id) {
       setIsFetching(true);
-      getFilmInfo(filmId).then((res) => {
+      getFilmInfo(id).then((res) => {
         setIsFetching(false);
         if (res.Response === "True") {
           setFilmInfo(res);
         }
       });
     }
-  }, [filmId]);
+  }, [id]);
 
   return (
     <>

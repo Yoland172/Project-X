@@ -4,7 +4,6 @@ import FilmListSkeleton from "./FilmListSkeleton";
 import RightArrow from "../../../assets/icon/rightArrow";
 import LeftArrow from "../../../assets/icon/leftArrow";
 import { Link } from "react-router-dom";
-
 interface FilmListProps {
   filmList: FilmItemMainPage[];
   isFetching: boolean;

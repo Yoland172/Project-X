@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import Search from "../Search";
 
-describe("Search component", () => {
-  test("renders Search", () => {
+describe("Search component tests", () => {
+  test("Search should render correctly", () => {
     render(
       <Search
         tryFindFilmBySearch={jest.fn()}
@@ -14,7 +14,7 @@ describe("Search component", () => {
     expect(input).toBeInTheDocument();
   });
 
-  test("onchange working", () => {
+  test("OnChange should be called with correct params", () => {
     //Arrange
     const tryToFindFilmsByTyipingMock = jest.fn();
     const setSearchTextMock = jest.fn();
@@ -37,7 +37,7 @@ describe("Search component", () => {
     expect(setSearchTextMock).toHaveBeenCalledWith("test");
   });
 
-  test("press button working", () => {
+  test("Press button work", () => {
     //Arrange
     const tryFindFilmBySearchMock = jest.fn();
 

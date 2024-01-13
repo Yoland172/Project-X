@@ -1,6 +1,5 @@
 import SearchArrow from "../../../assets/icon/SearchArrow";
 import styles from "./search.module.scss";
-
 interface searchProps {
   tryToFindFilmsByTyiping: (text: string) => void;
   tryFindFilmBySearch: () => void;
@@ -28,7 +27,7 @@ const Search = ({
             tryFindFilmBySearch();
           }}
         >
-          <SearchArrow />
+          <SearchArrow width={24} height={24}/>
         </button>
       </div>
     </div>

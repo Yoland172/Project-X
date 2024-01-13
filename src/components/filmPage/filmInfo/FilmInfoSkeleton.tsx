@@ -84,12 +84,6 @@ const FilmInfoSkeleton = () => {
             <Skeleton width="15vw" height="4vh" borderRadius="15px" />
             <Skeleton width="15vw" height="4vh" borderRadius="15px" />
           </div>
-          {/*filmInfo?.Writer != "N/A" ?
-                <div className={styles.directorsTest}>
-                        <h1>{filmInfo?.Writer}</h1>
-                        <p>Writer</p>
-                    </div>
-                    : <></> */}
         </div>
       </div>
     </>

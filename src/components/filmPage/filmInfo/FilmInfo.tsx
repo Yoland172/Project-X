@@ -24,20 +24,10 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               <div className={styles.iconWithRating}>
                 <p>
                   {filmInfo?.imdbRating} / <span>10</span>
-                  {/* <span className={styles.votes}>
-                        {filmInfo!.imdbVotes.length > 4 ? `${filmInfo?.imdbVotes.substring(0,4)} k` : filmInfo?.imdbVotes } // add
-                    </span> */}
                 </p>
                 <img src={imdbIcon} alt="IMDB" />
               </div>
             </div>
-            {/* <div className={styles.ratingItem}>
-                        <h1>TOMATOMETR:</h1>
-                        <div className={styles.iconWithRating}>
-                            <p>73%</p>  <img src={tomatoIcon} />  add TOMATOMETR.........................................
-                        </div>
-
-                    </div> */}
             {filmInfo?.Metascore && filmInfo?.Metascore !== "N/A"  ? (
               <div className={styles.ratingItem}>
                 <h1>METACRITIC:</h1>
@@ -104,7 +94,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
 
           {filmInfo?.Awards&&filmInfo?.Awards !== "N/A" ? (
             <div className={styles.oscarAwardsContainer}>
-              <div className={styles.goldContainer}></div>
+              <div className={styles.oscarAwards}></div>
               <div></div>
               <div className={styles.awardsText}>
                 <p>{filmInfo?.Awards}</p>
@@ -183,12 +173,6 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               <></>
             )}
           </div>
-          {/*filmInfo?.Writer != "N/A" ?
-                <div className={styles.directorsTest}>
-                        <h1>{filmInfo?.Writer}</h1>
-                        <p>Writer</p>
-                    </div>
-                    : <></> */}
         </div>
       </div>
     </>
