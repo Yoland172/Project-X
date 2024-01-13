@@ -1,0 +1,160 @@
+.mainContainer {
+  display: flex;
+  width: 100%;
+
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-top: -6vh;
+  position: relative;
+  padding: 0 20vh 20vh;
+
+  .filmPosterContainer {
+    // styles for skeleton
+    .loadingImage {
+      width: 15vw;
+      height: 41vh;
+      border-radius: 15px;
+      background-color: #3f3f3f;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg rect {
+        fill: var(--golden);
+      }
+    }
+
+    .ratingList {
+      display: grid;
+      row-gap: 25px;
+      padding-top: 40px;
+
+      .ratingItem {
+        .iconWithRating {
+          display: flex;
+          align-items: center;
+          column-gap: 10px;
+
+          & > img {
+            width: 40px;
+            height: auto;
+          }
+
+          & > p {
+            color: var(--light-grey);
+            font-size: 2.2em;
+            font-weight: 700;
+
+            & > span {
+              font-size: 0.8em;
+            }
+          }
+        }
+
+        & > h1 {
+          color: var(--light-grey);
+        }
+      }
+    }
+  }
+
+  .filmInfoContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7vh 0 2vh 3vw;
+
+    .title {
+      width: 50vw;
+      color: var(--light-grey);
+      font-size: 3.8em;
+    }
+
+    .addInfo {
+      width: 30vw;
+      padding: 50px 0 0 7vw;
+      display: grid;
+      row-gap: 20px;
+
+      & > div > p {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+        & > span {
+          color: var(--light-grey);
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          padding-left: 5px;
+        }
+      }
+    }
+
+    display: grid;
+    row-gap: 20px;
+
+    .oscarAwardsContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 18fr;
+
+      width: fit-content;
+      height: auto;
+      border: 2px solid var(--golden);
+      border-radius: 12px;
+      box-sizing: border-box;
+      overflow: hidden;
+      margin-left: 40px;
+
+      .oscarAwards {
+        // rename contanier
+        background-color: var(--golden);
+        transform: rotate(20deg) scale(2.7);
+      }
+
+      .awardsText {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+
+        & > p {
+          text-align: center;
+          font-size: 1.3em;
+          color: var(--light-grey);
+        }
+      }
+    }
+
+    .addInfoContainer {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 44px;
+      column-gap: 20px;
+
+      .directorsTest {
+        display: grid;
+        grid-template-columns: 1fr 200fr;
+        .verticalLine {
+          width: 4px;
+          height: 100%;
+          background: var(--grey);
+          border-radius: 15px;
+        }
+
+        .textContainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+          padding-left: 10px;
+
+          & > h1 {
+            color: var(--light-grey);
+          }
+        }
+      }
+    }
+  }
+}

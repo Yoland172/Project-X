@@ -1,0 +1,40 @@
+import { useParams } from "react-router-dom";
+import FilmInfo from "./FilmInfo";
+import { useEffect, useState } from "react";
+import { getFilmInfo } from "../../../api/requests";
+import { FilmItemInfoPage } from "../../../types/types";
+import FilmInfoSkeleton from "./FilmInfoSkeleton";
+
+const FilmInfoContainer = () => {
+  const {id} = useParams();
+
+  const [filmInfo, setFilmInfo] = useState<FilmItemInfoPage>();
+  const [isFetching, setIsFetching] = useState<boolean>(false);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (id) {
+      setIsFetching(true);
+      getFilmInfo(id).then((res) => {
+        setIsFetching(false);
+        if (res.Response === "True") {
+          setFilmInfo(res);
+        }
+      });
+    }
+  }, [id]);
+
+  return (
+    <>
+      {!isFetching ? (
+        <>
+          <FilmInfo filmInfo={filmInfo} />
+        </>
+      ) : (
+        <FilmInfoSkeleton />
+      )}
+    </>
+  );
+};
+
+export default FilmInfoContainer;
