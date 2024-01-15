@@ -1,7 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import FilmList from "../FilmList";
+import FilmList from "../../filmList/FilmList";
 import { BrowserRouter } from "react-router-dom";
+import React from "react";
 
 describe("FilmList Ccomponent tests", () => {
   const filmList = [

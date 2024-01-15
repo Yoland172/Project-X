@@ -1,92 +1,87 @@
-import Skeleton from "../../../Helpers/Skeleton/Skeleton";
-import styles from "./search.module.scss";
+import Skeleton from "../../ui/Skeleton/Skeleton";
+import styles from "./filmList.module.scss";
 
 const FilmListSkeleton = () => {
-  let styleProps = {
-    display: "grid",
-    rowGap: "18px",
-  };
-
   return (
-    <div style={styleProps}>
+    <div className={styles.mainSkeletonContainer}>
       <div className={styles.filmInfoContainer}>
         <div className={styles.filmName}>
-          <Skeleton width="25vw" height="3vh" borderRadius="15px" />
+          <Skeleton width="25vw" height="3vh" />
         </div>
         <div className={styles.addInfo}>
-          <Skeleton width="5vh" height="3vh" borderRadius="10px" />
+          <Skeleton width="5vh" height="3vh" />
         </div>
       </div>
       <div className={styles.filmInfoContainer}>
         <div className={styles.filmName}>
-          <Skeleton width="25vw" height="3vh" borderRadius="15px" />
+          <Skeleton width="25vw" height="3vh" />
         </div>
         <div className={styles.addInfo}>
-          <Skeleton width="5vh" height="3vh" borderRadius="10px" />
+          <Skeleton width="5vh" height="3vh" />
         </div>
       </div>
       <div className={styles.filmInfoContainer}>
         <div className={styles.filmName}>
-          <Skeleton width="25vw" height="3vh" borderRadius="15px" />
+          <Skeleton width="25vw" height="3vh" />
         </div>
         <div className={styles.addInfo}>
-          <Skeleton width="5vh" height="3vh" borderRadius="10px" />
+          <Skeleton width="5vh" height="3vh" />
         </div>
       </div>
       <div className={styles.filmInfoContainer}>
         <div className={styles.filmName}>
-          <Skeleton width="25vw" height="3vh" borderRadius="15px" />
+          <Skeleton width="25vw" height="3vh" />
         </div>
         <div className={styles.addInfo}>
-          <Skeleton width="5vh" height="3vh" borderRadius="10px" />
+          <Skeleton width="5vh" height="3vh" />
         </div>
       </div>
       <div className={styles.filmInfoContainer}>
         <div className={styles.filmName}>
-          <Skeleton width="25vw" height="3vh" borderRadius="15px" />
+          <Skeleton width="25vw" height="3vh" />
         </div>
         <div className={styles.addInfo}>
-          <Skeleton width="5vh" height="3vh" borderRadius="10px" />
+          <Skeleton width="5vh" height="3vh" />
         </div>
       </div>
       <div className={styles.filmInfoContainer}>
         <div className={styles.filmName}>
-          <Skeleton width="25vw" height="3vh" borderRadius="15px" />
+          <Skeleton width="25vw" height="3vh" />
         </div>
         <div className={styles.addInfo}>
-          <Skeleton width="5vh" height="3vh" borderRadius="10px" />
+          <Skeleton width="5vh" height="3vh" />
         </div>
       </div>
       <div className={styles.filmInfoContainer}>
         <div className={styles.filmName}>
-          <Skeleton width="25vw" height="3vh" borderRadius="15px" />
+          <Skeleton width="25vw" height="3vh" />
         </div>
         <div className={styles.addInfo}>
-          <Skeleton width="5vh" height="3vh" borderRadius="10px" />
+          <Skeleton width="5vh" height="3vh" />
         </div>
       </div>
       <div className={styles.filmInfoContainer}>
         <div className={styles.filmName}>
-          <Skeleton width="25vw" height="3vh" borderRadius="15px" />
+          <Skeleton width="25vw" height="3vh" />
         </div>
         <div className={styles.addInfo}>
-          <Skeleton width="5vh" height="3vh" borderRadius="10px" />
+          <Skeleton width="5vh" height="3vh" />
         </div>
       </div>
       <div className={styles.filmInfoContainer}>
         <div className={styles.filmName}>
-          <Skeleton width="25vw" height="3vh" borderRadius="15px" />
+          <Skeleton width="25vw" height="3vh" />
         </div>
         <div className={styles.addInfo}>
-          <Skeleton width="5vh" height="3vh" borderRadius="10px" />
+          <Skeleton width="5vh" height="3vh" />
         </div>
       </div>
       <div className={styles.filmInfoContainer}>
         <div className={styles.filmName}>
-          <Skeleton width="25vw" height="3vh" borderRadius="15px" />
+          <Skeleton width="25vw" height="3vh" />
         </div>
         <div className={styles.addInfo}>
-          <Skeleton width="5vh" height="3vh" borderRadius="10px" />
+          <Skeleton width="5vh" height="3vh" />
         </div>
       </div>
     </div>

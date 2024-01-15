@@ -1,8 +1,8 @@
-import { FilmItemInfoPage } from "../../../types/types";
 import styles from "./filmInfo.module.scss";
-import imdbIcon from "../../../assets/icon/IMDB_Logo_2016.svg.png";
-import metacritic from "../../../assets/icon/Metacritic.svg";
-import SectionLine from "../../../Helpers/SectionLine/SectionLine";
+import imdbIcon from "../../../assets/img/IMDB_Logo_2016.svg.png";
+import metacritic from "../../../assets/img/Metacritic.svg";
+import SectionLine from "../../ui/SectionLine/SectionLine";
+import { FilmItemInfoPage } from "../../../api/types";
 
 interface FilmInfoProps {
   filmInfo?: FilmItemInfoPage;
@@ -34,7 +34,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
                 <div className={styles.iconWithRating}>
                   <p>
                     {filmInfo?.Metascore} / <span>100</span>
-                  </p>{" "}
+                  </p>
                   <img src={metacritic} alt="Metacritic" />
                 </div>
               </div>

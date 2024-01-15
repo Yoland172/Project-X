@@ -1,4 +1,4 @@
-import { IconProp } from "../../types/types";
+import { IconProp } from "../../types/uiTypes";
 
 const SearchArrow = ({ width, height }: IconProp) => {
   return (

@@ -1,6 +1,6 @@
 import Footer from "../footer/Footer";
-import SearchContainer from "./Search/SearchContainer";
-import MainHeader from "./mainHeader/mainHeader";
+import SearchContainer from "./search/SearchContainer";
+import MainHeader from "./mainHeader/MainHeader";
 
 const HomePage = ( ) => {
     return (
