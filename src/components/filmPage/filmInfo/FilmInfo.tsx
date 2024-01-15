@@ -1,7 +1,7 @@
 import styles from "./filmInfo.module.scss";
 import imdbIcon from "../../../assets/img/IMDB_Logo_2016.svg.png";
 import metacritic from "../../../assets/img/Metacritic.svg";
-import SectionLine from "../../UI/SectionLine/SectionLine";
+import SectionLine from "../../ui/SectionLine/SectionLine";
 import { FilmItemInfoPage } from "../../../api/types";
 
 interface FilmInfoProps {
