@@ -21,13 +21,8 @@ const Search = ({
             tryToFindFilmsByTyiping(event.target.value);
           }}
         ></input>
-        <button
-          type="submit"
-          onClick={() => {
-            tryFindFilmBySearch();
-          }}
-        >
-          <SearchArrow width={24} height={24}/>
+        <button type="submit" onClick={tryFindFilmBySearch}>
+          <SearchArrow width={24} height={24} />
         </button>
       </div>
     </div>

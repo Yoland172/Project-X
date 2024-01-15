@@ -1,4 +1,4 @@
-import { IconProp } from "../../../types/types";
+import { IconProp } from "../../../types/uiTypes";
 
 const Twitter = ({ width, height }: IconProp) => {
   return (

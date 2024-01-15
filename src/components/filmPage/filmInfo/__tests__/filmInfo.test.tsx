@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import FilmInfo from "../FilmInfo";
-import { FilmItemInfoPage } from "../../../../types/types";
+import { FilmItemInfoPage } from "../../../../types/uiTypes";
 import exp from "constants";
 
 describe("FilmInfo component", () => {

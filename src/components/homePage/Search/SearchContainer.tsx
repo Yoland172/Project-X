@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Search from "./Search";
 import { getFilms } from "../../../api/requests";
-import FilmList from "./FilmList";
-import { FilmItemMainPage } from "../../../types/types";
+import FilmList from "../filmList/FilmList";
+import { FilmItemMainPage } from "../../../types/uiTypes";
 
 const SearchContainer = () => {
   const [searchText, setSearchText] = useState<string>();

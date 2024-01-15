@@ -1,5 +1,5 @@
 import styles from "./videoHeader.module.scss";
-import header from "../../../assets/img/iron-man-cave-time-travel-3840x1080-112 (1).jpg";
+import header from "../../../assets/img/mocks/iron-man-cave-time-travel-3840x1080-112 (1).jpg";
 import { Link } from "react-router-dom";
 import LeftLongArrow from "../../../assets/icon/leftLongArrow";
 
@@ -11,7 +11,7 @@ const VideoHeader = () => {
       </div>
       <Link to={"/home"}>
         <div className={styles.backArrowContainer}>
-          <LeftLongArrow />
+          <LeftLongArrow width={68} height={24}/>
           <p>Back</p>
         </div>
       </Link>

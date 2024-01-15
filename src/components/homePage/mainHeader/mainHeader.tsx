@@ -2,9 +2,31 @@ import styles from "./mainHeader.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { settingsForSlider, slides } from "./slides";
+import { slides } from "./slides";
+interface SettingForSlider {
+  dots?: boolean;
+  infinite?: boolean;
+  speed?: number;
+  slidesToShow?: number;
+  slidesToScroll?: number;
+  autoplay?: boolean;
+  arrows?: boolean;
+  pauseOnHover?: boolean;
+  autoplaySpeed?: number;
+}
 
 function MainHeader() {
+  const settingsForSlider: SettingForSlider = {
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: false,
+    pauseOnHover: true,
+    autoplaySpeed: 4000,
+  };
   return (
     <div className={styles.roundaboutContainer}>
       <Slider {...settingsForSlider}>
