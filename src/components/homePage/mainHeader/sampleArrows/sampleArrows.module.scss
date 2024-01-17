@@ -1,0 +1,43 @@
+.nextArrow {
+  display: flex;
+  align-items: center;
+  column-gap: 9px;
+  position: absolute !important;
+  bottom: 40px;
+  font-weight: 400;
+  right: 100px;
+  z-index: 1;
+  cursor: pointer;
+  transition: 250ms;
+
+  & > p {
+    font-size: 1.7em;
+    color: var(--light-grey);
+  }
+  &:hover {
+    transform: scale(1.15);
+    transition: 250ms ease-in-out;
+  }
+}
+
+.prevArrow {
+  display: flex;
+  align-items: center;
+  column-gap: 9px;
+  position: absolute !important;
+  bottom: 40px;
+  font-weight: 400;
+  left: 100px;
+  z-index: 1;
+  cursor: pointer;
+  transition: 250ms;
+
+  & > p {
+    font-size: 1.7em;
+    color: var(--light-grey);
+  }
+  &:hover {
+    transform: scale(1.15);
+    transition: 250ms ease-in-out;
+  }
+}

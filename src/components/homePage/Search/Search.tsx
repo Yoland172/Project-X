@@ -8,12 +8,12 @@ interface searchProps {
 const Search = ({
   tryToFindFilmsByTyiping,
   tryFindFilmBySearch,
-  setSearchText,
+  setSearchText
 }: searchProps) => {
   return (
     <div className={styles.searchBarContainer}>
       <div className={styles.webflowStyleInput}>
-        <input
+        <input 
           type="text"
           placeholder="Search..."
           onChange={(event) => {

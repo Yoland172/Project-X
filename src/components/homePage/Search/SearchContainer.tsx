@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Search from "./Search";
 import { getFilms } from "../../../api/requests";
 import FilmList from "../filmList/FilmList";
 import { FilmItemMainPage } from "../../../types/uiTypes";
+import { SearchContext } from "../../app/App";
 
 const SearchContainer = () => {
-  const [searchText, setSearchText] = useState<string>();
+  const {searchText, setSearchText} = useContext(SearchContext)
   const [filmList, setFilmList] = useState<FilmItemMainPage[]>([]);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [isFetching, setIsFetching] = useState<boolean>(false);
