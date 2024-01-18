@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Search from "./Search";
 import { getFilms } from "../../../api/requests";
 import FilmList from "../filmList/FilmList";
 import { FilmItemMainPage } from "../../../types/uiTypes";
+import { SearchContext } from "../../app/App";
 
 const SearchContainer = () => {
-  const [searchText, setSearchText] = useState<string>();
+  const { searchText, setSearchText } = useContext(SearchContext);
   const [filmList, setFilmList] = useState<FilmItemMainPage[]>([]);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [filmsCount, setFilmsCount] = useState<number>(0);
 
   const [currentImage, setCurrentImage] = useState<string>("");
+
+  useEffect(() => {
+    tryFindFilmBySearch();
+  }, []);
 
   const tryToFindFilmsByTyiping = (searchText: string) => {
     if (searchText) {
@@ -60,6 +65,7 @@ const SearchContainer = () => {
         tryToFindFilmsByTyiping={tryToFindFilmsByTyiping}
         tryFindFilmBySearch={tryFindFilmBySearch}
         setSearchText={setSearchText}
+        searchText={searchText}
       />
       <FilmList
         currentImage={currentImage}
@@ -74,7 +80,7 @@ const SearchContainer = () => {
         filmsCount={filmsCount}
         nextPage={() => {
           if (searchText && (pageNumber + 0.1) * 10 - filmsCount <= 0) {
-            console.log('NextPage')
+            console.log("NextPage");
             setIsFetching(true);
             getFilms(searchText, pageNumber + 1).then((res) => {
               if (res.Response === "True") {
@@ -93,7 +99,7 @@ const SearchContainer = () => {
         }}
         prevPage={() => {
           if (searchText && pageNumber > 1) {
-            console.log('prevPage')
+            console.log("prevPage");
             setIsFetching(true);
             getFilms(searchText, pageNumber - 1).then((res) => {
               if (res.Response === "True") {

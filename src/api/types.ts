@@ -29,3 +29,8 @@ interface RatingItem {
     imdbRating: string;
     imdbVotes: string;
   }
+
+  
+export interface SampleArrowProp {
+  onClick?: () => void;
+}

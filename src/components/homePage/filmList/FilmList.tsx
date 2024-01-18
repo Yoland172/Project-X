@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 import styles from "./filmList.module.scss";
 import { FilmItemMainPage } from "../../../types/uiTypes";
 import FilmListSkeleton from "./FilmListSkeleton";
 import RightArrow from "../../../assets/icon/rightArrow";
 import LeftArrow from "../../../assets/icon/leftArrow";
-import { Link } from "react-router-dom";
+import notFoundImage from "../../../assets/img/imageNotFound2.png";
+
 interface FilmListProps {
   filmList: FilmItemMainPage[];
   isFetching: boolean;
@@ -26,12 +28,13 @@ const FilmList = ({
   prevPage,
   pageNumber,
 }: FilmListProps) => {
+
   return (
-    <div className={styles.mainFilmListContainer}>
+    <div className={filmList.length !== 0 ? styles.mainFilmListContainer : styles.mainFilmListContainerHide}>
       <div className={styles.imageContainer}>
         <img
           alt="filmImage"
-          src={`${currentImage}`}
+          src={currentImage !=="N/A" ? currentImage : notFoundImage}
           className={currentImage ? styles.imageFilmOn : styles.imageFilmOff}
         />
       </div>
@@ -79,7 +82,7 @@ const FilmList = ({
             <></>
           )}
         </div>
-        {filmsCount>0 ? (
+        {filmsCount > 0 ? (
           <div className={styles.navContainer}>
             <p className={styles.pageInfo}>All items : {filmsCount}</p>
             <div className={styles.navArrowContainer}>
@@ -94,7 +97,7 @@ const FilmList = ({
               <button
                 className={styles.arrow}
                 onClick={() => {
-                    nextPage();
+                  nextPage();
                 }}
               >
                 <p>

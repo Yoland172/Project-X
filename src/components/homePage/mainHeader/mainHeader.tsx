@@ -1,8 +1,11 @@
-import styles from "./mainHeader.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { slides } from "./slides";
+import styles from "./mainHeader.module.scss";
+import SampleNextArrow from "./sampleArrows/SampleNextArrow";
+import SamplePrevArrow from "./sampleArrows/SamplePrevArrow";
+
 interface SettingForSlider {
   dots?: boolean;
   infinite?: boolean;
@@ -13,6 +16,9 @@ interface SettingForSlider {
   arrows?: boolean;
   pauseOnHover?: boolean;
   autoplaySpeed?: number;
+  dotsClass?:string,
+  nextArrow?:any,
+  prevArrow?:any
 }
 
 function MainHeader() {
@@ -23,9 +29,12 @@ function MainHeader() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    arrows: false,
+    arrows: true,
     pauseOnHover: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 6000,
+    dotsClass:`${styles.button__bar}`,
+    nextArrow: <SampleNextArrow/>,
+    prevArrow:<SamplePrevArrow/>
   };
   return (
     <div className={styles.roundaboutContainer}>
@@ -48,9 +57,7 @@ function MainHeader() {
           );
         })}
       </Slider>
-      <div className={styles.bigMainText}>
-        <p>Explore movies and series</p>
-      </div>
+        <p className={styles.bigMainText}><span>Explore</span> movies and series</p>
     </div>
   );
 }
