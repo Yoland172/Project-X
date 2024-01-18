@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import FilmInfo from "./FilmInfo";
 import { useEffect, useState } from "react";
+import FilmInfo from "./FilmInfo";
 import { getFilmInfo } from "../../../api/requests";
 import FilmInfoSkeleton from "./FilmInfoSkeleton";
 import { FilmItemInfoPage } from "../../../api/types";
 
 const FilmInfoContainer = () => {
-  const {id} = useParams();
+  const { id } = useParams();
 
   const [filmInfo, setFilmInfo] = useState<FilmItemInfoPage>();
   const [isFetching, setIsFetching] = useState<boolean>(false);

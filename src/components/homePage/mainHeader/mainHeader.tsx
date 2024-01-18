@@ -1,8 +1,8 @@
-import styles from "./mainHeader.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { slides } from "./slides";
+import styles from "./mainHeader.module.scss";
 import SampleNextArrow from "./sampleArrows/SampleNextArrow";
 import SamplePrevArrow from "./sampleArrows/SamplePrevArrow";
 

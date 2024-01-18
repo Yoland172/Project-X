@@ -1,9 +1,8 @@
 import styles from "./filmInfo.module.scss";
-import imdbIcon from "../../../assets/img/IMDB_Logo_2016.svg.png";
-import metacritic from "../../../assets/img/Metacritic.svg";
 import SectionLine from "../../ui/SectionLine/SectionLine";
 import { FilmItemInfoPage } from "../../../api/types";
-
+import imdbIcon from "../../../assets/img/IMDB_Logo_2016.svg.png";
+import metacritic from "../../../assets/img/Metacritic.svg";
 interface FilmInfoProps {
   filmInfo?: FilmItemInfoPage;
 }
@@ -13,7 +12,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
     <>
       <div className={styles.mainContainer}>
         <div className={styles.filmPosterContainer}>
-          {filmInfo?.Poster && filmInfo.Poster!=="N/A" ? (
+          {filmInfo?.Poster && filmInfo.Poster !== "N/A" ? (
             <img src={filmInfo.Poster} alt="FilmPoster" />
           ) : (
             <></>
@@ -28,7 +27,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
                 <img src={imdbIcon} alt="IMDB" />
               </div>
             </div>
-            {filmInfo?.Metascore && filmInfo?.Metascore !== "N/A"  ? (
+            {filmInfo?.Metascore && filmInfo?.Metascore !== "N/A" ? (
               <div className={styles.ratingItem}>
                 <h1>METACRITIC:</h1>
                 <div className={styles.iconWithRating}>
@@ -92,7 +91,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
           </div>
           <SectionLine />
 
-          {filmInfo?.Awards&&filmInfo?.Awards !== "N/A" ? (
+          {filmInfo?.Awards && filmInfo?.Awards !== "N/A" ? (
             <div className={styles.oscarAwardsContainer}>
               <div className={styles.oscarAwards}></div>
               <div></div>
@@ -160,7 +159,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
             ) : (
               <></>
             )}
-            {filmInfo?.BoxOffice && filmInfo?.BoxOffice !== "N/A"  ? (
+            {filmInfo?.BoxOffice && filmInfo?.BoxOffice !== "N/A" ? (
               <div className={styles.directorsTest}>
                 <div className={styles.verticalLine}></div>{" "}
                 {/*make check for all blocks */}

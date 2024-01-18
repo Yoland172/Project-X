@@ -1,11 +1,11 @@
 import { SampleArrowProp } from "../../../../api/types";
-import LeftLongArrow from "../../../../assets/icon/leftLongArrow";
 import styles from "./sampleArrows.module.scss";
+import LeftLongArrow from "../../../../assets/icon/leftLongArrow";
 
 const SamplePrevArrow = ({ onClick }: SampleArrowProp) => {
   return (
     <div className={styles.prevArrow} onClick={onClick}>
-      <LeftLongArrow width={75} height={75}/>
+      <LeftLongArrow width={75} height={75} />
       <p>Prev</p>
     </div>
   );

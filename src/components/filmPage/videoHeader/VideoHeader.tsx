@@ -1,7 +1,7 @@
-import styles from "./videoHeader.module.scss";
-import header from "../../../assets/img/mocks/iron-man-cave-time-travel-3840x1080-112 (1).jpg";
 import { Link } from "react-router-dom";
+import styles from "./videoHeader.module.scss";
 import LeftLongArrow from "../../../assets/icon/leftLongArrow";
+import header from "../../../assets/img/mocks/iron-man-cave-time-travel-3840x1080-112 (1).jpg";
 
 const VideoHeader = () => {
   return (
