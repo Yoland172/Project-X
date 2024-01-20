@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import styles from "./App.module.scss";
 import FilmPage from "../filmPage/FilmPage";
 import HomePage from "../homePage/HomePage";
-
-export const SearchContext = React.createContext<any>("");
+import SearchContext from "../../lib/contexts/SearchContext";
 
 function App() {
   const [searchText, setSearchText] = useState<string>("");

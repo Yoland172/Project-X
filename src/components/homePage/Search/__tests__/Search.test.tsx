@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Search from "../Search";
+import Search from "../../filmSearch/search/Search";
 
 describe("Search component tests", () => {
   test("Search should render correctly", () => {

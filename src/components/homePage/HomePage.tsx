@@ -1,12 +1,12 @@
 import Footer from "../footer/Footer";
-import SearchContainer from "./search/SearchContainer";
-import MainHeader from "./mainHeader/MainHeader";
+import MainHeader from "./mainHeader/mainHeader";
+import FilmSearchContainer from "./filmSearch/FilmSearchContainer";
 
 const HomePage = ( ) => {
     return (
         <>
         <MainHeader/>
-        <SearchContainer/>
+        <FilmSearchContainer/>
         <Footer/>
         </>
     )   

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import FilmList from "../../filmList/FilmList";
+import FilmList from "../../filmSearch/filmList/FilmList";
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
 
