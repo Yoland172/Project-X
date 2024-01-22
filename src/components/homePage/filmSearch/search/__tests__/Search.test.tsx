@@ -1,13 +1,13 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Search from "../../filmSearch/search/Search";
+import Search from "../Search";
 
 describe("Search component tests", () => {
   test("Search should render correctly", () => {
     render(
       <Search
-        tryFindFilmBySearch={jest.fn()}
-        tryToFindFilmsByTyiping={jest.fn()}
-        setSearchText={jest.fn()}
+        onSearchChange={jest.fn()}
+        onSearchClickButton={jest.fn()}
+        searchText={'testValue'}
       />
     );
     const input = screen.getByPlaceholderText("Search...");
@@ -16,37 +16,34 @@ describe("Search component tests", () => {
 
   test("OnChange should be called with correct params", () => {
     //Arrange
-    const tryToFindFilmsByTyipingMock = jest.fn();
-    const setSearchTextMock = jest.fn();
+    const onSearchChangeMock = jest.fn();
 
     //Act
     render(
       <Search
-        tryFindFilmBySearch={jest.fn()}
-        tryToFindFilmsByTyiping={tryToFindFilmsByTyipingMock}
-        setSearchText={setSearchTextMock}
+      onSearchChange={onSearchChangeMock}
+      onSearchClickButton={()=>{}}
+      searchText={''}
       />
     );
     const input = screen.getByPlaceholderText("Search...");
     fireEvent.change(input, { target: { value: "test" } });
 
     //Assert
-    expect(tryToFindFilmsByTyipingMock).toHaveBeenCalledWith("test");
-    expect(tryToFindFilmsByTyipingMock).toBeCalledTimes(1);
-    expect(setSearchTextMock).toBeCalledTimes(1);
-    expect(setSearchTextMock).toHaveBeenCalledWith("test");
+    expect(onSearchChangeMock).toHaveBeenCalledWith("test");
+    expect(onSearchChangeMock).toBeCalledTimes(1);
   });
 
   test("Press button work", () => {
     //Arrange
-    const tryFindFilmBySearchMock = jest.fn();
+    const onSearchClickButtonMock = jest.fn();
 
     //Act
     render(
       <Search
-        tryFindFilmBySearch={tryFindFilmBySearchMock}
-        tryToFindFilmsByTyiping={jest.fn()}
-        setSearchText={jest.fn()}
+      onSearchChange={()=>{}}
+      onSearchClickButton={onSearchClickButtonMock}
+      searchText={''}
       />
     );
     const input = screen.getByPlaceholderText("Search...");
@@ -55,6 +52,6 @@ describe("Search component tests", () => {
     fireEvent.click(button);
 
      //Assert
-    expect(tryFindFilmBySearchMock).toBeCalledTimes(1);
+    expect(onSearchClickButtonMock).toBeCalledTimes(1);
   });
 });

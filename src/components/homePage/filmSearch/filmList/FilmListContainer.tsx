@@ -30,6 +30,8 @@ const FilmListContainer = ({
   const { currentPage, setNextPage, setPreviousPage} =
     usePagination(1);
 
+    
+
   const nextPage = () => {
     if (searchText && checkIfHasNextPage()) {
       setIsFetching(true);
