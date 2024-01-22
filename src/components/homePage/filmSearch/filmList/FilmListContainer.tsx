@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import FilmList from "./FilmList";
 import usePagination from "../../../../lib/hooks/usePagination";
 import SearchContext from "../../../../lib/contexts/SearchContext";
@@ -27,38 +27,20 @@ const FilmListContainer = ({
   const checkIfHasNextPage = () => (currentPage + 0.1) * 10 - filmsCount <= 0;
   const checkIfHasPreviousPage = () => currentPage > 1;
 
-  const { currentPage, setNextPage, setPreviousPage} =
-    usePagination(1);
+  const { currentPage, setNextPage, setPreviousPage } = usePagination(1);
 
-    
-
-  const nextPage = () => {
-    if (searchText && checkIfHasNextPage()) {
+  const pageNavigate = (
+    page: number,
+    paginationCondition: () => boolean,
+    setPage: () => void
+  ) => {
+    if (searchText && paginationCondition()) {
       setIsFetching(true);
-      getFilms(searchText, currentPage + 1).then((res) => {
+      getFilms(searchText, page).then((res) => {
         if (res.Response === "True") {
           setIsFetching(false);
           setFilmList(res.Search);
-          setNextPage();
-        } else {
-          setIsFetching(false);
-          switch (res.Error) {
-            case "Too many results.":
-              console.log("tutu");
-          }
-        }
-      });
-    }
-  };
-
-  const prevPage = () => {
-    if (searchText && checkIfHasPreviousPage()) {
-      setIsFetching(true);
-      getFilms(searchText, currentPage - 1).then((res) => {
-        if (res.Response === "True") {
-          setIsFetching(false);
-          setFilmList(res.Search);
-          setPreviousPage();
+          setPage();
         } else {
           setIsFetching(false);
           switch (res.Error) {
@@ -82,8 +64,12 @@ const FilmListContainer = ({
         setCurrentImage("");
       }}
       filmsCount={filmsCount}
-      nextPage={nextPage}
-      prevPage={prevPage}
+      nextPage={() => {
+        pageNavigate(currentPage + 1, checkIfHasNextPage, setNextPage);
+      }}
+      prevPage={() => {
+        pageNavigate(currentPage - 1, checkIfHasPreviousPage, setPreviousPage);
+      }}
       pageNumber={currentPage}
     />
   );

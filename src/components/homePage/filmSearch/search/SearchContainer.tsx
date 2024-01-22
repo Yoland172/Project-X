@@ -24,7 +24,7 @@ const SearchContainer = ({
     tryFindFilmBySearch();
   }, []);
 
-  const testFunc = (
+  const findFilms = (
     page: number,
     searchTextFromInnput: string,
     setIsFetching?: (status: boolean) => void | null
@@ -48,7 +48,7 @@ const SearchContainer = ({
 
   const tryToFindFilmsByTyping = (searchText: string) => {
     if (searchText) {
-      testFunc(1, searchText);
+      findFilms(1, searchText);
     } else {
       setFilmList([]);
       setIsFetching(false);
@@ -58,7 +58,7 @@ const SearchContainer = ({
 
   const tryFindFilmBySearch = () => {
     if (searchText) {
-      testFunc(1, searchText, setIsFetching);
+      findFilms(1, searchText, setIsFetching);
     }
   };
 
