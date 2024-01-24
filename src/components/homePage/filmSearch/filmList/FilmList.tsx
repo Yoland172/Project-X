@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import styles from "./filmList.module.scss";
-import { FilmItemMainPage } from "../../../types/uiTypes";
+import { FilmItemMainPage } from "../../../../types/uiTypes";
 import FilmListSkeleton from "./FilmListSkeleton";
-import RightArrow from "../../../assets/icon/rightArrow";
-import LeftArrow from "../../../assets/icon/leftArrow";
-import notFoundImage from "../../../assets/img/imageNotFound2.png";
+import RightArrow from "../../../../assets/icon/rightArrow";
+import LeftArrow from "../../../../assets/icon/leftArrow";
+import notFoundImage from "../../../../assets/img/imageNotFound2.png";
 
 interface FilmListProps {
   filmList: FilmItemMainPage[];

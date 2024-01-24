@@ -1,16 +1,14 @@
 import styles from "./search.module.scss";
-import SearchArrow from "../../../assets/icon/SearchArrow";
+import SearchArrow from "../../../../assets/icon/SearchArrow";
 
 interface searchProps {
-  tryToFindFilmsByTyiping: (text: string) => void;
-  tryFindFilmBySearch: () => void;
-  setSearchText: (setSearchText: string) => void;
   searchText: string;
+  onSearchChange: (text: string) => void;
+  onSearchClickButton: () => void;
 }
 const Search = ({
-  tryToFindFilmsByTyiping,
-  tryFindFilmBySearch,
-  setSearchText,
+  onSearchChange,
+  onSearchClickButton,
   searchText,
 }: searchProps) => {
   return (
@@ -20,12 +18,9 @@ const Search = ({
           type="text"
           placeholder="Search..."
           value={searchText}
-          onChange={(event) => {
-            setSearchText(event.currentTarget.value);
-            tryToFindFilmsByTyiping(event.currentTarget.value);
-          }}
+          onChange={(event) => onSearchChange(event.target.value)}
         ></input>
-        <button type="submit" onClick={tryFindFilmBySearch}>
+        <button type="submit" onClick={onSearchClickButton}>
           <SearchArrow width={24} height={24} />
         </button>
       </div>

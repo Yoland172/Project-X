@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import FilmList from "../../filmList/FilmList";
+import FilmList from "../FilmList";
 import { BrowserRouter } from "react-router-dom";
-import React from "react";
+import notFoundImage from "../../../../../assets/img/imageNotFound2.png";
 
 describe("FilmList Ccomponent tests", () => {
   const filmList = [
@@ -182,6 +182,51 @@ describe("FilmList Ccomponent tests", () => {
     expect(prevPageMock).toHaveBeenCalled();
     expect(nextPageMock).toHaveBeenCalled();
   });
+
+  test("Image shown", () => {
+    //Act
+    render(
+        <BrowserRouter>
+        <FilmList
+          filmList={filmList}
+          isFetching={false}
+          currentImage={filmList[0].Poster}
+          setCurrentImage={()=>{}}
+          removeCurrentImage={()=>{}}
+          prevPage={()=>{}}
+          nextPage={()=>{}}
+          filmsCount={250}
+          pageNumber={1}
+        />
+      </BrowserRouter>
+    )
+    const filmPoster = screen.getByAltText("filmImage");
+
+    //Assert
+    expect(filmPoster).toHaveAttribute("src", filmList[0].Poster);
+  });
+
+  test("Show image if poster is not found",() => {
+    //Act
+    render(
+        <BrowserRouter>
+        <FilmList
+          filmList={filmList}
+          isFetching={false}
+          currentImage={"N/A"}
+          setCurrentImage={()=>{}}
+          removeCurrentImage={()=>{}}
+          prevPage={()=>{}}
+          nextPage={()=>{}}
+          filmsCount={250}
+          pageNumber={1}
+        />
+      </BrowserRouter>
+    )
+    const filmPoster = screen.getByAltText("filmImage");
+    //Assert
+    expect(filmPoster).toHaveAttribute("src",notFoundImage);
+  })
 
   test("Pagination not renders", () => {
     //act
