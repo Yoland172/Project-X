@@ -1,3 +1,5 @@
+@import "../../../../styles/variables";
+
 .mainFilmListContainerHide {
   box-sizing: border-box;
   padding: 10px 100px 40px 200px;
@@ -144,6 +146,55 @@
       letter-spacing: 1px;
       transition: 200ms ease-out;
     }
+  }
+}
+
+
+
+@media (max-width: $desktop) {
+  .mainFilmListContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+    height: fit-content;
+    margin-bottom: 80px;
+    width: 100%;
+    transition: all 300ms;
+  }
+  .imageContainer {
+    display: none;
+  }
+
+  .filmListContainer {
+    height: 100%;
+    & > div {
+      padding: 10px;
+    }
+
+    .filmListShow {
+      overflow: scroll;
+      overflow-x: hidden;
+      max-height: 70vh;
+    }
+
+    .navContainer {
+      margin-top: 0;
+      grid-template-columns: 1fr 2fr;
+      .pageInfo {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .filmInfoContainer {
+    padding: 10px 0px;
+    transition: 200ms ease-out;
+
+    .filmName {
+      font-size: 1.8rem;
+    }
+
   }
 }
 

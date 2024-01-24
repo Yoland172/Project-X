@@ -1,3 +1,5 @@
+@import "../../../../styles/variables";
+
 .searchBar {
   width: 300px;
 }
@@ -6,6 +8,14 @@
   width: 100%;
   padding: 50px 40px;
   box-sizing: border-box;
+}
+
+@media (max-width:$tablet) {
+  .searchBarContainer {
+    display: flex;
+    padding: 0 20px;
+    justify-content: center;
+  }
 }
 
 // gradient animation
