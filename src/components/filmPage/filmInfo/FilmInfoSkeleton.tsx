@@ -1,5 +1,5 @@
-import SectionLine from "../../ui/SectionLine/SectionLine";
-import Skeleton from "../../ui/Skeleton/Skeleton";
+import SectionLine from "../../ui_1/SectionLine/SectionLine";
+import Skeleton from "../../ui_1/Skeleton/Skeleton";
 import styles from "./filmInfo.module.scss";
 import LoadingIcon from "../../../assets/icon/LoadingIcon";
 
