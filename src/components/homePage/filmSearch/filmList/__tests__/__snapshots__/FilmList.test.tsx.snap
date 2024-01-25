@@ -353,7 +353,7 @@ exports[`FilmList Ccomponent tests Component renders correctly 1`] = `
         </button>
         <button
           className="arrow"
-          onClick={[Function]}
+          onClick={[MockFunction]}
         >
           <p>
             549

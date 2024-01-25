@@ -29,6 +29,44 @@ const FilmList = ({
   pageNumber,
 }: FilmListProps) => {
 
+  const renderFilmList = () => {
+    if (isFetching)
+      return <FilmListSkeleton />;
+    
+    if (filmList) 
+    return (filmList.map((el: FilmItemMainPage, index: number) => {
+      return (
+        <div
+          key={el.imdbID}
+          className={styles.filmInfoContainer}
+          onMouseEnter={() => {
+            setCurrentImage(el.Poster);
+          }}
+          onMouseLeave={() => {
+            removeCurrentImage();
+          }}
+        >
+          <Link to={`/film/${el.imdbID}`}>
+            <div className={styles.filmName}>
+              <p title={el.Title}>
+                {el.Title.length > 30
+                  ? `${el.Title.substring(0, 25)}...`
+                  : el.Title}
+              </p>
+            </div>
+          </Link>
+          <div className={styles.addInfo}>
+            <p>{el.Year}</p>
+
+            <p>{el.Type}</p>
+          </div>
+        </div>
+      );
+    }));
+
+    return null;
+  }
+
   return (
     <div className={filmList.length !== 0 ? styles.mainFilmListContainer : styles.mainFilmListContainerHide}>
       <div className={styles.imageContainer}>
@@ -39,50 +77,15 @@ const FilmList = ({
         />
       </div>
       <div className={styles.filmListContainer}>
-        <div
-          className={
+        <div className={
             (filmList && filmList.length !== 0) || isFetching
               ? styles.filmListShow
               : styles.filmListRemove
           }
         >
-          {isFetching ? (
-            <FilmListSkeleton />
-          ) : filmList ? (
-            filmList.map((el: FilmItemMainPage, index: number) => {
-              return (
-                <div
-                  key={el.imdbID}
-                  className={styles.filmInfoContainer}
-                  onMouseEnter={() => {
-                    setCurrentImage(el.Poster);
-                  }}
-                  onMouseLeave={() => {
-                    removeCurrentImage();
-                  }}
-                >
-                  <Link to={`/film/${el.imdbID}`}>
-                    <div className={styles.filmName}>
-                      <p title={el.Title}>
-                        {el.Title.length > 30
-                          ? `${el.Title.substring(0, 25)}...`
-                          : el.Title}
-                      </p>
-                    </div>
-                  </Link>
-                  <div className={styles.addInfo}>
-                    <p>{el.Year}</p>
-
-                    <p>{el.Type}</p>
-                  </div>
-                </div>
-              );
-            })
-          ) : (
-            <></>
-          )}
+        {renderFilmList()}
         </div>
-        {filmsCount > 0 ? (
+        {filmsCount > 0 && (
           <div className={styles.navContainer}>
             <p className={styles.pageInfo}>All items : {filmsCount}</p>
             <div className={styles.navArrowContainer}>
@@ -94,12 +97,7 @@ const FilmList = ({
                     : filmsCount
                 }`}</p>
               </button>
-              <button
-                className={styles.arrow}
-                onClick={() => {
-                  nextPage();
-                }}
-              >
+              <button className={styles.arrow} onClick={nextPage} >
                 <p>
                   {filmsCount > 10 && filmsCount - pageNumber * 10 > 0
                     ? filmsCount - pageNumber * 10
@@ -109,8 +107,6 @@ const FilmList = ({
               </button>
             </div>
           </div>
-        ) : (
-          <></>
         )}
       </div>
     </div>

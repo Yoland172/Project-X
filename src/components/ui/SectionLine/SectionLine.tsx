@@ -1,11 +1,5 @@
 import styles from './sectionLine.module.scss';
 
-const SectionLine = () => {
-    return (
-        <div className={styles.line}>
-
-        </div>
-    )
-}
+const SectionLine = () => <div className={styles.line} />
 
 export default SectionLine;

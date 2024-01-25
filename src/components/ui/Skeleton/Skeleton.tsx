@@ -4,8 +4,6 @@ interface SkeletonProps {
   height: string;
 }
 
-const Skeleton = (styleProps: SkeletonProps) => {
-  return <div style={styleProps} className={styles.skeleton}></div>;
-};
+const Skeleton = (styleProps: SkeletonProps) => <div style={styleProps} className={styles.skeleton} />;
 
 export default Skeleton;

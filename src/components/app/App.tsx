@@ -12,14 +12,7 @@ function App() {
     <div className={styles.App}>
       <SearchContext.Provider value={{ searchText, setSearchText }}>
         <Routes>
-          <Route
-            path="/home"
-            element={
-              <>
-                <HomePage />
-              </>
-            }
-          />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/film/:id" element={<FilmPage />} />
           <Route path="*" element={<Navigate to={"/home"} />} />
         </Routes>

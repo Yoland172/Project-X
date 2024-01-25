@@ -21,7 +21,8 @@ interface SettingForSlider {
   prevArrow?:any
 }
 
-function MainHeader() {
+const MainHeader = () => {
+
   const settingsForSlider: SettingForSlider = {
     dots: true,
     infinite: true,
@@ -36,6 +37,7 @@ function MainHeader() {
     nextArrow: <SampleNextArrow/>,
     prevArrow:<SamplePrevArrow/>
   };
+
   return (
     <div className={styles.roundaboutContainer}>
       <Slider {...settingsForSlider}>
@@ -57,7 +59,7 @@ function MainHeader() {
           );
         })}
       </Slider>
-        <p className={styles.bigMainText}><span>Explore</span> movies and series</p>
+      <p className={styles.bigMainText}><span>Explore</span> movies and series</p>
     </div>
   );
 }

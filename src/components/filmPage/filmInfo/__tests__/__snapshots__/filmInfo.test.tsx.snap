@@ -45,6 +45,7 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
         <div
           className="iconWithRating"
         >
+          Í
           <p>
             72
              / 

@@ -24,17 +24,7 @@ const FilmInfoContainer = () => {
     }
   }, [id]);
 
-  return (
-    <>
-      {!isFetching ? (
-        <>
-          <FilmInfo filmInfo={filmInfo} />
-        </>
-      ) : (
-        <FilmInfoSkeleton />
-      )}
-    </>
-  );
+  return isFetching ? <FilmInfoSkeleton /> : <FilmInfo filmInfo={filmInfo} />
 };
 
 export default FilmInfoContainer;

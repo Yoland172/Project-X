@@ -11,6 +11,7 @@ const Search = ({
   onSearchClickButton,
   searchText,
 }: searchProps) => {
+  
   return (
     <div className={styles.searchBarContainer}>
       <div className={styles.webflowStyleInput}>
