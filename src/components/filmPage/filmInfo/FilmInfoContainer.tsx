@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import FilmInfo from "./FilmInfo";
 import { getFilmInfo } from "../../../api/requests";
 import FilmInfoSkeleton from "./FilmInfoSkeleton";
@@ -23,6 +23,16 @@ const FilmInfoContainer = () => {
       });
     }
   }, [id]);
+
+  useEffect(() => {
+    if (filmInfo?.Title) {
+      document.title = `Project X - ${filmInfo?.Title}`;
+    }
+
+    return () => {
+      document.title = `Project X - ${filmInfo?.Title}`;
+    };
+  }, [filmInfo]);
 
   return (
     <>

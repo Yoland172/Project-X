@@ -28,13 +28,18 @@ const FilmList = ({
   prevPage,
   pageNumber,
 }: FilmListProps) => {
-
   return (
-    <div className={filmList.length !== 0 ? styles.mainFilmListContainer : styles.mainFilmListContainerHide}>
+    <div
+      className={
+        filmList.length !== 0
+          ? styles.mainFilmListContainer
+          : styles.mainFilmListContainerHide
+      }
+    >
       <div className={styles.imageContainer}>
         <img
           alt="filmImage"
-          src={currentImage !=="N/A" ? currentImage : notFoundImage}
+          src={currentImage !== "N/A" ? currentImage : notFoundImage}
           className={currentImage ? styles.imageFilmOn : styles.imageFilmOff}
         />
       </div>
@@ -64,7 +69,7 @@ const FilmList = ({
                   <Link to={`/film/${el.imdbID}`}>
                     <div className={styles.filmName}>
                       <p title={el.Title}>
-                        {el.Title.length > 30
+                        {el.Title.length > 26
                           ? `${el.Title.substring(0, 25)}...`
                           : el.Title}
                       </p>

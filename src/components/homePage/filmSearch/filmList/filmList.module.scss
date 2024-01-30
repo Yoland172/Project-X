@@ -11,7 +11,7 @@
 
 .mainFilmListContainer {
   box-sizing: border-box;
-  padding: 10px 100px 40px 200px;
+  padding: 10px 100px 0 200px;
   display: grid;
   grid-template-columns: 3fr 6fr;
   height: 80vh;
@@ -24,17 +24,19 @@
     visibility: visible;
     opacity: 1;
     transition: 200ms;
-    height: 75%;
+    width: 75%;
+    aspect-ratio: 7/11;
   }
 
   .imageFilmOff {
     visibility: hidden;
     opacity: 0;
     height: 75%;
+    aspect-ratio: 7/11;
   }
 }
 
-.filmListContainer {
+.filmListContainer {  
   & > div {
     padding: 0px 100px;
   }
@@ -54,7 +56,7 @@
   }
 
   .navContainer {
-    margin-top: 10px;
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -107,7 +109,8 @@
   justify-content: space-between;
   box-sizing: border-box;
   align-items: center;
-  padding: 20px 0px;
+  min-width: 100%;
+  padding: 20px 0px;  
   transition: 200ms ease-out;
 
   &:hover {
@@ -149,9 +152,16 @@
   }
 }
 
-
-
 @media (max-width: $desktop) {
+  .mainFilmListContainerHide {
+    box-sizing: border-box;
+    padding: 10px 100px 40px 200px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200px;
+    transition: 300ms;
+  }
   .mainFilmListContainer {
     display: flex;
     flex-direction: column;
@@ -159,7 +169,6 @@
     padding: 20px 20px;
     height: fit-content;
     margin-bottom: 80px;
-    width: 100%;
     transition: all 300ms;
   }
   .imageContainer {
@@ -167,15 +176,8 @@
   }
 
   .filmListContainer {
-    height: 100%;
     & > div {
       padding: 10px;
-    }
-
-    .filmListShow {
-      overflow: scroll;
-      overflow-x: hidden;
-      max-height: 70vh;
     }
 
     .navContainer {
@@ -189,12 +191,41 @@
 
   .filmInfoContainer {
     padding: 10px 0px;
+    width: 100%;
     transition: 200ms ease-out;
+
+    .filmName > p {
+      font-size: 0.8em;
+    }
+
+    .addInfo > p {
+      font-size: 0.9em;
+    }
+
+    &:hover {
+      transform: scale(1);
+
+      .filmName > p {
+        color: var(--main-text-color);
+      }
+
+      .addInfo > p {
+        color: var(--main-text-color);
+        transition: 200ms ease-out;
+        font-weight: 400;
+      }
+    }
 
     .filmName {
       font-size: 1.8rem;
     }
+  }
+}
 
+@media (min-width: $tablet) and (max-width: $desktop) {
+  .filmListShow {
+    height: 42vh !important;
+    width: 48vw;
   }
 }
 

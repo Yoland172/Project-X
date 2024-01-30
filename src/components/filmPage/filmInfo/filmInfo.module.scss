@@ -1,34 +1,46 @@
-.mainContainer {
-  display: flex;
-  width: 100%;
+@import "../../../styles/variables";
 
+.mainContainer {
+  width: 100%;
   box-sizing: border-box;
   overflow: hidden;
   margin-top: -6vh;
   position: relative;
-  padding: 0 20vh ;
+  padding: 0 20vh;
 
-  .filmPosterContainer {
-    // styles for skeleton
-    .loadingImage {
-      width: 15vw;
-      height: 41vh;
-      border-radius: 15px;
-      background-color: #3f3f3f;
+  .mainInfoContainer {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 120px 324px 1fr;
+    height: fit-content;
+    row-gap: 10px;
+    column-gap: 30px;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .filmPosterContainer {
+      grid-area: 1 / 1 / 3 / 2;
 
-      svg rect {
-        fill: var(--golden);
+      & > img {
+        width: 300px;
+        height: 444px;
+      }
+      // styles for skeleton
+      .loadingImage {
+        width: 15vw;
+        height: 41vh;
+        border-radius: 15px;
+        background-color: #3f3f3f;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg rect {
+          fill: var(--golden);
+        }
       }
     }
-
     .ratingList {
-      display: grid;
-      row-gap: 25px;
-      padding-top: 40px;
+      grid-area: 3 / 1 / 4 / 2;
 
       .ratingItem {
         .iconWithRating {
@@ -57,24 +69,23 @@
         }
       }
     }
-  }
-
-  .filmInfoContainer {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 7vh 0 2vh 3vw;
 
     .title {
+      grid-area: 1 / 2 / 2 / 3;
+      justify-content: start;
       width: 50vw;
       color: var(--light-grey);
       font-size: 3.8em;
+      padding-top: 50px;
     }
-
     .addInfo {
-      width: 30vw;
-      padding: 50px 0 0 7vw;
-      display: grid;
-      row-gap: 20px;
+      grid-area: 2 / 2 / 3 / 3;
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+      box-sizing: border-box;
+      padding-left: 4vw;
+      padding-top: 80px;
 
       & > div > p {
         font-size: 24px;
@@ -92,65 +103,223 @@
         }
       }
     }
+    .plot {
+      padding-top: 20px;
+      width: 40vw;
+    }
+  }
 
+  .oscarAwardsContainer {
     display: grid;
-    row-gap: 20px;
+    grid-template-columns: 1fr 1fr 18fr;
 
-    .oscarAwardsContainer {
+    width: fit-content;
+    height: auto;
+    border: 2px solid var(--golden);
+    border-radius: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-left: 40px;
+
+    .oscarAwards {
+      background-color: var(--golden);
+      transform: rotate(20deg) scale(2.7);
+    }
+
+    .awardsText {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+
+      & > p {
+        text-align: center;
+        font-size: 1.3em;
+        color: var(--light-grey);
+      }
+    }
+  }
+
+  .addInfoContainer {
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 44px;
+    column-gap: 20px;
+
+    .directorsTest {
       display: grid;
-      grid-template-columns: 1fr 1fr 18fr;
-
-      width: fit-content;
-      height: auto;
-      border: 2px solid var(--golden);
-      border-radius: 12px;
-      box-sizing: border-box;
-      overflow: hidden;
-      margin-left: 40px;
-
-      .oscarAwards {
-        background-color: var(--golden);
-        transform: rotate(20deg) scale(2.7);
+      grid-template-columns: 1fr 200fr;
+      .verticalLine {
+        width: 4px;
+        height: 100%;
+        background: var(--grey);
+        border-radius: 15px;
       }
 
-      .awardsText {
-        padding: 20px;
+      .textContainer {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: end;
+        padding-left: 10px;
 
-        & > p {
-          text-align: center;
-          font-size: 1.3em;
+        & > h1 {
           color: var(--light-grey);
         }
       }
     }
+  }
+}
+
+@media (max-width: $tablet) {
+  .mainContainer {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 20px 0 10px;
+
+    .mainInfoContainer {
+      display: grid;
+      grid-template-columns: 38vw 1fr;
+      grid-template-rows: repeat(2, 30vw) 4fr;
+      row-gap: 8px;
+      column-gap: 10px;
+      .filmPosterContainer {
+        grid-area: 1 / 1 / 3 / 2;
+
+        & > img {
+          width: 38vw !important;
+          height: 60vw !important;
+        }
+        // styles for skeleton
+        .loadingImage {
+          width: 38vw;
+          height: 60vw;
+        }
+      }
+      .ratingList {
+        grid-area: 2 / 2 / 3 / 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        row-gap: 10px;
+        padding-bottom: 10px;
+
+        .ratingItem {
+          display: flex;
+          flex-direction: column;
+          & > h1 {
+            display: none;
+          }
+          .iconWithRating {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: solid var(--golden);
+            width: fit-content;
+            padding: 4px 6px 4px 4px;
+            border-width: 5px 1px 1px 1px;
+            border-radius: 6px;
+
+            & > img {
+              width: 25px;
+            }
+
+            & > p {
+              font-size: 1em;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .title {
+        grid-area: 1 / 2 / 2 / 3;
+        width: 100%;
+        font-size: 1.8em;
+        padding-top: 0;
+      }
+      .addInfo {
+        grid-area: 3 / 1 / 4 / 3;
+        row-gap: 5px;
+        padding-left: 10px;
+        padding-top: 0;
+
+        & > div > p {
+          font-size: 1.3em;
+          font-weight: 300;
+
+          & > span {
+            font-size: 0.9em;
+            font-weight: 400;
+          }
+        }
+        .plot {
+          & > p {
+            font-size: 1.25em;
+          }
+          padding-top: 10px;
+          width: 100%;
+        }
+      }
+    }
+
+    .oscarAwardsContainer {
+      display: block;
+      border-width: 13px 1px 1px 1px;
+      margin-left: 10px;
+    }
 
     .addInfoContainer {
-      padding: 40px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      row-gap: 44px;
-      column-gap: 20px;
+      padding: 10px 0 0 10px;
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 30px;
 
       .directorsTest {
         display: grid;
         grid-template-columns: 1fr 200fr;
-        .verticalLine {
-          width: 4px;
-          height: 100%;
-          background: var(--grey);
-          border-radius: 15px;
-        }
 
-        .textContainer {
-          display: flex;
-          flex-direction: column;
-          justify-content: end;
-          padding-left: 10px;
+        h1 {
+          color: var(--light-grey);
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet) and (max-width: $desktop) {
+  .mainContainer {
+    width: 100%;
+    padding: 0 20px;
+
+    .mainInfoContainer {
+      .title {
+        width: 100%;
+        font-size: 2.3em;
+        padding-top: 85px;
+      }
+      .addInfo {
+        row-gap: 8px;
+        box-sizing: border-box;
+        padding-left: 0;
+        padding-top: 70px;
+      }
+
+      .ratingList {
+        .ratingItem {
+          .iconWithRating {
+            & > p {
+              font-size: 1.8em;
+
+              & > span {
+                font-size: 0.8em;
+              }
+            }
+          }
 
           & > h1 {
-            color: var(--light-grey);
+            font-size: 1.8em;
           }
         }
       }

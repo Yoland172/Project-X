@@ -3,6 +3,7 @@ import VideoHeader from "./videoHeader/VideoHeader";
 import Footer from "../footer/Footer";
 
 const FilmPage = () => {
+
   return (
     <>
       <VideoHeader />

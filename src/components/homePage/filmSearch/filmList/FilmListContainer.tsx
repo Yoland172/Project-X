@@ -29,6 +29,10 @@ const FilmListContainer = ({
 
   const { currentPage, setNextPage, setPreviousPage } = usePagination(1);
 
+  useEffect(() => {
+    filmList.length === 0 && setCurrentImage("");
+  }, [filmList]);
+
   const pageNavigate = (
     page: number,
     paginationCondition: () => boolean,
