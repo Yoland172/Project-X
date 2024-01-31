@@ -28,48 +28,6 @@ const FilmList = ({
   prevPage,
   pageNumber,
 }: FilmListProps) => {
-<<<<<<< HEAD
-=======
-
-  const renderFilmList = () => {
-    if (isFetching)
-      return <FilmListSkeleton />;
-    
-    if (filmList) 
-    return (filmList.map((el: FilmItemMainPage, index: number) => {
-      return (
-        <div
-          key={el.imdbID}
-          className={styles.filmInfoContainer}
-          onMouseEnter={() => {
-            setCurrentImage(el.Poster);
-          }}
-          onMouseLeave={() => {
-            removeCurrentImage();
-          }}
-        >
-          <Link to={`/film/${el.imdbID}`}>
-            <div className={styles.filmName}>
-              <p title={el.Title}>
-                {el.Title.length > 30
-                  ? `${el.Title.substring(0, 25)}...`
-                  : el.Title}
-              </p>
-            </div>
-          </Link>
-          <div className={styles.addInfo}>
-            <p>{el.Year}</p>
-
-            <p>{el.Type}</p>
-          </div>
-        </div>
-      );
-    }));
-
-    return null;
-  }
-
->>>>>>> d187e513d9b08d9f5e81910fa4374b7c1757a107
   return (
     <div
       className={
@@ -92,7 +50,6 @@ const FilmList = ({
               : styles.filmListRemove
           }
         >
-<<<<<<< HEAD
           {isFetching ? (
             <FilmListSkeleton />
           ) : filmList ? (
@@ -128,9 +85,6 @@ const FilmList = ({
           ) : (
             <></>
           )}
-=======
-        {renderFilmList()}
->>>>>>> d187e513d9b08d9f5e81910fa4374b7c1757a107
         </div>
         {filmsCount > 0 && (
           <div className={styles.navContainer}>
