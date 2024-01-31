@@ -35,7 +35,7 @@
         align-items: center;
 
         svg rect {
-          fill: var(--golden);
+          fill: $golden;
         }
       }
     }
@@ -54,7 +54,7 @@
           }
 
           & > p {
-            color: var(--light-grey);
+            color: $light-grey;
             font-size: 2.2em;
             font-weight: 700;
 
@@ -65,7 +65,7 @@
         }
 
         & > h1 {
-          color: var(--light-grey);
+          color: $light-grey;
         }
       }
     }
@@ -74,7 +74,7 @@
       grid-area: 1 / 2 / 2 / 3;
       justify-content: start;
       width: 50vw;
-      color: var(--light-grey);
+      color: $light-grey;
       font-size: 3.8em;
       padding-top: 50px;
     }
@@ -94,7 +94,7 @@
         line-height: normal;
 
         & > span {
-          color: var(--light-grey);
+          color: $light-grey;
           font-size: 24px;
           font-style: normal;
           font-weight: 700;
@@ -115,14 +115,14 @@
 
     width: fit-content;
     height: auto;
-    border: 2px solid var(--golden);
+    border: 2px solid $golden;
     border-radius: 12px;
     box-sizing: border-box;
     overflow: hidden;
     margin-left: 40px;
 
     .oscarAwards {
-      background-color: var(--golden);
+      background-color: $golden;
       transform: rotate(20deg) scale(2.7);
     }
 
@@ -134,7 +134,7 @@
       & > p {
         text-align: center;
         font-size: 1.3em;
-        color: var(--light-grey);
+        color: $light-grey;
       }
     }
   }
@@ -152,7 +152,7 @@
       .verticalLine {
         width: 4px;
         height: 100%;
-        background: var(--grey);
+        background: $grey;
         border-radius: 15px;
       }
 
@@ -163,7 +163,7 @@
         padding-left: 10px;
 
         & > h1 {
-          color: var(--light-grey);
+          color: $light-grey;
         }
       }
     }
@@ -214,7 +214,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            border: solid var(--golden);
+            border: solid $golden;
             width: fit-content;
             padding: 4px 6px 4px 4px;
             border-width: 5px 1px 1px 1px;
@@ -280,7 +280,7 @@
         grid-template-columns: 1fr 200fr;
 
         h1 {
-          color: var(--light-grey);
+          color: $light-grey;
           font-size: 1.5em;
         }
       }

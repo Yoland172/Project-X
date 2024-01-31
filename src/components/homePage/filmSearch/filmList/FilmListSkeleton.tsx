@@ -1,4 +1,4 @@
-import Skeleton from "../../../ui/Skeleton/Skeleton";
+import Skeleton from "../../../UI/Skeleton/Skeleton";
 import styles from "./filmList.module.scss";
 
 const FilmListSkeleton = () => {

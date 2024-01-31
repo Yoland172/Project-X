@@ -82,19 +82,19 @@
         }
 
         & > svg {
-          fill: var(--main-text-color);
+          fill: $main-text-color;
           transition: 250ms;
         }
 
         &:hover {
           & > svg {
-            fill: var(--golden);
+            fill: $golden;
             transition: 250ms;
             transform: scale(1.1);
           }
 
           & > p {
-            color: var(--golden);
+            color: $golden;
             transition: 250ms;
             transform: scale(1.1);
           }
@@ -118,19 +118,19 @@
     transition: 200ms ease-out;
 
     .filmName > p {
-      color: var(--light-grey);
+      color: $light-grey;
       transition: 200ms ease-out;
     }
 
     .addInfo > p {
-      color: var(--light-grey);
+      color: $light-grey;
       transition: 200ms ease-out;
       font-weight: 600;
     }
   }
 
   .filmName {
-    color: var(--main-text-color);
+    color: $main-text-color;
     letter-spacing: 2px;
     font-size: 2.4rem;
     font-weight: 500;
@@ -206,11 +206,11 @@
       transform: scale(1);
 
       .filmName > p {
-        color: var(--main-text-color);
+        color: $main-text-color;
       }
 
       .addInfo > p {
-        color: var(--main-text-color);
+        color: $main-text-color;
         transition: 200ms ease-out;
         font-weight: 400;
       }

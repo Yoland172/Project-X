@@ -27,16 +27,16 @@
     align-items: center;
     transition: 250ms ease-in-out;
     & > p {
-      color: var(--light-grey);
+      color: $light-grey;
     }
 
     & > svg {
-      fill: var(--light-grey);
+      fill: $light-grey;
     }
 
     &:hover {
       transform: scale(1.2);
-      color: var(--golden);
+      color: $golden;
       transition: 250ms ease-in-out;
     }
   }
@@ -56,7 +56,7 @@
       align-items: center;
       transition: 250ms ease-in-out;
       & > p {
-        color: var(--light-grey);
+        color: $light-grey;
       }
 
       & > svg {

@@ -92,7 +92,7 @@
 
   .button__bar li button {
     border: none;
-    background: var(--light-grey);
+    background: $light-grey;
     color: transparent;
     cursor: pointer;
     display: block;
@@ -103,17 +103,17 @@
   }
 
   .button__bar :global(li.slick-active) button {
-    background-color: var(--hot-yellow);
+    background-color: $hot-yellow;
   }
 
   .bigMainText {
-    color: var(--light-grey);
+    color: $light-grey;
     padding: 10px 0 40px 40px;
     font-size: 4vw;
     letter-spacing: 4px;
     font-weight: 550;
     & > span {
-      color: var(--golden);
+      color: $golden;
     }
   }
 

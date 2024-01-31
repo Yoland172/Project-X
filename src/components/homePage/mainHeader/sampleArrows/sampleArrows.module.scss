@@ -13,12 +13,12 @@
 
   & > p {
     font-size: 1.7em;
-    color: var(--light-grey);
+    color: $light-grey;
     transition: all 250ms;
   }
 
   & > svg {
-    fill: var(--light-grey);
+    fill: $light-grey;
     transition: all 250ms;
   }
   &:hover {
@@ -26,11 +26,11 @@
     transition: 250ms ease-in-out;
 
     p {
-      color: var(--golden);
+      color: $golden;
     }
 
     svg {
-      fill: var(--golden);
+      fill: $golden;
     }
   }
 }

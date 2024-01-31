@@ -13,7 +13,7 @@
     padding: 0 40px 40px;
     box-sizing: border-box;
     margin-top: -4px;
-    background-color: var(--golden);
+    background-color: $golden;
     display: grid;
     grid-template-columns: 5fr 9fr 2fr;
 
@@ -21,7 +21,7 @@
       width: min-content;
 
       & > h1 {
-        color: var(--black);
+        color: $black;
         font-size: 8em;
         font-weight: 700;
       }
@@ -47,7 +47,7 @@
         & > h1 {
           font-weight: 700;
           font-size: 2.1em;
-          color: var(--black);
+          color: $black;
         }
 
         & > p {
@@ -55,7 +55,7 @@
           position: relative;
           font-weight: 300;
           font-size: 1.4em;
-          color: var(--black);
+          color: $black;
           cursor: pointer;
           font-family: "Montserrat", sans-serif;
 
@@ -68,7 +68,7 @@
             bottom: -3px;
             width: 0;
             height: 1px;
-            background-color: var(--grey);
+            background-color: $grey;
             transition: width 0.5s;
           }
 
@@ -80,7 +80,7 @@
             left: 0;
             bottom: -3px;
             height: 1px;
-            background-color: var(--grey);
+            background-color: $grey;
             transition: width 0.5s;
           }
         }
@@ -90,7 +90,7 @@
           position: relative;
           font-weight: 300;
           font-size: 1.4em;
-          color: var(--black);
+          color: $black;
           font-family: "Montserrat", sans-serif;
         }
       }
@@ -104,7 +104,7 @@
       & > h1 {
         font-weight: 500;
         font-size: 2.4em;
-        color: var(--black);
+        color: $black;
       }
 
       .socialsIconsContainer {
@@ -114,7 +114,7 @@
         row-gap: 20px;
         cursor: pointer;
         & > svg {
-          fill: var(--black);
+          fill: $black;
           transition: 250ms ease-in-out;
 
           &:hover {
