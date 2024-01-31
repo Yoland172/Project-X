@@ -16,8 +16,8 @@ const SearchContainer = ({
   setFilmsCount,
   setIsFetching,
 }: SerachContainerProp) => {
-  const { searchText, setSearchText } = useContext(SearchContext);
 
+  const { searchText, setSearchText } = useContext(SearchContext);
   const { resetPageState } = usePagination(1);
 
   useEffect(() => {

@@ -1,3 +1,5 @@
+@import "../../../../styles/variables";
+
 .searchBar {
   width: 300px;
 }
@@ -6,6 +8,21 @@
   width: 100%;
   padding: 50px 40px;
   box-sizing: border-box;
+}
+
+@media (max-width:$tablet) {
+  .searchBarContainer {
+    display: flex;
+    padding: 0 20px;
+    justify-content: center;
+  }
+}
+
+@media (max-width:$desktop) {
+  .searchBarContainer{
+    display: flex;
+    justify-content: center;
+  }
 }
 
 // gradient animation
@@ -19,9 +36,11 @@
   }
 }
 
+
 .webflowStyleInput {
   position: relative;
   display: flex;
+
   width: 100%;
   max-width: 400px;
   border-radius: 2px;
@@ -37,7 +56,7 @@
     z-index: 999;
     height: 3px;
     background-position: 0% 0%;
-    background: var(--golden);
+    background: $golden;
     background-size: 500% auto;
   }
 
@@ -64,12 +83,12 @@
     cursor: pointer;
 
     & > svg {
-      fill: var(--light-grey);
+      fill: $light-grey;
       transition: 300ms ease-in-out;
       transform: rotate(0deg);
 
       &:hover {
-        fill: var(--golden);
+        fill: $golden;
         transform: rotate(360deg);
         transition: 300ms;
       }

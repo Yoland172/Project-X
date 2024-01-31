@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .header {
   width: 100%;
   height: 55vh;
@@ -24,14 +26,58 @@
     display: flex;
     align-items: center;
     transition: 250ms ease-in-out;
+    
     & > p {
-      color: var(--light-grey);
+      color: $light-grey;
+    }
+
+    & > svg {
+      fill: $light-grey;
     }
 
     &:hover {
       transform: scale(1.2);
-      color: var(--golden);
+      color: $golden;
       transition: 250ms ease-in-out;
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .header {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+
+    .backArrowContainer {
+      top: 20px;
+      left: 20px;
+      column-gap: 10px;
+      display: flex;
+      align-items: center;
+      transition: 250ms ease-in-out;
+      & > p {
+        color: $light-grey;
+      }
+
+      & > svg {
+        width: 45px ;
+        height: 45px ;
+      }
+    }
+  }
+}
+
+@media (min-width:$tablet) and (max-width:$desktop) {
+  .backArrowContainer {
+    top: 30px;
+    left: 20px; 
+    &>svg{
+      width: 55px;
+      height: 55px;
+    }
+    & > p {
+      font-size: 1.3em;
     }
   }
 }

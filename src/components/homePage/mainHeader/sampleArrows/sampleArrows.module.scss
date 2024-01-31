@@ -1,43 +1,56 @@
-.nextArrow {
+@import "../../../../styles/variables";
+
+@mixin navigateArrow {
   display: flex;
   align-items: center;
   column-gap: 9px;
   position: absolute !important;
   bottom: 40px;
   font-weight: 400;
-  right: 100px;
   z-index: 1;
   cursor: pointer;
   transition: 250ms;
 
   & > p {
     font-size: 1.7em;
-    color: var(--light-grey);
+    color: $light-grey;
+    transition: all 250ms;
+  }
+
+  & > svg {
+    fill: $light-grey;
+    transition: all 250ms;
   }
   &:hover {
     transform: scale(1.15);
     transition: 250ms ease-in-out;
+
+    p {
+      color: $golden;
+    }
+
+    svg {
+      fill: $golden;
+    }
   }
 }
 
-.prevArrow {
-  display: flex;
-  align-items: center;
-  column-gap: 9px;
-  position: absolute !important;
-  bottom: 40px;
-  font-weight: 400;
-  left: 100px;
-  z-index: 1;
-  cursor: pointer;
-  transition: 250ms;
+.nextArrow {
+  @include navigateArrow;
+  right: 100px;
+}
 
-  & > p {
-    font-size: 1.7em;
-    color: var(--light-grey);
+.prevArrow {
+  @include navigateArrow;
+  left: 100px;
+}
+
+@media (max-width: $tablet) {
+  .nextArrow {
+    display: none;
   }
-  &:hover {
-    transform: scale(1.15);
-    transition: 250ms ease-in-out;
+
+  .prevArrow {
+    display: none;
   }
 }

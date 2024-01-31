@@ -28,19 +28,23 @@ const FilmList = ({
   prevPage,
   pageNumber,
 }: FilmListProps) => {
-
   return (
-    <div className={filmList.length !== 0 ? styles.mainFilmListContainer : styles.mainFilmListContainerHide}>
+    <div
+      className={
+        filmList.length !== 0
+          ? styles.mainFilmListContainer
+          : styles.mainFilmListContainerHide
+      }
+    >
       <div className={styles.imageContainer}>
         <img
           alt="filmImage"
-          src={currentImage !=="N/A" ? currentImage : notFoundImage}
+          src={currentImage !== "N/A" ? currentImage : notFoundImage}
           className={currentImage ? styles.imageFilmOn : styles.imageFilmOff}
         />
       </div>
       <div className={styles.filmListContainer}>
-        <div
-          className={
+        <div className={
             (filmList && filmList.length !== 0) || isFetching
               ? styles.filmListShow
               : styles.filmListRemove
@@ -64,7 +68,7 @@ const FilmList = ({
                   <Link to={`/film/${el.imdbID}`}>
                     <div className={styles.filmName}>
                       <p title={el.Title}>
-                        {el.Title.length > 30
+                        {el.Title.length > 26
                           ? `${el.Title.substring(0, 25)}...`
                           : el.Title}
                       </p>
@@ -82,7 +86,7 @@ const FilmList = ({
             <></>
           )}
         </div>
-        {filmsCount > 0 ? (
+        {filmsCount > 0 && (
           <div className={styles.navContainer}>
             <p className={styles.pageInfo}>All items : {filmsCount}</p>
             <div className={styles.navArrowContainer}>
@@ -94,12 +98,7 @@ const FilmList = ({
                     : filmsCount
                 }`}</p>
               </button>
-              <button
-                className={styles.arrow}
-                onClick={() => {
-                  nextPage();
-                }}
-              >
+              <button className={styles.arrow} onClick={nextPage} >
                 <p>
                   {filmsCount > 10 && filmsCount - pageNumber * 10 > 0
                     ? filmsCount - pageNumber * 10
@@ -109,8 +108,6 @@ const FilmList = ({
               </button>
             </div>
           </div>
-        ) : (
-          <></>
         )}
       </div>
     </div>

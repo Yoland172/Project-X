@@ -24,6 +24,16 @@ const FilmInfoContainer = () => {
     }
   }, [id]);
 
+  useEffect(() => {
+    if (filmInfo?.Title) {
+      document.title = `Project X - ${filmInfo?.Title}`;
+    }
+
+    return () => {
+      document.title = `Project X - ${filmInfo?.Title}`;
+    };
+  }, [filmInfo]);
+
   return (
     <>
       {!isFetching ? (
