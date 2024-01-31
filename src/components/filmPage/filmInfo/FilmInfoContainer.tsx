@@ -24,6 +24,7 @@ const FilmInfoContainer = () => {
     }
   }, [id]);
 
+<<<<<<< HEAD
   useEffect(() => {
     if (filmInfo?.Title) {
       document.title = `Project X - ${filmInfo?.Title}`;
@@ -45,6 +46,9 @@ const FilmInfoContainer = () => {
       )}
     </>
   );
+=======
+  return isFetching ? <FilmInfoSkeleton /> : <FilmInfo filmInfo={filmInfo} />
+>>>>>>> d187e513d9b08d9f5e81910fa4374b7c1757a107
 };
 
 export default FilmInfoContainer;

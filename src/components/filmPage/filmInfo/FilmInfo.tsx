@@ -1,8 +1,9 @@
 import styles from "./filmInfo.module.scss";
-import SectionLine from "../../UI/SectionLine/SectionLine";
+import SectionLine from "../../ui/SectionLine/SectionLine";
 import { FilmItemInfoPage } from "../../../api/types";
 import imdbIcon from "../../../assets/img/IMDB_Logo_2016.svg.png";
 import metacritic from "../../../assets/img/Metacritic.svg";
+
 interface FilmInfoProps {
   filmInfo?: FilmItemInfoPage;
 }
@@ -33,6 +34,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               <div className={styles.ratingItem}>
                 <h1>METACRITIC:</h1>
                 <div className={styles.iconWithRating}>
+                  Í
                   <p>
                     {filmInfo?.Metascore} / <span>100</span>
                   </p>
@@ -45,14 +47,12 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
           </div>
           <h1 className={styles.title}>{filmInfo?.Title}</h1>
           <div className={styles.addInfo}>
-            {filmInfo?.Runtime && filmInfo?.Runtime !== "N/A" ? (
+            {filmInfo?.Runtime && filmInfo?.Runtime !== "N/A" && (
               <div className={styles.runtime}>
                 <p>
                   Runtime:<span>{filmInfo?.Runtime}</span>
                 </p>
               </div>
-            ) : (
-              <></>
             )}
 
             {filmInfo?.Genre && filmInfo?.Genre !== "N/A" ? (
@@ -73,21 +73,17 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
             ) : (
               <></>
             )}
-            {filmInfo?.Type && filmInfo?.Type !== "N/A" ? (
+            {filmInfo?.Type && filmInfo?.Type !== "N/A" && (
               <div className={styles.type}>
                 <p>
                   Type:<span>{filmInfo?.Type}</span>
                 </p>
               </div>
-            ) : (
-              <></>
             )}
-            {filmInfo?.Plot && filmInfo?.Plot !== "N/A" ? (
+            {filmInfo?.Plot && filmInfo?.Plot !== "N/A" && (
               <div className={styles.plot}>
                 <p>{filmInfo?.Plot}</p>
               </div>
-            ) : (
-              <></>
             )}
           </div>
         </div>

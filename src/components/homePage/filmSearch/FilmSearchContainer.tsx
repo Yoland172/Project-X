@@ -11,23 +11,15 @@ const FilmSearchContainer = () => {
   return (
     <>
       <SearchContainer
-        setFilmsCount={(filmsCount: number) => {
-          setFilmsCount(filmsCount);
-        }}
-        setIsFetching={(status: boolean) => {
-          setIsFetching(status);
-        }}
-        setFilmList={(filmList: FilmItemMainPage[]) => {
-          setFilmList(filmList);
-        }}
+        setFilmsCount={(filmsCount: number) => setFilmsCount(filmsCount)}
+        setIsFetching={(status: boolean) => setIsFetching(status)}
+        setFilmList={(filmList: FilmItemMainPage[]) => setFilmList(filmList)}
       />
       <FilmListContainer
         filmList={filmList}
         setFilmList={(filmList: FilmItemMainPage[]) => setFilmList(filmList)}
         isFetching={isFetching}
-        setIsFetching={(status: boolean) => {
-          setIsFetching(status);
-        }}
+        setIsFetching={(status: boolean) => setIsFetching(status)}
         filmsCount={filmsCount}
       />
     </>
