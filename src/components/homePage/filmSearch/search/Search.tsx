@@ -1,5 +1,5 @@
 import styles from "./search.module.scss";
-import SearchArrow from "../../../../assets/icon/SearchArrow";
+import SearchArrow from "../../../ui/icon/SearchArrow";
 import { useRef } from "react";
 
 interface searchProps {

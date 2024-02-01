@@ -11,6 +11,9 @@ interface FilmListContainerProp {
   isFetching: boolean;
   setIsFetching: (status: boolean) => void;
   filmsCount: number;
+  currentPage: number;
+  setNextPage: () => void;
+  setPreviousPage: () => void;
 }
 
 const FilmListContainer = ({
@@ -19,6 +22,9 @@ const FilmListContainer = ({
   isFetching,
   setIsFetching,
   filmsCount,
+  currentPage,
+  setNextPage,
+  setPreviousPage,
 }: FilmListContainerProp) => {
   const { searchText } = useContext(SearchContext);
 
@@ -27,11 +33,13 @@ const FilmListContainer = ({
   const checkIfHasNextPage = () => (currentPage + 0.1) * 10 - filmsCount <= 0;
   const checkIfHasPreviousPage = () => currentPage > 1;
 
-  const { currentPage, setNextPage, setPreviousPage } = usePagination(1);
-
   useEffect(() => {
     filmList.length === 0 && setCurrentImage("");
   }, [filmList]);
+
+  useEffect(() => {
+    console.log(currentPage);
+  }, [currentPage]);
 
   const pageNavigate = (
     page: number,
@@ -49,7 +57,7 @@ const FilmListContainer = ({
           setIsFetching(false);
           switch (res.Error) {
             case "Too many results.":
-              console.log("tutu");
+              console.log("error");
           }
         }
       });

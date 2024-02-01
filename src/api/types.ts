@@ -2,7 +2,7 @@ interface RatingItem {
     Source: string;
     Value: string;
   }
-  export interface FilmItemInfoPage {
+  export interface FilmItemInfo {
     Actors: string;
     Awards: string;
     BoxOffice: string;

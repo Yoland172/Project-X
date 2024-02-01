@@ -1,11 +1,10 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import FilmInfo from "../FilmInfo";
-import { FilmItemInfoPage } from "../../../../types/uiTypes";
-import exp from "constants";
+import { FilmItemInfoPage } from "../../../../api/types";
 
 describe("FilmInfo component", () => {
-  const filmInfo: FilmItemInfoPage = {
+  const filmInfo:  FilmItemInfoPage = {
     Title: "The Batman",
     Year: "2022",
     Rated: "PG-13",

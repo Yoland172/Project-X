@@ -1,11 +1,11 @@
 import styles from "./filmInfo.module.scss";
 import SectionLine from "../../ui/SectionLine/SectionLine";
-import { FilmItemInfoPage } from "../../../api/types";
+import { FilmItemInfo } from "../../../api/types";
 import imdbIcon from "../../../assets/img/IMDB_Logo_2016.svg.png";
 import metacritic from "../../../assets/img/Metacritic.svg";
 
 interface FilmInfoProps {
-  filmInfo?: FilmItemInfoPage;
+  filmInfo?: FilmItemInfo;
 }
 
 const FilmInfo = ({ filmInfo }: FilmInfoProps) => {

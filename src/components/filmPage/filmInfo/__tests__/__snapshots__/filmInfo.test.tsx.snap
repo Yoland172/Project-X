@@ -5,12 +5,16 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
   className="mainContainer"
 >
   <div
-    className="filmPosterContainer"
+    className="mainInfoContainer"
   >
-    <img
-      alt="FilmPoster"
-      src="https://m.media-amazon.com/images/M/MV5BM2MyNTAwZGEtNTAxNC00ODVjLTgzZjUtYmU0YjAzNmQyZDEwXkEyXkFqcGdeQXVyNDc2NTg3NzA@._V1_SX300.jpg"
-    />
+    <div
+      className="filmPosterContainer"
+    >
+      <img
+        alt="FilmPoster"
+        src="https://m.media-amazon.com/images/M/MV5BM2MyNTAwZGEtNTAxNC00ODVjLTgzZjUtYmU0YjAzNmQyZDEwXkEyXkFqcGdeQXVyNDc2NTg3NzA@._V1_SX300.jpg"
+      />
+    </div>
     <div
       className="ratingList"
     >
@@ -60,10 +64,6 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
         </div>
       </div>
     </div>
-  </div>
-  <div
-    className="filmInfoContainer"
-  >
     <h1
       className="title"
     >
@@ -120,129 +120,129 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
         </p>
       </div>
     </div>
+  </div>
+  <div
+    className="line"
+  />
+  <div
+    className="oscarAwardsContainer"
+  >
     <div
-      className="line"
+      className="oscarAwards"
     />
+    <div />
     <div
-      className="oscarAwardsContainer"
+      className="awardsText"
+    >
+      <p>
+        Nominated for 3 Oscars. 35 wins & 165 nominations total
+      </p>
+    </div>
+  </div>
+  <div
+    className="addInfoContainer"
+  >
+    <div
+      className="directorsTest"
     >
       <div
-        className="oscarAwards"
+        className="verticalLine"
       />
-      <div />
       <div
-        className="awardsText"
+        className="textContainer"
       >
+        <h1>
+          Matt Reeves
+        </h1>
         <p>
-          Nominated for 3 Oscars. 35 wins & 165 nominations total
+          Director
         </p>
       </div>
     </div>
     <div
-      className="addInfoContainer"
+      className="directorsTest"
     >
       <div
-        className="directorsTest"
-      >
-        <div
-          className="verticalLine"
-        />
-        <div
-          className="textContainer"
-        >
-          <h1>
-            Matt Reeves
-          </h1>
-          <p>
-            Director
-          </p>
-        </div>
-      </div>
+        className="verticalLine"
+      />
       <div
-        className="directorsTest"
+        className="textContainer"
       >
-        <div
-          className="verticalLine"
-        />
-        <div
-          className="textContainer"
-        >
-          <h1>
-            PG-13
-          </h1>
-          <p>
-            Rated
-          </p>
-        </div>
+        <h1>
+          PG-13
+        </h1>
+        <p>
+          Rated
+        </p>
       </div>
+    </div>
+    <div
+      className="directorsTest"
+    >
       <div
-        className="directorsTest"
+        className="verticalLine"
+      />
+      <div
+        className="textContainer"
       >
-        <div
-          className="verticalLine"
-        />
-        <div
-          className="textContainer"
-        >
-          <h1>
-            English, Spanish, Latin, Italian
-          </h1>
-          <p>
-            Language
-          </p>
-        </div>
+        <h1>
+          English, Spanish, Latin, Italian
+        </h1>
+        <p>
+          Language
+        </p>
       </div>
+    </div>
+    <div
+      className="directorsTest"
+    >
       <div
-        className="directorsTest"
+        className="verticalLine"
+      />
+      <div
+        className="textContainer"
       >
-        <div
-          className="verticalLine"
-        />
-        <div
-          className="textContainer"
-        >
-          <h1>
-            04 Mar 2022
-          </h1>
-          <p>
-            Released
-          </p>
-        </div>
+        <h1>
+          04 Mar 2022
+        </h1>
+        <p>
+          Released
+        </p>
       </div>
+    </div>
+    <div
+      className="directorsTest"
+    >
       <div
-        className="directorsTest"
+        className="verticalLine"
+      />
+      <div
+        className="textContainer"
       >
-        <div
-          className="verticalLine"
-        />
-        <div
-          className="textContainer"
-        >
-          <h1>
-            United States
-          </h1>
-          <p>
-            Country
-          </p>
-        </div>
+        <h1>
+          United States
+        </h1>
+        <p>
+          Country
+        </p>
       </div>
+    </div>
+    <div
+      className="directorsTest"
+    >
       <div
-        className="directorsTest"
+        className="verticalLine"
+      />
+       
+      <div
+        className="textContainer"
       >
-        <div
-          className="verticalLine"
-        />
-         
-        <div
-          className="textContainer"
-        >
-          <h1>
-            $369,345,583
-          </h1>
-          <p>
-            Box Office
-          </p>
-        </div>
+        <h1>
+          $369,345,583
+        </h1>
+        <p>
+          Box Office
+        </p>
       </div>
     </div>
   </div>

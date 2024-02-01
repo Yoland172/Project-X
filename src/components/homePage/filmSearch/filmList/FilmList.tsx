@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import styles from "./filmList.module.scss";
 import { FilmItemMainPage } from "../../../../types/uiTypes";
 import FilmListSkeleton from "./FilmListSkeleton";
-import RightArrow from "../../../../assets/icon/rightArrow";
-import LeftArrow from "../../../../assets/icon/leftArrow";
+import RightArrow from "../../../ui/icon/rightArrow";
+import LeftArrow from "../../../ui/icon/leftArrow";
 import notFoundImage from "../../../../assets/img/imageNotFound2.png";
 
 interface FilmListProps {
@@ -28,6 +28,23 @@ const FilmList = ({
   prevPage,
   pageNumber,
 }: FilmListProps) => {
+  const prevPageCountInfo = (pageNumber: number, filmsCount: number) => {
+    const filmElementsCountFrom = (pageNumber + 0.1) * 10 - 10;
+    const filmElementsCountTo =
+      Math.abs((pageNumber + 0.1) * 10 - 10 - filmsCount) >= 10
+        ? pageNumber * 10
+        : filmsCount;
+
+    return `${filmElementsCountFrom}-${filmElementsCountTo}`;
+  };
+  const nextPageCountInfo = (pageNumber: number, filmsCount: number) => {
+    return `${
+      filmsCount > 10 && filmsCount - pageNumber * 10 > 0
+        ? filmsCount - pageNumber * 10
+        : 0
+    }`;
+  };
+
   return (
     <div
       className={
@@ -44,7 +61,8 @@ const FilmList = ({
         />
       </div>
       <div className={styles.filmListContainer}>
-        <div className={
+        <div
+          className={
             (filmList && filmList.length !== 0) || isFetching
               ? styles.filmListShow
               : styles.filmListRemove
@@ -92,18 +110,10 @@ const FilmList = ({
             <div className={styles.navArrowContainer}>
               <button className={styles.arrow} onClick={prevPage}>
                 <LeftArrow width={50} height={50} />
-                <p>{`${(pageNumber + 0.1) * 10 - 10}-${
-                  Math.abs((pageNumber + 0.1) * 10 - 10 - filmsCount) >= 10
-                    ? pageNumber * 10
-                    : filmsCount
-                }`}</p>
+                <p>{prevPageCountInfo(pageNumber, filmsCount)}</p>
               </button>
-              <button className={styles.arrow} onClick={nextPage} >
-                <p>
-                  {filmsCount > 10 && filmsCount - pageNumber * 10 > 0
-                    ? filmsCount - pageNumber * 10
-                    : 0}
-                </p>
+              <button className={styles.arrow} onClick={nextPage}>
+                <p>{nextPageCountInfo(pageNumber,filmsCount)}</p>
                 <RightArrow width={50} height={50} />
               </button>
             </div>
