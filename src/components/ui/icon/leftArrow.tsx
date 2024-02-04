@@ -1,4 +1,4 @@
-import { IconProp } from "../../types/uiTypes";
+import { IconProp } from "../../../types/uiTypes";
 
 const LeftArrow = ({ width, height }: IconProp) => {
   return (

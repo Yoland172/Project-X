@@ -9,16 +9,16 @@ interface SerachContainerProp {
   setFilmList: (filmList: FilmItemMainPage[]) => void;
   setFilmsCount: (filmsCounet: number) => void;
   setIsFetching: (status: boolean) => void;
+  resetPageState: () => void;
 }
 
 const SearchContainer = ({
   setFilmList,
   setFilmsCount,
   setIsFetching,
+  resetPageState,
 }: SerachContainerProp) => {
-
   const { searchText, setSearchText } = useContext(SearchContext);
-  const { resetPageState } = usePagination(1);
 
   useEffect(() => {
     tryFindFilmBySearch();
@@ -40,7 +40,7 @@ const SearchContainer = ({
         if (setIsFetching) setIsFetching(false);
         switch (res.Error) {
           case "Too many results.":
-            console.log("tutu");
+            console.log("error");
         }
       }
     });

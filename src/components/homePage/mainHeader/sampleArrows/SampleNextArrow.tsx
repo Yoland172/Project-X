@@ -1,5 +1,5 @@
 import { SampleArrowProp } from "../../../../api/types";
-import RightLongArrow from "../../../../assets/icon/rightLongArrow";
+import RightLongArrow from "../../../ui/icon/rightLongArrow";
 import styles from "./sampleArrows.module.scss";
 
 export const SampleNextArrow = ({ onClick }: SampleArrowProp) => {

@@ -1,9 +1,9 @@
 import styles from "./footer.module.scss";
 import transitionImg from "../../assets/img/layered-waves-haikei (2).png";
-import FacebookIcon from "../../assets/icon/socialMedia/FacebookIcon";
-import InstagramIcon from "../../assets/icon/socialMedia/InstagramIcon";
-import TwitterIcon from "../../assets/icon/socialMedia/TwitterIcon";
-import TelegramIcon from "../../assets/icon/socialMedia/TelegramIcon";
+import FacebookIcon from "../ui/icon/socialMedia/FacebookIcon";
+import InstagramIcon from "../ui/icon/socialMedia/InstagramIcon";
+import TwitterIcon from "../ui/icon/socialMedia/TwitterIcon";
+import TelegramIcon from "../ui/icon/socialMedia/TelegramIcon";
 
 const Footer = () => {
   return (
