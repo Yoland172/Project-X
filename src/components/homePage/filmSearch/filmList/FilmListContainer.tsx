@@ -37,10 +37,6 @@ const FilmListContainer = ({
     filmList.length === 0 && setCurrentImage("");
   }, [filmList]);
 
-  useEffect(() => {
-    console.log(currentPage);
-  }, [currentPage]);
-
   const pageNavigate = (
     page: number,
     paginationCondition: () => boolean,
