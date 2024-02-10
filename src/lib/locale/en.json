@@ -1,0 +1,57 @@
+{
+  "translation": {
+    "homePage": {
+      "header": {
+        "arrowText": {
+          "prev": "Prev",
+          "next": "Next"
+        },
+        "bigText": {
+          "part1": "Explore",
+          "part2": " movies and series"
+        }
+      },
+      "body": {
+        "inputPlaceholder": "Search...",
+        "filmItemType": {
+          "movie": "movie",
+          "game": "game",
+          "series": "series"
+        },
+        "allItems": "All items"
+      }
+    },
+    "footer": {
+      "columnArticle": {
+        "legal": "Legal",
+        "explore": "Explore",
+        "getInTouch": "Get in touch",
+        "partners": "Partners",
+        "socials": "Socials"
+      },
+      "columnAddInfo": {
+        "terms": "Terms",
+        "privacy": "Privacy",
+        "home": "Home",
+        "about": "About",
+        "careers": "Careers"
+      }
+    },
+    "filmInfoPage": {
+      "filmMainInfo": {
+        "runtime": "Runtime",
+        "genre": "Genre",
+        "year": "Year",
+        "type": "Type"
+      },
+      "addInfo":{
+        "director":"Director",
+        "language":"Language",
+        "country":"Country",
+        "rated":"Rated",
+        "released":"Released",
+        "boxOffice":"Box Office"
+      }
+    }
+  }
+}

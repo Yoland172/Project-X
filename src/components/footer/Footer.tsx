@@ -4,8 +4,15 @@ import FacebookIcon from "../ui/icon/socialMedia/FacebookIcon";
 import InstagramIcon from "../ui/icon/socialMedia/InstagramIcon";
 import TwitterIcon from "../ui/icon/socialMedia/TwitterIcon";
 import TelegramIcon from "../ui/icon/socialMedia/TelegramIcon";
+import {useTranslation} from "react-i18next";
 
 const Footer = () => {
+  const {t, i18n} = useTranslation();
+  const languages = [
+      'ua',
+      'en'
+  ];
+
   return (
     <div className={styles.footerContainer}>
       <img src={transitionImg} alt="transitionImage" />
@@ -15,30 +22,30 @@ const Footer = () => {
         </div>
         <div className={styles.titlesContainer}>
           <div className={styles.section}>
-            <h1>Legal</h1>
-            <p>Terms</p>
-            <p>Privacy</p>
+            <h1>{t("footer.columnArticle.legal")}</h1>
+            <p>{t("footer.columnAddInfo.terms")}</p>
+            <p>{t("footer.columnAddInfo.privacy")}</p>
           </div>
           <div className={styles.section}>
-            <h1>Explore</h1>
-            <p>Home</p>
-            <p>About</p>
-            <p>Careers</p>
+            <h1>{t("footer.columnArticle.explore")}</h1>
+            <p>{t("footer.columnAddInfo.home")}</p>
+            <p>{t("footer.columnAddInfo.about")}</p>
+            <p>{t("footer.columnAddInfo.careers")}</p>
           </div>
           <div className={styles.section}>
-            <h1>Get in touch</h1>
+            <h1>{t("footer.columnArticle.getInTouch")}</h1>
             <h3>workMail@gmail.com</h3>
             <h3>949 735 4092</h3>
           </div>
           <div className={styles.section}>
-            <h1>Partners</h1>
+            <h1>{t("footer.columnArticle.partners")}</h1>
             <p>IMDB</p>
             <p>Metarcritic</p>
             <p>Rotten Tomatoes</p>
           </div>
         </div>
         <div className={styles.socialsContainer}>
-          <h1>Socials</h1>
+          <h1>{t("footer.columnArticle.socials")}</h1>
           <div className={styles.socialsIconsContainer}>
             <FacebookIcon width={30} height={30} />
             <InstagramIcon width={30} height={30} />
@@ -46,6 +53,10 @@ const Footer = () => {
             <TelegramIcon width={30} height={30} />
           </div>
         </div>
+      </div>
+      <div>
+        <div style={{color:'white'}}>Current language {i18n.language}</div>
+        {languages.map(lang => <button onClick={() => i18n.changeLanguage(lang)}>{lang}</button>)}
       </div>
     </div>
   );
