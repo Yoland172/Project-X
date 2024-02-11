@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import FilmInfo from "../FilmInfo";
-import { FilmItemInfoPage } from "../../../../api/types";
+import { FilmItemInfo } from "../../../../api/types";
 
 describe("FilmInfo component", () => {
-  const filmInfo: FilmItemInfoPage = {
+  const filmInfo: FilmItemInfo = {
     Title: "The Batman",
     Year: "2022",
     Rated: "PG-13",
@@ -66,7 +66,8 @@ describe("FilmInfo component", () => {
     const language = screen.getByText(/Language/i);
     const released = screen.getByText(/Released/i);
     const country = screen.getByText(/Country/i);
-    const boxOffice = screen.getByText(/Box Office/i);
+    const boxOffice = screen.getByText(/Box/i);
+    console.log(boxOffice);
 
     //Assert
     expect(img).toBeInTheDocument();

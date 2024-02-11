@@ -3,12 +3,14 @@ import SectionLine from "../../ui/SectionLine/SectionLine";
 import { FilmItemInfo } from "../../../api/types";
 import imdbIcon from "../../../assets/img/IMDB_Logo_2016.svg.png";
 import metacritic from "../../../assets/img/Metacritic.svg";
+import { useTranslation } from "react-i18next";
 
 interface FilmInfoProps {
   filmInfo?: FilmItemInfo;
 }
 
 const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
+  const {t} = useTranslation();
   return (
     <>
       <div className={styles.mainContainer}>
@@ -34,7 +36,6 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               <div className={styles.ratingItem}>
                 <h1>METACRITIC:</h1>
                 <div className={styles.iconWithRating}>
-                  Í
                   <p>
                     {filmInfo?.Metascore} / <span>100</span>
                   </p>
@@ -50,7 +51,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
             {filmInfo?.Runtime && filmInfo?.Runtime !== "N/A" && (
               <div className={styles.runtime}>
                 <p>
-                  Runtime:<span>{filmInfo?.Runtime}</span>
+                  {t("filmInfoPage.filmMainInfo.runtime")}:<span>{filmInfo?.Runtime}</span>
                 </p>
               </div>
             )}
@@ -58,7 +59,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
             {filmInfo?.Genre && filmInfo?.Genre !== "N/A" ? (
               <div className={styles.genre}>
                 <p>
-                  Genre:<span>{filmInfo?.Genre}</span>
+                {t("filmInfoPage.filmMainInfo.genre")}:<span>{filmInfo?.Genre}</span>
                 </p>
               </div>
             ) : (
@@ -67,7 +68,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
             {filmInfo?.Year && filmInfo?.Year !== "N/A" ? (
               <div className={styles.year}>
                 <p>
-                  Year:<span>{filmInfo?.Year}</span>
+                {t("filmInfoPage.filmMainInfo.year")}:<span>{filmInfo?.Year}</span>
                 </p>
               </div>
             ) : (
@@ -76,7 +77,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
             {filmInfo?.Type && filmInfo?.Type !== "N/A" && (
               <div className={styles.type}>
                 <p>
-                  Type:<span>{filmInfo?.Type}</span>
+                {t("filmInfoPage.filmMainInfo.type")}:<span>{filmInfo?.Type}</span>
                 </p>
               </div>
             )}
@@ -109,7 +110,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               <div className={styles.verticalLine}></div>
               <div className={styles.textContainer}>
                 <h1>{filmInfo?.Director}</h1>
-                <p>Director</p>
+                <p>{t("filmInfoPage.addInfo.director")}</p>
               </div>
             </div>
           ) : (
@@ -120,7 +121,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               <div className={styles.verticalLine}></div>
               <div className={styles.textContainer}>
                 <h1>{filmInfo?.Rated}</h1>
-                <p>Rated</p>
+                <p>{t("filmInfoPage.addInfo.rated")}</p>
               </div>
             </div>
           ) : (
@@ -131,7 +132,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               <div className={styles.verticalLine}></div>
               <div className={styles.textContainer}>
                 <h1>{filmInfo?.Language}</h1>
-                <p>Language</p>
+                <p>{t("filmInfoPage.addInfo.language")}</p>
               </div>
             </div>
           ) : (
@@ -142,7 +143,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               <div className={styles.verticalLine}></div>
               <div className={styles.textContainer}>
                 <h1>{filmInfo?.Released}</h1>
-                <p>Released</p>
+                <p>{t("filmInfoPage.addInfo.released")}</p>
               </div>
             </div>
           ) : (
@@ -153,7 +154,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               <div className={styles.verticalLine}></div>
               <div className={styles.textContainer}>
                 <h1>{filmInfo?.Country}</h1>
-                <p>Country</p>
+                <p>{t("filmInfoPage.addInfo.country")}</p>
               </div>
             </div>
           ) : (
@@ -165,7 +166,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               {/*make check for all blocks */}
               <div className={styles.textContainer}>
                 <h1>{filmInfo?.BoxOffice}</h1>
-                <p>Box Office</p>
+                <p>{t("filmInfoPage.addInfo.boxOffice")}</p>
               </div>
             </div>
           ) : (

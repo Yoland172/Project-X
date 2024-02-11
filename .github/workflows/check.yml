@@ -1,0 +1,11 @@
+on: push
+jobs: 
+    lint: 
+        runs-on: windows-latest
+        steps: 
+            - name: chekout
+              uses: actions/checkout@v4
+            - name: Install deps
+              run: npm ci
+            - name: Lint
+              run: npm run lint
