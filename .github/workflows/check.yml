@@ -1,11 +1,20 @@
 on: push
 jobs: 
     lint: 
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
         steps: 
-            - name: chekout
+            - name: Chekout
               uses: actions/checkout@v4
             - name: Install deps
               run: npm ci
             - name: Lint
               run: npm run lint
+    test:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Chekout
+              uses: actions/checkout@v4
+            - name: Install deps
+              run: npm ci
+            - name: Lint
+              run: npm run test
