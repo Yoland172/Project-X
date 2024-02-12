@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
-  const languages = ["ua", "en","es","es","es","es","es","es"];
+  const languages = ["ua", "en","es"];
 
   return (
     <div className={styles.footerContainer}>
