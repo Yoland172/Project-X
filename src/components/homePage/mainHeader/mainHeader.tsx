@@ -62,6 +62,7 @@ const MainHeader = () => {
           );
         })}
       </Slider>
+      <div>kek</div>
       <p className={styles.bigMainText}><span>{t('homePage.header.bigText.part1')}</span>{t('homePage.header.bigText.part2')}</p>
     </div>
   );
