@@ -1,0 +1,64 @@
+{
+  "translation": {
+    "homePage": {
+      "header": {
+        "arrowText": {
+          "prev": "Anterior",
+          "next": "Siguiente"
+        },
+        "bigText": {
+          "part1": "Explorar",
+          "part2": " películas y series"
+        }
+      },
+      "body": {
+        "inputPlaceholder": "Buscar...",
+        "filmItemType": {
+          "movie": "película",
+          "game": "juego",
+          "series": "serie"
+        },
+        "allItems": "Todos los elementos"
+      }
+    },
+    "footer": {
+        "enjoyIt": "DISFRÚTALA!",
+      "columnArticle": {
+        "legal": "Legal",
+        "explore": "Explorar",
+        "getInTouch": "Contacto",
+        "partners": "Socios",
+        "socials": "Redes"
+      },
+      "columnAddInfo": {
+        "terms": "Términos",
+        "privacy": "Privacidad",
+        "home": "Inicio",
+        "about": "Acerca de",
+        "careers": "Carreras"
+      },
+      "languagePreset": {
+        "chsLang": "Elige un idioma",
+        "ua": "Ucraniano",
+        "en": "Inglés",
+        "es": "Español"
+      }
+    },
+    "filmInfoPage": {
+      "filmMainInfo": {
+        "runtime": "Duración",
+        "genre": "Género",
+        "year": "Año",
+        "type": "Tipo"
+      },
+      "addInfo": {
+        "director": "Director",
+        "language": "Idioma",
+        "country": "País",
+        "rated": "Clasificación",
+        "released": "Fecha de estreno",
+        "boxOffice": "Taquilla"
+      }
+    }
+  }
+}

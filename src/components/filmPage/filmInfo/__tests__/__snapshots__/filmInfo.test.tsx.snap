@@ -49,7 +49,6 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
         <div
           className="iconWithRating"
         >
-          Í
           <p>
             72
              / 
@@ -76,7 +75,8 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
         className="runtime"
       >
         <p>
-          Runtime:
+          filmInfoPage.filmMainInfo.runtime
+          :
           <span>
             176 min
           </span>
@@ -86,7 +86,8 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
         className="genre"
       >
         <p>
-          Genre:
+          filmInfoPage.filmMainInfo.genre
+          :
           <span>
             Action, Crime, Drama
           </span>
@@ -96,7 +97,8 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
         className="year"
       >
         <p>
-          Year:
+          filmInfoPage.filmMainInfo.year
+          :
           <span>
             2022
           </span>
@@ -106,7 +108,8 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
         className="type"
       >
         <p>
-          Type:
+          filmInfoPage.filmMainInfo.type
+          :
           <span>
             movie
           </span>
@@ -155,7 +158,7 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
           Matt Reeves
         </h1>
         <p>
-          Director
+          filmInfoPage.addInfo.director
         </p>
       </div>
     </div>
@@ -172,7 +175,7 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
           PG-13
         </h1>
         <p>
-          Rated
+          filmInfoPage.addInfo.rated
         </p>
       </div>
     </div>
@@ -189,7 +192,7 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
           English, Spanish, Latin, Italian
         </h1>
         <p>
-          Language
+          filmInfoPage.addInfo.language
         </p>
       </div>
     </div>
@@ -206,7 +209,7 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
           04 Mar 2022
         </h1>
         <p>
-          Released
+          filmInfoPage.addInfo.released
         </p>
       </div>
     </div>
@@ -223,7 +226,7 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
           United States
         </h1>
         <p>
-          Country
+          filmInfoPage.addInfo.country
         </p>
       </div>
     </div>
@@ -241,7 +244,7 @@ exports[`FilmInfo component Component matches shapshot 1`] = `
           $369,345,583
         </h1>
         <p>
-          Box Office
+          filmInfoPage.addInfo.boxOffice
         </p>
       </div>
     </div>

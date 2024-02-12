@@ -1,0 +1,64 @@
+{
+  "translation": {
+    "homePage": {
+      "header": {
+        "arrowText": {
+          "prev": "Назад",
+          "next": "Вперед"
+        },
+        "bigText": {
+          "part1": "Досліджуй",
+          "part2": " фільми і серіали"
+        }
+      },
+      "body": {
+        "inputPlaceholder": "Пошук...",
+        "filmItemType": {
+          "movie": "фільм",
+          "game": "гра",
+          "series": "серіал"
+        },
+        "allItems": "Фільмів"
+      }
+    },
+    "footer": {
+      "enjoyIt": "НАСОЛОДЬСЯ!",
+      "columnArticle": {
+        "legal": "Права",
+        "explore": "Більше",
+        "getInTouch": "Контакти",
+        "partners": "Партнери",
+        "socials": "Зв'язок"
+      },
+      "columnAddInfo": {
+        "terms": "Умови",
+        "privacy": "Приватність",
+        "home": "Додому",
+        "about": "Про нас",
+        "careers": "Співпраця"
+      },
+      "languagePreset": {
+        "chsLang": "Оберіть мову",
+        "ua": "Українська",
+        "en": "Англійська",
+        "es": "Іспанська"
+      }
+    },
+    "filmInfoPage": {
+      "filmMainInfo": {
+        "runtime": "Тривалість",
+        "genre": "Жанр",
+        "year": "Дата випуску",
+        "type": "Тип"
+      },
+      "addInfo": {
+        "director": "Директор",
+        "language": "Мови",
+        "country": "Країна",
+        "rated": "Рейтинг",
+        "released": "Дата випуску",
+        "boxOffice": "Прибуток"
+      }
+    }
+  }
+}
