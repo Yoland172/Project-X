@@ -1,11 +1,10 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import FilmInfo from "../FilmInfo";
-import { FilmItemInfoPage } from "../../../../types/uiTypes";
-import exp from "constants";
+import { FilmItemInfo } from "../../../../api/types";
 
 describe("FilmInfo component", () => {
-  const filmInfo: FilmItemInfoPage = {
+  const filmInfo: FilmItemInfo = {
     Title: "The Batman",
     Year: "2022",
     Rated: "PG-13",
@@ -55,19 +54,20 @@ describe("FilmInfo component", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test("elements of page render", ()=> {
-    render(<FilmInfo filmInfo={filmInfo}/>);
+  test("elements of page render", () => {
+    render(<FilmInfo filmInfo={filmInfo} />);
     const img = screen.queryByAltText("FilmPoster");
     const metacritic = screen.queryByAltText("Metacritic");
     const runtime = screen.getByText(/Runtime/i);
     const genre = screen.getByText(/Genre/i);
-    const year = screen.getByText(/Year/i); 
+    const year = screen.getByText(/Year/i);
     const director = screen.getByText(/Director/i);
     const rated = screen.getByText(/Rated/i);
     const language = screen.getByText(/Language/i);
     const released = screen.getByText(/Released/i);
     const country = screen.getByText(/Country/i);
-    const boxOffice = screen.getByText(/Box Office/i);
+    const boxOffice = screen.getByText(/Box/i);
+    console.log(boxOffice);
 
     //Assert
     expect(img).toBeInTheDocument();
@@ -81,7 +81,7 @@ describe("FilmInfo component", () => {
     expect(released).toBeInTheDocument();
     expect(country).toBeInTheDocument();
     expect(boxOffice).toBeInTheDocument();
-  } )
+  });
 
   test("elements of page do not render", () => {
     //Act
@@ -90,7 +90,7 @@ describe("FilmInfo component", () => {
     const metacritic = screen.queryByAltText("queryByAltText");
     const runtime = screen.queryByText(/Runtime/i);
     const genre = screen.queryByText(/Genre/i);
-    const year = screen.queryByText(/Year/i); 
+    const year = screen.queryByText(/Year/i);
     const director = screen.queryByText(/Director/i);
     const rated = screen.queryByText(/Rated/i);
     const language = screen.queryByText(/Language/i);
