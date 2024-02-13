@@ -5,6 +5,7 @@ import { slides } from "./slides";
 import styles from "./mainHeader.module.scss";
 import SampleNextArrow from "./sampleArrows/SampleNextArrow";
 import SamplePrevArrow from "./sampleArrows/SamplePrevArrow";
+import {useTranslation} from "react-i18next";
 
 interface SettingForSlider {
   dots?: boolean;
@@ -38,6 +39,8 @@ const MainHeader = () => {
     prevArrow:<SamplePrevArrow/>
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className={styles.roundaboutContainer}>
       <Slider {...settingsForSlider}>
@@ -59,7 +62,7 @@ const MainHeader = () => {
           );
         })}
       </Slider>
-      <p className={styles.bigMainText}><span>Explore</span> movies and series</p>
+      <p className={styles.bigMainText}><span>{t('homePage.header.bigText.part1')}</span>{t('homePage.header.bigText.part2')}</p>
     </div>
   );
 }

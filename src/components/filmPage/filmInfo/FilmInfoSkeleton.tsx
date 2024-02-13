@@ -1,7 +1,7 @@
 import SectionLine from "../../ui/SectionLine/SectionLine";
 import Skeleton from "../../ui/Skeleton/Skeleton";
 import styles from "./filmInfo.module.scss";
-import LoadingIcon from "../../../assets/icon/LoadingIcon";
+import LoadingIcon from "../../ui/icon/LoadingIcon";
 
 const FilmInfoSkeleton = () => {
   return (

@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import FilmInfo from "./FilmInfo";
 import { getFilmInfo } from "../../../api/requests";
 import FilmInfoSkeleton from "./FilmInfoSkeleton";
-import { FilmItemInfoPage } from "../../../api/types";
+import { FilmItemInfo } from "../../../api/types";
 
 const FilmInfoContainer = () => {
   const { id } = useParams();
 
-  const [filmInfo, setFilmInfo] = useState<FilmItemInfoPage>();
+  const [filmInfo, setFilmInfo] = useState<FilmItemInfo>();
   const [isFetching, setIsFetching] = useState<boolean>(false);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -174,6 +174,7 @@ describe("FilmList Ccomponent tests", () => {
         />
       </BrowserRouter>
     );
+    //sdjlfnsuw
     const navArrows = screen.getAllByRole("button");
     fireEvent.click(navArrows[0]);
     fireEvent.click(navArrows[1]);
