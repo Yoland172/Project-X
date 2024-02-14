@@ -1,16 +1,16 @@
-name: Run test
+name: Deploy build
 
 on:
-  pull_request:
+  push:
     branches: [main]
-    
+
 jobs: 
-    test:
+    dedploy:
         runs-on: ubuntu-latest
         steps: 
             - name: Chekout
               uses: actions/checkout@v4
             - name: Install deps
               run: npm ci
-            - name: Test program
-              run: npm run test
+            - name: Deploy build
+              run: npm run deploy
