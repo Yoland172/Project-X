@@ -5,6 +5,7 @@ import FilmListSkeleton from "./FilmListSkeleton";
 import RightArrow from "../../../ui/icon/rightArrow";
 import LeftArrow from "../../../ui/icon/leftArrow";
 import notFoundImage from "../../../../assets/img/imageNotFound2.png";
+import classNames from "classnames";
 
 interface FilmListProps {
   filmList: FilmItemMainPage[];
@@ -16,6 +17,7 @@ interface FilmListProps {
   nextPage: () => void;
   prevPage: () => void;
   pageNumber: number;
+  theme:string
 }
 const FilmList = ({
   filmList,
@@ -27,6 +29,7 @@ const FilmList = ({
   nextPage,
   prevPage,
   pageNumber,
+  theme
 }: FilmListProps) => {
   const prevPageCountInfo = (pageNumber: number, filmsCount: number) => {
     const filmElementsCountFrom = (pageNumber + 0.1) * 10 - 10;
@@ -64,7 +67,7 @@ const FilmList = ({
         <div
           className={
             (filmList && filmList.length !== 0) || isFetching
-              ? styles.filmListShow
+              ? classNames(styles.filmListShow, theme && styles[theme])
               : styles.filmListRemove
           }
         >
@@ -75,7 +78,7 @@ const FilmList = ({
               return (
                 <div
                   key={el.imdbID}
-                  className={styles.filmInfoContainer}
+                  className={classNames(styles.filmInfoContainer, theme && styles[theme])}
                   onMouseEnter={() => {
                     setCurrentImage(el.Poster);
                   }}
@@ -106,13 +109,13 @@ const FilmList = ({
         </div>
         {filmsCount > 0 && (
           <div className={styles.navContainer}>
-            <p className={styles.pageInfo}>All items : {filmsCount}</p>
+            <p className={classNames(styles.pageInfo, theme && styles[theme])}>All items : {filmsCount}</p>
             <div className={styles.navArrowContainer}>
-              <button className={styles.arrow} onClick={prevPage}>
+              <button className={classNames(styles.arrow, theme && styles[theme])} onClick={prevPage}>
                 <LeftArrow width={50} height={50} />
                 <p>{prevPageCountInfo(pageNumber, filmsCount)}</p>
               </button>
-              <button className={styles.arrow} onClick={nextPage}>
+              <button className={classNames(styles.arrow, theme && styles[theme])} onClick={nextPage}>
                 <p>{nextPageCountInfo(pageNumber,filmsCount)}</p>
                 <RightArrow width={50} height={50} />
               </button>

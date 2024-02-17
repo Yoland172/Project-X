@@ -30,6 +30,7 @@ export interface FilmItemInfo {
   imdbVotes: string;
 }
 
-export interface SampleArrowProp {
+export interface SampleArrowProps {
   onClick?: () => void;
+  theme:string
 }

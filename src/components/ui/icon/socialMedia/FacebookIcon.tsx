@@ -1,6 +1,6 @@
-import { IconProp } from "../../../../types/uiTypes";
+import { IconProps } from "../../../../types/uiTypes";
 
-const FacebookIcon = ({ width, height }: IconProp) => {
+const FacebookIcon = ({ width, height }: IconProps) => {
   return (
     <svg fill="#000000" width={width} height={height} viewBox="0 0 1920 1920">
       <path

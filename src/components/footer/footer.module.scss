@@ -10,7 +10,7 @@
   .mainContainer {
     height: fit-content;
     width: 100%;
-    padding: 0 40px 40px;
+    padding: 0 40px 20px;
     box-sizing: border-box;
     margin-top: -4px;
     background-color: $golden;
@@ -26,6 +26,11 @@
           color: $black;
           font-size: 7em;
           font-weight: 700;
+          transition: color $fast-anim;
+        }
+
+        &.light > h1 {
+          color: $white !important;
         }
       }
 
@@ -50,6 +55,7 @@
             font-weight: 700;
             font-size: 2em;
             color: $black;
+            transition: color $fast-anim;
           }
 
           & > p {
@@ -60,6 +66,7 @@
             color: $black;
             cursor: pointer;
             font-family: "Montserrat", sans-serif;
+            transition: color $fast-anim;
 
             &::after {
               content: "";
@@ -94,6 +101,28 @@
             font-size: 1.2em;
             color: $black;
             font-family: "Montserrat", sans-serif;
+            transition: color $fast-anim;
+          }
+
+          &.light {
+            & > h1 {
+              color: $white;
+            }
+
+            & > p {
+              color: $white;
+
+              &::after {
+                background-color: $white;
+              }
+              &:hover::after {
+                background-color: $white;
+              }
+            }
+
+            & > h3 {
+              color: $white;
+            }
           }
         }
       }
@@ -107,6 +136,7 @@
           font-weight: 500;
           font-size: 2em;
           color: $black;
+          transition: color $fast-anim;
         }
 
         .socialsIconsContainer {
@@ -124,6 +154,14 @@
               transition: 250ms ease-in-out;
             }
           }
+
+          &.light > svg {
+            fill: $white;
+          }
+        }
+
+        &.light > h1 {
+          color: $white;
         }
       }
     }
@@ -135,6 +173,7 @@
         color: $black;
         font-size: 1.3em;
         font-weight: 300;
+        transition: color $fast-anim;
       }
 
       .languageList {
@@ -145,8 +184,22 @@
           font-size: 1.2em;
           list-style-type: none;
           cursor: pointer;
+          transition: color $fast-anim;
         }
       }
+
+      &.light {
+        & > h3 {
+          color: $white;
+        }
+        & > .languageList > li {
+          color: $white;
+        }
+      }
+    }
+
+    &.light {
+      background-color: $blue;
     }
   }
 

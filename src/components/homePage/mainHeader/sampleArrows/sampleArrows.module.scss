@@ -9,21 +9,21 @@
   font-weight: 400;
   z-index: 1;
   cursor: pointer;
-  transition: 250ms;
+  transition: all $fast-anim;
 
   & > p {
     font-size: 1.7em;
     color: $light-grey;
-    transition: all 250ms;
+    transition: all $fast-anim;
   }
 
   & > svg {
     fill: $light-grey;
-    transition: all 250ms;
+    transition: all $fast-anim;
   }
   &:hover {
     transform: scale(1.15);
-    transition: 250ms ease-in-out;
+    transition: $fast-anim ease-in-out;
 
     p {
       color: $golden;
@@ -31,6 +31,15 @@
 
     svg {
       fill: $golden;
+    }
+  }
+
+  &.light:hover{
+    p{
+      color: $blue;
+    }
+    svg{
+      fill: $blue;
     }
   }
 }

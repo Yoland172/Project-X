@@ -1,6 +1,6 @@
-import { IconProp } from "../../../../types/uiTypes";
+import { IconProps } from "../../../../types/uiTypes";
 
-const TelegramIcon = ({ width, height }: IconProp) => {
+const TelegramIcon = ({ width, height }: IconProps) => {
   return (
     <svg
       fill="#000000"

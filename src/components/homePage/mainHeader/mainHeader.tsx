@@ -5,7 +5,8 @@ import { slides } from "./slides";
 import styles from "./mainHeader.module.scss";
 import SampleNextArrow from "./sampleArrows/SampleNextArrow";
 import SamplePrevArrow from "./sampleArrows/SamplePrevArrow";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
+import classNames from "classnames";
 
 interface SettingForSlider {
   dots?: boolean;
@@ -17,13 +18,16 @@ interface SettingForSlider {
   arrows?: boolean;
   pauseOnHover?: boolean;
   autoplaySpeed?: number;
-  dotsClass?:string,
-  nextArrow?:any,
-  prevArrow?:any
+  dotsClass?: string;
+  nextArrow?: any;
+  prevArrow?: any;
 }
 
-const MainHeader = () => {
+interface MainHeaderProps {
+  theme: string;
+}
 
+const MainHeader = ({theme}: MainHeaderProps) => {
   const settingsForSlider: SettingForSlider = {
     dots: true,
     infinite: true,
@@ -34,9 +38,9 @@ const MainHeader = () => {
     arrows: true,
     pauseOnHover: true,
     autoplaySpeed: 6000,
-    dotsClass:`${styles.button__bar}`,
-    nextArrow: <SampleNextArrow/>,
-    prevArrow:<SamplePrevArrow/>
+    dotsClass: `${classNames(styles.button__bar, theme && styles[theme])}`,
+    nextArrow: <SampleNextArrow theme={theme}/>,
+    prevArrow: <SamplePrevArrow theme={theme}/>,
   };
 
   const { t } = useTranslation();
@@ -62,8 +66,11 @@ const MainHeader = () => {
           );
         })}
       </Slider>
-      <p className={styles.bigMainText}><span>{t('homePage.header.bigText.part1')}</span>{t('homePage.header.bigText.part2')}</p>
+      <p className={classNames(styles.bigMainText, theme && styles[theme])}>
+        <span>{t("homePage.header.bigText.part1")}</span>
+        {t("homePage.header.bigText.part2")}
+      </p>
     </div>
   );
-}
+};
 export default MainHeader;

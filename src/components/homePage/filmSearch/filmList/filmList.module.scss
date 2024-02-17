@@ -47,6 +47,11 @@
     max-height: 75vh;
     overflow: scroll;
     animation: showFilmList 500ms ease;
+
+    &.light::-webkit-scrollbar-thumb {
+      background-color: $light-blue ;
+      border-radius: 3px;
+    }
   }
 
   .filmListRemove {
@@ -64,6 +69,11 @@
     .pageInfo {
       font-size: 1.3em;
       letter-spacing: 1px;
+      transition: color $fast-anim;
+
+      &.light{
+        color:$dark-blue
+      }
     }
 
     .navArrowContainer {
@@ -79,25 +89,42 @@
         border: none;
 
         & > p {
-          transition: 250ms;
+          transition: all $fast-anim;
         }
 
         & > svg {
           fill: $main-text-color;
-          transition: 250ms;
+          transition: all $fast-anim;
         }
 
         &:hover {
           & > svg {
             fill: $golden;
-            transition: 250ms;
             transform: scale(1.1);
           }
 
           & > p {
             color: $golden;
-            transition: 250ms;
             transform: scale(1.1);
+          }
+        }
+
+        &.light{
+          &>svg{
+            fill: $dark-blue;
+          }
+          &>p{
+            color: $dark-blue;
+          }
+
+          &:hover{
+            &>svg{
+              fill: $blue;
+            }
+
+            &>p{
+              color: $blue;
+            }
           }
         }
       }
@@ -137,7 +164,7 @@
     font-weight: 500;
 
     & > p {
-      transition: 200ms ease-out;
+      transition: all $fast-anim ease-out;
     }
   }
 
@@ -148,8 +175,33 @@
 
     & > p {
       letter-spacing: 1px;
-      transition: 200ms ease-out;
+      transition: color $fast-anim ease-out;
     }
+  }
+
+  &.light{
+    
+    .filmName>p{
+
+      color: $dark-blue;
+
+    }
+
+    .addInfo>p{
+      color: $dark-blue;
+    }
+
+    &:hover {
+      .addInfo > p {
+        color: $blue;
+      }
+
+      .filmName>p{
+        color: $blue;
+      }
+
+    }
+
   }
 }
 
@@ -184,8 +236,13 @@
     .navContainer {
       margin-top: 0;
       grid-template-columns: 1fr 2fr;
+
       .pageInfo {
-        font-size: 1em;
+        font-size: 1em; 
+      }
+
+      &.light{
+        color: $black !important;
       }
     }
   }

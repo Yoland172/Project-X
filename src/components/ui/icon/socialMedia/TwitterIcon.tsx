@@ -1,6 +1,6 @@
-import { IconProp } from "../../../../types/uiTypes";
+import { IconProps } from "../../../../types/uiTypes";
 
-const Twitter = ({ width, height }: IconProp) => {
+const Twitter = ({ width, height }: IconProps) => {
   return (
     <svg
       fill="#000000"

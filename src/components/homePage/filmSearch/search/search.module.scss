@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-@media (max-width:$tablet) {
+@media (max-width: $tablet) {
   .searchBarContainer {
     display: flex;
     padding: 0 20px;
@@ -18,8 +18,8 @@
   }
 }
 
-@media (max-width:$desktop) {
-  .searchBarContainer{
+@media (max-width: $desktop) {
+  .searchBarContainer {
     display: flex;
     justify-content: center;
   }
@@ -36,7 +36,6 @@
   }
 }
 
-
 .webflowStyleInput {
   position: relative;
   display: flex;
@@ -45,6 +44,7 @@
   max-width: 400px;
   border-radius: 2px;
   padding: 1.4rem 10px;
+  transition: 250ms;
 
   &:after {
     content: "";
@@ -58,6 +58,7 @@
     background-position: 0% 0%;
     background: $golden;
     background-size: 500% auto;
+    transition: all $fast-anim;
   }
 
   & > input {
@@ -71,9 +72,11 @@
     padding-right: 10px;
     letter-spacing: 2px;
     width: 0;
+    transition: color $fast-anim;
 
     &::-webkit-input-placeholder {
       color: #c0c0c0;
+      transition: color $fast-anim;
     }
   }
 
@@ -84,14 +87,39 @@
 
     & > svg {
       fill: $light-grey;
-      transition: 300ms ease-in-out;
+      transition: all $fast-anim ease-in-out;
       transform: rotate(0deg);
 
       &:hover {
         fill: $golden;
         transform: rotate(360deg);
-        transition: 300ms;
       }
+    }
+  }
+
+  &.light {
+    &:after {
+      background: $blue;
+    }
+
+    & > input {
+      color: $black;
+
+      &::-webkit-input-placeholder {
+        color: $black !important;
+      }
+    }
+
+    & > button {
+
+      & > svg {
+        fill: $black;
+
+        &:hover {
+          fill: $blue;
+        }
+      }
+
     }
   }
 }
