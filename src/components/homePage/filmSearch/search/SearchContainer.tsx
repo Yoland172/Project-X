@@ -4,6 +4,7 @@ import { getFilms } from "../../../../api/requests";
 import { FilmItemMainPage } from "../../../../types/uiTypes";
 import usePagination from "../../../../lib/hooks/usePagination";
 import SearchContext from "../../../../lib/contexts/SearchContext";
+import ThemeContext from "../../../../lib/contexts/ThemeContext";
 
 interface SerachContainerProp {
   setFilmList: (filmList: FilmItemMainPage[]) => void;
@@ -19,6 +20,7 @@ const SearchContainer = ({
   resetPageState,
 }: SerachContainerProp) => {
   const { searchText, setSearchText } = useContext(SearchContext);
+  const {theme} =useContext(ThemeContext);
 
   useEffect(() => {
     tryFindFilmBySearch();
@@ -70,6 +72,7 @@ const SearchContainer = ({
         tryToFindFilmsByTyping(text);
       }}
       onSearchClickButton={tryFindFilmBySearch}
+      theme={theme}
     />
   );
 };

@@ -1,14 +1,13 @@
 import FilmInfoContainer from "./filmInfo/FilmInfoContainer";
 import VideoHeader from "./videoHeader/VideoHeader";
-import Footer from "../footer/Footer";
+import FooterContainer from "../footer/FooterContainer";
 
 const FilmPage = () => {
-
   return (
     <>
       <VideoHeader />
       <FilmInfoContainer />
-      <Footer />
+      <FooterContainer />
     </>
   );
 };

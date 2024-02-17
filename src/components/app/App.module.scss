@@ -1,15 +1,18 @@
 @import "../../styles/variables.scss";
 
-body {
+.App {
   background: radial-gradient(
     circle at 0% 0%,
     #282828,
     #292929 51%,
     #131313
   ) !important;
-  background: radial-gradient(circle at 0% 0%, #383838, #303030 51%, #131313);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  &.light{
+    background: white !important;
+  }
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700&family=Montserrat:wght@300&display=swap");

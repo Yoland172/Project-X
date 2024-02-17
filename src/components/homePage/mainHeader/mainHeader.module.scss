@@ -14,6 +14,7 @@
       height: 100%;
       object-fit: cover;
     }
+    
   }
 
   .filmInfoContainer {
@@ -80,6 +81,11 @@
     box-sizing: border-box;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    &.light :global(li.slick-active) button {
+      background-color: $blue;
+       
+    }
   }
 
   .button__bar li {
@@ -103,7 +109,7 @@
   }
 
   .button__bar :global(li.slick-active) button {
-    background-color: $hot-yellow;
+    background-color: $golden;
   }
 
   .bigMainText {
@@ -114,6 +120,14 @@
     font-weight: 550;
     & > span {
       color: $golden;
+    }
+
+    &.light{
+      color:$dark-blue;
+
+      &>span{
+        color:$blue
+      }
     }
   }
 

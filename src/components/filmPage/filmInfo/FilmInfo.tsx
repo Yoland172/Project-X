@@ -4,12 +4,14 @@ import { FilmItemInfo } from "../../../api/types";
 import imdbIcon from "../../../assets/img/IMDB_Logo_2016.svg.png";
 import metacritic from "../../../assets/img/Metacritic.svg";
 import { useTranslation } from "react-i18next";
+import classNames from "classnames";
 
 interface FilmInfoProps {
   filmInfo?: FilmItemInfo;
+  theme:string
 }
 
-const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
+const FilmInfo = ({ filmInfo, theme }: FilmInfoProps) => {
   const {t} = useTranslation();
   return (
     <>
@@ -23,9 +25,9 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
             )}
           </div>
           <div className={styles.ratingList}>
-            <div className={styles.ratingItem}>
+            <div className={classNames(styles.ratingItem, theme && styles[theme])}>
               <h1>IMDB Rating:</h1>
-              <div className={styles.iconWithRating}>
+              <div className={classNames(styles.iconWithRating, theme && styles[theme])}>
                 <p>
                   {filmInfo?.imdbRating} / <span>10</span>
                 </p>
@@ -33,9 +35,9 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               </div>
             </div>
             {filmInfo?.Metascore && filmInfo?.Metascore !== "N/A" ? (
-              <div className={styles.ratingItem}>
+              <div className={classNames(styles.ratingItem, theme && styles[theme])}>
                 <h1>METACRITIC:</h1>
-                <div className={styles.iconWithRating}>
+                <div className={classNames(styles.iconWithRating, theme && styles[theme])}>
                   <p>
                     {filmInfo?.Metascore} / <span>100</span>
                   </p>
@@ -46,8 +48,8 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
               <></>
             )}
           </div>
-          <h1 className={styles.title}>{filmInfo?.Title}</h1>
-          <div className={styles.addInfo}>
+          <h1 className={classNames(styles.title, theme && styles[theme])}>{filmInfo?.Title}</h1>
+          <div className={classNames(styles.addInfo, theme && styles[theme])}>
             {filmInfo?.Runtime && filmInfo?.Runtime !== "N/A" && (
               <div className={styles.runtime}>
                 <p>
@@ -93,7 +95,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
         <SectionLine />
 
         {filmInfo?.Awards && filmInfo?.Awards !== "N/A" ? (
-          <div className={styles.oscarAwardsContainer}>
+          <div className={classNames(styles.oscarAwardsContainer,theme && styles[theme])}>
             <div className={styles.oscarAwards}></div>
             <div></div>
             <div className={styles.awardsText}>
@@ -104,7 +106,7 @@ const FilmInfo = ({ filmInfo }: FilmInfoProps) => {
           <></>
         )}
 
-        <div className={styles.addInfoContainer}>
+        <div className={classNames(styles.addInfoContainer, theme && styles[theme])}>
           {filmInfo?.Director && filmInfo?.Director !== "N/A" ? (
             <div className={styles.directorsTest}>
               <div className={styles.verticalLine}></div>

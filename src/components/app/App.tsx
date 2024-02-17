@@ -1,16 +1,20 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./App.module.scss";
 import FilmPage from "../filmPage/FilmPage";
 import HomePage from "../homePage/HomePage";
 import SearchContext from "../../lib/contexts/SearchContext";
 import { ROUTE_FILM_PAGE, ROUTE_HOME_PAGE } from "../../lib/constants";
+import ThemeContext from "../../lib/contexts/ThemeContext";
+import classNames from "classnames";
 
 function App() {
   const [searchText, setSearchText] = useState<string>("");
+  const [theme, setTheme] = useState<string>("");
 
   return (
-    <div className={styles.App}>
+    <div className={classNames(styles.App, theme && styles[theme])}>
+      <ThemeContext.Provider value={{theme,setTheme}}>
       <SearchContext.Provider value={{ searchText, setSearchText }}>
         <Routes>
           <Route path={ROUTE_HOME_PAGE} element={<HomePage />} />
@@ -18,6 +22,7 @@ function App() {
           <Route path="*" element={<Navigate to={"/home"} />} />
         </Routes>
       </SearchContext.Provider>
+      </ThemeContext.Provider>
     </div>
   );
 }

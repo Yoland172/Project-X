@@ -67,6 +67,15 @@
         & > h1 {
           color: $light-grey;
         }
+
+        &.light{
+          .iconWithRating>p{
+            color:$dark-blue !important;
+          }
+          &>h1{
+            color:$dark-blue;
+          }
+        }
       }
     }
 
@@ -77,6 +86,10 @@
       color: $light-grey;
       font-size: 3.8em;
       padding-top: 50px;
+
+      &.light{
+        color:$dark-blue
+      }
     }
     .addInfo {
       grid-area: 2 / 2 / 3 / 3;
@@ -101,6 +114,17 @@
           line-height: normal;
           padding-left: 5px;
         }
+      }
+
+      &.light{
+        &>div>p{
+          color: $dark-blue;
+
+          &>span{
+            color: $light-blue;
+          }
+        }
+
       }
     }
     .plot {
@@ -137,6 +161,16 @@
         color: $light-grey;
       }
     }
+
+    &.light{
+      border-color: $blue;
+      .oscarAwards{
+        background-color: $blue;
+      }
+      .awardsText>p{
+        color: $dark-blue;
+      }
+    }
   }
 
   .addInfoContainer {
@@ -164,6 +198,19 @@
 
         & > h1 {
           color: $light-grey;
+        }
+      }
+    }
+
+    &.light{
+      .directorsTest{
+        .textContainer{
+          &>h1{
+          color: $light-blue;
+          }
+          &>p{
+            color:$dark-blue;
+          }
         }
       }
     }
@@ -227,6 +274,10 @@
             & > p {
               font-size: 1em;
               font-weight: 500;
+            }
+
+            &.light{
+              border-color: $blue !important;
             }
           }
         }

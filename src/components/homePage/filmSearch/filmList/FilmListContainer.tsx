@@ -4,6 +4,7 @@ import usePagination from "../../../../lib/hooks/usePagination";
 import SearchContext from "../../../../lib/contexts/SearchContext";
 import { getFilms } from "../../../../api/requests";
 import { FilmItemMainPage } from "../../../../types/uiTypes";
+import ThemeContext from "../../../../lib/contexts/ThemeContext";
 
 interface FilmListContainerProp {
   filmList: FilmItemMainPage[];
@@ -27,7 +28,7 @@ const FilmListContainer = ({
   setPreviousPage,
 }: FilmListContainerProp) => {
   const { searchText } = useContext(SearchContext);
-
+  const {theme} = useContext(ThemeContext);
   const [currentImage, setCurrentImage] = useState<string>("");
 
   const checkIfHasNextPage = () => (currentPage + 0.1) * 10 - filmsCount <= 0;
@@ -79,6 +80,7 @@ const FilmListContainer = ({
         pageNavigate(currentPage - 1, checkIfHasPreviousPage, setPreviousPage);
       }}
       pageNumber={currentPage}
+      theme={theme}
     />
   );
 };

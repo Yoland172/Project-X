@@ -1,15 +1,17 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import FilmInfo from "./FilmInfo";
 import { getFilmInfo } from "../../../api/requests";
 import FilmInfoSkeleton from "./FilmInfoSkeleton";
 import { FilmItemInfo } from "../../../api/types";
+import ThemeContext from "../../../lib/contexts/ThemeContext";
 
 const FilmInfoContainer = () => {
   const { id } = useParams();
 
   const [filmInfo, setFilmInfo] = useState<FilmItemInfo>();
   const [isFetching, setIsFetching] = useState<boolean>(false);
+  const {theme} = useContext(ThemeContext);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
@@ -38,7 +40,7 @@ const FilmInfoContainer = () => {
     <>
       {!isFetching ? (
         <>
-          <FilmInfo filmInfo={filmInfo} />
+          <FilmInfo filmInfo={filmInfo} theme={theme}/>
         </>
       ) : (
         <FilmInfoSkeleton />

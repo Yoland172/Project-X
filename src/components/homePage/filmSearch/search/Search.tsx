@@ -1,17 +1,20 @@
 import styles from "./search.module.scss";
 import SearchArrow from "../../../ui/icon/SearchArrow";
 import { useRef } from "react";
+import classNames from "classnames";
 
-interface searchProps {
+interface SearchProps {
   searchText: string;
   onSearchChange: (text: string) => void;
   onSearchClickButton: () => void;
+  theme:string
 }
 const Search = ({
   onSearchChange,
   onSearchClickButton,
   searchText,
-}: searchProps) => {
+  theme
+}: SearchProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
@@ -22,7 +25,7 @@ const Search = ({
       }}
     >
       <div className={styles.searchBarContainer}>
-        <div className={styles.webflowStyleInput}>
+        <div className={classNames(styles.webflowStyleInput, theme && styles[theme])}>
           <input
             ref={inputRef}
             type="text"

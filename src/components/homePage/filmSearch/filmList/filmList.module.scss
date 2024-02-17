@@ -47,6 +47,11 @@
     max-height: 75vh;
     overflow: scroll;
     animation: showFilmList 500ms ease;
+
+    &.light::-webkit-scrollbar-thumb {
+      background-color: $light-blue ;
+      border-radius: 3px;
+    }
   }
 
   .filmListRemove {
@@ -64,6 +69,10 @@
     .pageInfo {
       font-size: 1.3em;
       letter-spacing: 1px;
+
+      &.light{
+        color:$dark-blue
+      }
     }
 
     .navArrowContainer {
@@ -98,6 +107,25 @@
             color: $golden;
             transition: 250ms;
             transform: scale(1.1);
+          }
+        }
+
+        &.light{
+          &>svg{
+            fill: $dark-blue;
+          }
+          &>p{
+            color: $dark-blue;
+          }
+
+          &:hover{
+            &>svg{
+              fill: $blue;
+            }
+
+            &>p{
+              color: $blue;
+            }
           }
         }
       }
@@ -151,6 +179,31 @@
       transition: 200ms ease-out;
     }
   }
+
+  &.light{
+    
+    .filmName>p{
+
+      color: $dark-blue;
+
+    }
+
+    .addInfo>p{
+      color: $dark-blue;
+    }
+
+    &:hover {
+      .addInfo > p {
+        color: $blue;
+      }
+
+      .filmName>p{
+        color: $blue;
+      }
+
+    }
+
+  }
 }
 
 @media (max-width: $desktop) {
@@ -185,7 +238,10 @@
       margin-top: 0;
       grid-template-columns: 1fr 2fr;
       .pageInfo {
-        font-size: 1em;
+        font-size: 1em; 
+      }
+      &.light{
+        color: $black !important;
       }
     }
   }

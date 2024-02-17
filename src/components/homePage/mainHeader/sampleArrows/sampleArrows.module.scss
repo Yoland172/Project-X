@@ -33,6 +33,15 @@
       fill: $golden;
     }
   }
+
+  &.light:hover{
+    p{
+      color: $blue;
+    }
+    svg{
+      fill: $blue;
+    }
+  }
 }
 
 .nextArrow {
