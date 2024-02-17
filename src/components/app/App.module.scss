@@ -9,6 +9,7 @@
   ) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background $fast-anim;
   
   &.light{
     background: white !important;

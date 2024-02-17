@@ -69,6 +69,7 @@
     .pageInfo {
       font-size: 1.3em;
       letter-spacing: 1px;
+      transition: color $fast-anim;
 
       &.light{
         color:$dark-blue
@@ -88,24 +89,22 @@
         border: none;
 
         & > p {
-          transition: 250ms;
+          transition: all $fast-anim;
         }
 
         & > svg {
           fill: $main-text-color;
-          transition: 250ms;
+          transition: all $fast-anim;
         }
 
         &:hover {
           & > svg {
             fill: $golden;
-            transition: 250ms;
             transform: scale(1.1);
           }
 
           & > p {
             color: $golden;
-            transition: 250ms;
             transform: scale(1.1);
           }
         }
@@ -165,7 +164,7 @@
     font-weight: 500;
 
     & > p {
-      transition: 200ms ease-out;
+      transition: all $fast-anim ease-out;
     }
   }
 
@@ -176,7 +175,7 @@
 
     & > p {
       letter-spacing: 1px;
-      transition: 200ms ease-out;
+      transition: color $fast-anim ease-out;
     }
   }
 
@@ -237,9 +236,11 @@
     .navContainer {
       margin-top: 0;
       grid-template-columns: 1fr 2fr;
+
       .pageInfo {
         font-size: 1em; 
       }
+
       &.light{
         color: $black !important;
       }

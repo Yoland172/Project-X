@@ -118,8 +118,10 @@
     font-size: 4vw;
     letter-spacing: 4px;
     font-weight: 550;
+    transition: color $fast-anim;
     & > span {
       color: $golden;
+      transition: color $fast-anim;
     }
 
     &.light{
