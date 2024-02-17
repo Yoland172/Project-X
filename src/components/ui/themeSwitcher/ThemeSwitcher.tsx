@@ -3,18 +3,18 @@ import styles from "./themeSwitcher.module.scss";
 import IconSun from "../icon/iconSun";
 import IconMoon from "../icon/iconMoon";
 
-interface ThemeSwitcherProp {
+interface ThemeSwitcherProps {
   theme: string;
-  setTheme: (themeMode: string) => void;
+  updateTheme: (themeMode: string) => void;
 }
 
-const ThemeSwitcher = ({ theme, setTheme }: ThemeSwitcherProp) => {
+const ThemeSwitcher = ({ theme, updateTheme }: ThemeSwitcherProps) => {
   return (
     <div className={styles.main}>
       <IconSun width={20} height={20} className={theme && styles.activeSun}/>
       <div
         className={classNames(styles.dotContainer, theme && styles[theme])}
-        onClick={() => setTheme(theme ? "" : "light")}
+        onClick={() => updateTheme(theme ? "" : "light")}
       >
         <span className={classNames(styles.dot, theme && styles[theme])} />
       </div>

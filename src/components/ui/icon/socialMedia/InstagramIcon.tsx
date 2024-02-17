@@ -1,6 +1,6 @@
-import { IconProp } from "../../../../types/uiTypes";
+import { IconProps } from "../../../../types/uiTypes";
 
-const InstagramIcon = ({ width, height }: IconProp) => {
+const InstagramIcon = ({ width, height }: IconProps) => {
     return (
         <svg width={width} height={height} viewBox="0 0 20 20" version="1.1">
             <g id="Page-1" stroke="none" strokeWidth={"1"}  >

@@ -20,7 +20,7 @@ const SearchContainer = ({
   resetPageState,
 }: SerachContainerProp) => {
   const { searchText, setSearchText } = useContext(SearchContext);
-  const {theme} =useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     tryFindFilmBySearch();

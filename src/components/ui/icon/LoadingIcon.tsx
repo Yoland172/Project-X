@@ -1,6 +1,6 @@
-import { IconProp } from "../../../types/uiTypes";
+import { IconProps } from "../../../types/uiTypes";
 
-const LoadingIcon = ({ width, height }: IconProp) => {
+const LoadingIcon = ({ width, height }: IconProps) => {
   return (
     <svg
       version="1.1"

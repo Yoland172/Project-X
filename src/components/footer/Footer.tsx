@@ -11,16 +11,21 @@ import ThemeSwitcher from "../ui/themeSwitcher/ThemeSwitcher";
 
 interface FooterProp {
   theme: string;
-  setTheme: (theme:string) => void
+  updateTheme: (theme: string) => void;
 }
 
-const Footer = ({ theme,setTheme }: FooterProp) => {
+const Footer = ({ theme, updateTheme }: FooterProp) => {
   const { t, i18n } = useTranslation();
   const languages = ["ua", "en", "es"];
 
   return (
     <div className={styles.footerContainer}>
-      <img src={theme ? transitionImgLightTheme : transitionImgDarkTheme} alt="transitionImage" />
+      <img
+        src={
+          theme === "light" ? transitionImgLightTheme : transitionImgDarkTheme
+        }
+        alt="transitionImage"
+      />
       <div className={classNames(styles.mainContainer, theme && styles[theme])}>
         <div className={styles.infoContainer}>
           <div className={classNames(styles.bigText, theme && styles[theme])}>
@@ -50,9 +55,19 @@ const Footer = ({ theme,setTheme }: FooterProp) => {
               <p>Rotten Tomatoes</p>
             </div>
           </div>
-          <div className={classNames(styles.socialsContainer, theme && styles[theme])}>
+          <div
+            className={classNames(
+              styles.socialsContainer,
+              theme && styles[theme]
+            )}
+          >
             <h1>{t("footer.columnArticle.socials")}</h1>
-            <div className={classNames(styles.socialsIconsContainer, theme && styles[theme])}>
+            <div
+              className={classNames(
+                styles.socialsIconsContainer,
+                theme && styles[theme]
+              )}
+            >
               <FacebookIcon width={30} height={30} />
               <InstagramIcon width={30} height={30} />
               <TwitterIcon width={30} height={30} />
@@ -60,7 +75,12 @@ const Footer = ({ theme,setTheme }: FooterProp) => {
             </div>
           </div>
         </div>
-        <div className={classNames(styles.changeLanguageContainer, theme && styles[theme])}>
+        <div
+          className={classNames(
+            styles.changeLanguageContainer,
+            theme && styles[theme]
+          )}
+        >
           <h3>{t("footer.languagePreset.chsLang")}: </h3>
           <ul className={styles.languageList}>
             {languages.map((lang) => (
@@ -75,7 +95,7 @@ const Footer = ({ theme,setTheme }: FooterProp) => {
             ))}
           </ul>
         </div>
-        <ThemeSwitcher theme={theme} setTheme={setTheme}/>
+        <ThemeSwitcher theme={theme} updateTheme={updateTheme} />
       </div>
     </div>
   );

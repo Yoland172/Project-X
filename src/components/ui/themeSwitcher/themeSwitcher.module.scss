@@ -9,13 +9,13 @@
 
   .activeSun {
     path {
-      fill: rgb(255, 255, 255);
+      fill: $golden;
     }
   }
 
   .activeMoon {
     path {
-      fill: $black;
+      fill: $blue;
     }
   }
 
@@ -50,7 +50,7 @@
 
     &.light {
         margin-left: 0;
-        background-color: white;
+        background-color: $white;
     }
   }
 }

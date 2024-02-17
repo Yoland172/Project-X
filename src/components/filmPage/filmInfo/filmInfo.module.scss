@@ -68,12 +68,13 @@
           color: $light-grey;
         }
 
-        &.light{
-          .iconWithRating>p{
-            color:$dark-blue !important;
+        &.light {
+          .iconWithRating > p {
+            color: $dark-blue !important;
           }
-          &>h1{
-            color:$dark-blue;
+
+          & > h1 {
+            color: $dark-blue;
           }
         }
       }
@@ -87,8 +88,8 @@
       font-size: 3.8em;
       padding-top: 50px;
 
-      &.light{
-        color:$dark-blue
+      &.light {
+        color: $dark-blue;
       }
     }
     .addInfo {
@@ -116,15 +117,14 @@
         }
       }
 
-      &.light{
-        &>div>p{
+      &.light {
+        & > div > p {
           color: $dark-blue;
 
-          &>span{
+          & > span {
             color: $light-blue;
           }
         }
-
       }
     }
     .plot {
@@ -162,12 +162,12 @@
       }
     }
 
-    &.light{
+    &.light {
       border-color: $blue;
-      .oscarAwards{
+      .oscarAwards {
         background-color: $blue;
       }
-      .awardsText>p{
+      .awardsText > p {
         color: $dark-blue;
       }
     }
@@ -202,14 +202,14 @@
       }
     }
 
-    &.light{
-      .directorsTest{
-        .textContainer{
-          &>h1{
-          color: $light-blue;
+    &.light {
+      .directorsTest {
+        .textContainer {
+          & > h1 {
+            color: $light-blue;
           }
-          &>p{
-            color:$dark-blue;
+          & > p {
+            color: $dark-blue;
           }
         }
       }
@@ -276,7 +276,7 @@
               font-weight: 500;
             }
 
-            &.light{
+            &.light {
               border-color: $blue !important;
             }
           }

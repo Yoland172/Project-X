@@ -5,7 +5,14 @@ export interface FilmItemMainPage {
   imdbID: string;
   Poster: string;
 }
-export interface IconProp {
+export interface IconProps {
   width: number;
   height: number;
+}
+
+
+export interface IconThemeProps {
+  width: number;
+  height: number;
+  className?: string;
 }

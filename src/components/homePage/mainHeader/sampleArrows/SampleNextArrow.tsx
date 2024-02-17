@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { SampleArrowProp } from "../../../../api/types";
+import { SampleArrowProps } from "../../../../api/types";
 import RightLongArrow from "../../../ui/icon/rightLongArrow";
 import styles from "./sampleArrows.module.scss";
 import classNames from "classnames";
 
-export const SampleNextArrow = ({ onClick,theme }: SampleArrowProp) => {
+export const SampleNextArrow = ({ onClick, theme }: SampleArrowProps) => {
   const {t} = useTranslation();
   return <div className={classNames(styles.nextArrow, theme && styles[theme])} onClick={onClick}>
     <p>{t("homePage.header.arrowText.next")}</p>

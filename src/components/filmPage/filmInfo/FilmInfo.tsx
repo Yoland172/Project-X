@@ -8,11 +8,12 @@ import classNames from "classnames";
 
 interface FilmInfoProps {
   filmInfo?: FilmItemInfo;
-  theme:string
+  theme?:string
 }
 
 const FilmInfo = ({ filmInfo, theme }: FilmInfoProps) => {
   const {t} = useTranslation();
+  
   return (
     <>
       <div className={styles.mainContainer}>

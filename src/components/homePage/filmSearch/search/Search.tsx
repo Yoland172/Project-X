@@ -7,7 +7,7 @@ interface SearchProps {
   searchText: string;
   onSearchChange: (text: string) => void;
   onSearchClickButton: () => void;
-  theme:string
+  theme?: string
 }
 const Search = ({
   onSearchChange,

@@ -1,6 +1,6 @@
-import { IconProp } from "../../../types/uiTypes";
+import { IconProps } from "../../../types/uiTypes";
 
-const LeftArrow = ({ width, height }: IconProp) => {
+const LeftArrow = ({ width, height }: IconProps) => {
   return (
     <svg
       width={width}
