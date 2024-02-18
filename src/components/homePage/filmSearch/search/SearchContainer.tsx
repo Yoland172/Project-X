@@ -2,7 +2,6 @@ import { useContext, useEffect } from "react";
 import Search from "./Search";
 import { getFilms } from "../../../../api/requests";
 import { FilmItemMainPage } from "../../../../types/uiTypes";
-import usePagination from "../../../../lib/hooks/usePagination";
 import SearchContext from "../../../../lib/contexts/SearchContext";
 import ThemeContext from "../../../../lib/contexts/ThemeContext";
 
@@ -24,6 +23,7 @@ const SearchContainer = ({
 
   useEffect(() => {
     tryFindFilmBySearch();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const findFilms = (

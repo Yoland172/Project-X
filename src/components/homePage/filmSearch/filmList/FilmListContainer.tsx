@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import FilmList from "./FilmList";
-import usePagination from "../../../../lib/hooks/usePagination";
 import SearchContext from "../../../../lib/contexts/SearchContext";
 import { getFilms } from "../../../../api/requests";
 import { FilmItemMainPage } from "../../../../types/uiTypes";
