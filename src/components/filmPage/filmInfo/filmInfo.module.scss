@@ -82,7 +82,7 @@
 
     .title {
       grid-area: 1 / 2 / 2 / 3;
-      justify-content: start;
+      justify-content: flex-start;
       width: 50vw;
       color: $light-grey;
       font-size: 3.8em;
@@ -193,7 +193,7 @@
       .textContainer {
         display: flex;
         flex-direction: column;
-        justify-content: end;
+        justify-content: flex-end;
         padding-left: 10px;
 
         & > h1 {
