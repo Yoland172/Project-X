@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Project-X/static/css/main.89fcccbd.css",
+    "main.js": "/Project-X/static/js/main.f9675bc4.js",
+    "static/media/iron-man-cave-time-travel-3840x1080-112 (1).jpg": "/Project-X/static/media/iron-man-cave-time-travel-3840x1080-112 (1).0045896ed73bd6ece5b1.jpg",
+    "static/media/batman_header.jpg": "/Project-X/static/media/batman_header.7424ec6cba9975c7b22b.jpg",
+    "static/media/batman_headerCopy.jpg": "/Project-X/static/media/batman_headerCopy.7424ec6cba9975c7b22b.jpg",
+    "static/media/superman_header.jpg": "/Project-X/static/media/superman_header.096924945963c9f48acf.jpg",
+    "static/media/layered-waves-haikei dark-theme.png": "/Project-X/static/media/layered-waves-haikei dark-theme.a4e58948c4247a654568.png",
+    "static/media/imageNotFound2.png": "/Project-X/static/media/imageNotFound2.0d917f3f7eb1a350b157.png",
+    "static/media/slick.svg": "/Project-X/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Project-X/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Project-X/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/Metacritic.svg": "/Project-X/static/media/Metacritic.5d30dbc0003e6754afcb5b44f21e4890.svg",
+    "static/media/slick.woff": "/Project-X/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/Project-X/index.html",
+    "main.89fcccbd.css.map": "/Project-X/static/css/main.89fcccbd.css.map",
+    "main.f9675bc4.js.map": "/Project-X/static/js/main.f9675bc4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89fcccbd.css",
+    "static/js/main.f9675bc4.js"
+  ]
+}
