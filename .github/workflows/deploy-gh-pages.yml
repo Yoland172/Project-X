@@ -1,0 +1,16 @@
+name: Deploy to github pages
+
+on:
+  push:
+    branches: [main]
+
+jobs: 
+    dedploy:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Chekout
+              uses: actions/checkout@v4
+            - name: Install deps
+              run: npm ci
+            - name: Deploy build
+              run: npm run deploy
