@@ -12,5 +12,9 @@ jobs:
               uses: actions/checkout@v4
             - name: Install deps
               run: npm ci
+            - name: Setting global confings
+              run : 
+                git config --global user.email "elik@example.com"
+                git config --global user.name "elik"
             - name: Deploy build
               run: npm run deploy
