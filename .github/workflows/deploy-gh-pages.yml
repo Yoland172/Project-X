@@ -1,20 +1,20 @@
-name: Deploy to github pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
 
-jobs: 
-    dedploy:
-        runs-on: ubuntu-latest
-        steps: 
-            - name: Chekout
-              uses: actions/checkout@v4
-            - name: Install deps
-              run: npm ci
-            - name: Setting global confings
-              run : 
-                git config --global user.email "elik@example.com"
-                git config --global user.name "elik"
-            - name: Deploy build
-              run: npm run deploy
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Set global configurations
+        run: |
+          git config --global user.email "elik@example.com"
+          git config --global user.name "elik"
+      - name: Deploy build
+        run: npm run deploy
