@@ -16,9 +16,7 @@ jobs:
         run: | 
           npm ci
           npm run build
-      - name: Setup git configs
-        run: |
-          /usr/bin/git config user.name Yoland172
-          /usr/bin/git config user.email Yoland172@users.noreply.github.com
-      - name: Deploy build
-        run: npm run deploy
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
