@@ -7,7 +7,7 @@ describe("Search component tests", () => {
       <Search
         onSearchChange={jest.fn()}
         onSearchClickButton={jest.fn()}
-        searchText={'testValue'}
+        searchText={"testValue"}
       />
     );
     const input = screen.getByPlaceholderText("Search...");
@@ -21,9 +21,9 @@ describe("Search component tests", () => {
     //Act
     render(
       <Search
-      onSearchChange={onSearchChangeMock}
-      onSearchClickButton={()=>{}}
-      searchText={''}
+        onSearchChange={onSearchChangeMock}
+        onSearchClickButton={() => {}}
+        searchText={""}
       />
     );
     const input = screen.getByPlaceholderText("Search...");
@@ -41,9 +41,9 @@ describe("Search component tests", () => {
     //Act
     render(
       <Search
-      onSearchChange={()=>{}}
-      onSearchClickButton={onSearchClickButtonMock}
-      searchText={''}
+        onSearchChange={() => {}}
+        onSearchClickButton={onSearchClickButtonMock}
+        searchText={""}
       />
     );
     const input = screen.getByPlaceholderText("Search...");
@@ -51,7 +51,7 @@ describe("Search component tests", () => {
     const button = screen.getByRole("button");
     fireEvent.click(button);
 
-     //Assert
+    //Assert
     expect(onSearchClickButtonMock).toBeCalledTimes(1);
   });
 });
