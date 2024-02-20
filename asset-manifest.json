@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Project-X/static/css/main.89fcccbd.css",
-    "main.js": "/Project-X/static/js/main.f9675bc4.js",
+    "main.css": "/Project-X/static/css/main.c9f4418b.css",
+    "main.js": "/Project-X/static/js/main.ba04d382.js",
     "static/media/iron-man-cave-time-travel-3840x1080-112 (1).jpg": "/Project-X/static/media/iron-man-cave-time-travel-3840x1080-112 (1).0045896ed73bd6ece5b1.jpg",
     "static/media/batman_header.jpg": "/Project-X/static/media/batman_header.7424ec6cba9975c7b22b.jpg",
     "static/media/batman_headerCopy.jpg": "/Project-X/static/media/batman_headerCopy.7424ec6cba9975c7b22b.jpg",
@@ -14,11 +14,11 @@
     "static/media/Metacritic.svg": "/Project-X/static/media/Metacritic.5d30dbc0003e6754afcb5b44f21e4890.svg",
     "static/media/slick.woff": "/Project-X/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Project-X/index.html",
-    "main.89fcccbd.css.map": "/Project-X/static/css/main.89fcccbd.css.map",
-    "main.f9675bc4.js.map": "/Project-X/static/js/main.f9675bc4.js.map"
+    "main.c9f4418b.css.map": "/Project-X/static/css/main.c9f4418b.css.map",
+    "main.ba04d382.js.map": "/Project-X/static/js/main.ba04d382.js.map"
   },
   "entrypoints": [
-    "static/css/main.89fcccbd.css",
-    "static/js/main.f9675bc4.js"
+    "static/css/main.c9f4418b.css",
+    "static/js/main.ba04d382.js"
   ]
 }
