@@ -59,6 +59,11 @@
         "released":"Released",
         "boxOffice":"Box Office"
       }
+    },
+    "errorPage":{
+      "wrongText":"OOPS! Something went wrong!",
+      "tryAgain_1":"Please try",
+      "tryAgain_2":"again"
     }
   }
 }

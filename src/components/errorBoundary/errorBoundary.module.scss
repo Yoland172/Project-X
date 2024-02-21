@@ -1,0 +1,80 @@
+@import "../../styles/variables.scss";
+
+.errorContainer{   
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    
+    width: 100vw;
+    height: 100svh;
+
+    &>img{
+        height: 40vh;
+
+    }
+
+    &>h1{
+        font-size: 3.1em;
+        font-weight: 400;
+    }
+    &>h3{
+        margin-top: 10px;
+        font-size: 2.4em;
+        font-weight: 300;
+
+        & > span{
+            width: fit-content;
+            position: relative;
+            color: $golden;
+            cursor: pointer;
+            transition: color $fast-anim;
+
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+
+              right: 0;
+              bottom: -3px;
+              width: 0;
+              height: 1px;
+              background-color: $golden;
+              transition: width 0.5s;
+            }
+
+            &:hover::after {
+              content: "";
+              width: 100%;
+              display: block;
+              position: absolute;
+              left: 0;
+              bottom: -3px;
+              height: 1px;
+              background-color: $golden;
+              transition: width 0.5s;
+            }
+          }
+    }
+
+    &.light{
+        &>h1{
+            color: $dark-blue;
+        }
+
+        &>h3{
+            color: $dark-blue;
+
+            &>span{
+                color: $blue;
+
+                &::after {
+                    background-color: $blue;
+                }
+
+                &:hover::after{
+                    background-color: $blue;
+                }
+            }
+        }
+    }
+}

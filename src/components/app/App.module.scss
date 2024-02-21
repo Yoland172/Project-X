@@ -1,5 +1,6 @@
 @import "../../styles/variables.scss";
 
+
 .App {
   background: radial-gradient(
     circle at 0% 0%,
@@ -9,7 +10,6 @@
   ) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background $fast-anim;
   
   &.light{
     background: white !important;

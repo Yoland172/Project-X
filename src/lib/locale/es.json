@@ -59,6 +59,11 @@
         "released": "Fecha de estreno",
         "boxOffice": "Taquilla"
       }
+    },
+    "errorPage":{
+      "wrongText":"¡UPS! ¡Algo salió mal!",
+      "tryAgain_1":"Inténtalo de",
+      "tryAgain_2":"nuevo"
     }
   }
 }

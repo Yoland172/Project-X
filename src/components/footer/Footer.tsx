@@ -96,6 +96,7 @@ const Footer = ({ theme, updateTheme }: FooterProp) => {
           </ul>
         </div>
         <ThemeSwitcher theme={theme} updateTheme={updateTheme} />
+        <button onClick={() => {throw new Error("test")}}>bsfh</button>
       </div>
     </div>
   );

@@ -35,6 +35,9 @@ const FilmListContainer = ({
 
   useEffect(() => {
     filmList.length === 0 && setCurrentImage("");
+    if(filmList.length > 2) {
+      throw new Error("dskfknfdsk")
+    }
   }, [filmList]);
 
   const pageNavigate = (
