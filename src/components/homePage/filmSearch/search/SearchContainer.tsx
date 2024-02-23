@@ -42,7 +42,6 @@ const SearchContainer = ({
         if (setIsFetching) setIsFetching(false);
         switch (res.Error) {
           case "Too many results.":
-            console.log("error");
         }
       }
     });
