@@ -67,7 +67,6 @@ describe("FilmInfo component", () => {
     const released = screen.getByText(/Released/i);
     const country = screen.getByText(/Country/i);
     const boxOffice = screen.getByText(/Box/i);
-    console.log(boxOffice);
 
     //Assert
     expect(img).toBeInTheDocument();

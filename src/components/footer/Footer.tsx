@@ -87,7 +87,6 @@ const Footer = ({ theme, updateTheme }: FooterProp) => {
               <li
                 onClick={() => {
                   i18n.changeLanguage(lang);
-                  console.log(lang);
                 }}
               >
                 {t(`footer.languagePreset.${lang}`)}

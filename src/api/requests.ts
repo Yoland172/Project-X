@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export const getFilms = async (name: string, page: number) => {
-  console.log(page);
   const result = await axios.get(
     `${process.env.REACT_APP_OMBD_URL}s=${name}&page=${page}`
   );

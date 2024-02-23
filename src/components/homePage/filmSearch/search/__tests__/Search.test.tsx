@@ -11,6 +11,8 @@ describe("Search component tests", () => {
       />
     );
     const input = screen.getByPlaceholderText("Search...");
+
+    //Assert
     expect(input).toBeInTheDocument();
   });
 

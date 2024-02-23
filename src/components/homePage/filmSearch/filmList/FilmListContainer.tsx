@@ -53,7 +53,6 @@ const FilmListContainer = ({
           setIsFetching(false);
           switch (res.Error) {
             case "Too many results.":
-              console.log("error");
           }
         }
       });
