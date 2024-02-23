@@ -16,7 +16,10 @@ describe("ErrorBoudary component tests", () => {
       </ErrorBoundary>
     );
 
+    const errorImage = screen.getByAltText("errorImage");
+
     //Assert
     expect(screen.queryByText(/Everything is fine/i)).not.toBeInTheDocument();
+    expect(errorImage).toBeInTheDocument();
   });
 });

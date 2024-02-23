@@ -1,4 +1,4 @@
-import React, { Component, ErrorInfo, ReactNode } from "react";
+import { Component, ErrorInfo, ReactNode } from "react";
 import styles from "./errorBoundary.module.scss";
 import errorImage_dark from "../../assets/img/fatalError_dark.png";
 import errorImage_light from "../../assets/img/fatalError_light.png";
